@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB288E21A54C68000BCF57A /* AppDelegate.swift */; };
+		CEB288E51A54C68000BCF57A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB288E41A54C68000BCF57A /* ViewController.swift */; };
+		CEB288E81A54C68100BCF57A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB288E61A54C68000BCF57A /* Main.storyboard */; };
+		CEB288EA1A54C68100BCF57A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB288E91A54C68100BCF57A /* Images.xcassets */; };
+		CEB288ED1A54C68100BCF57A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */; };
+		CEB288F91A54C68100BCF57A /* The_YutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB288F81A54C68100BCF57A /* The_YutorialTests.swift */; };
+		CEB289031BFE6BA900BCF57A /* YutorialListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB289021BFE6BA900BCF57A /* YutorialListTableViewController.swift */; };
+		CEB289051BFE6EAF00BCF57A /* YutorialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB289041BFE6EAF00BCF57A /* YutorialDetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEB288F31A54C68100BCF57A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEB288D51A54C68000BCF57A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEB288DC1A54C68000BCF57A;
+			remoteInfo = "The Yutorial";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CEB288DD1A54C68000BCF57A /* The Yutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Yutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB288E11A54C68000BCF57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEB288E21A54C68000BCF57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEB288E41A54C68000BCF57A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEB288E71A54C68000BCF57A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEB288E91A54C68100BCF57A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CEB288EC1A54C68100BCF57A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CEB288F21A54C68100BCF57A /* The YutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The YutorialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB288F71A54C68100BCF57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEB288F81A54C68100BCF57A /* The_YutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_YutorialTests.swift; sourceTree = "<group>"; };
+		CEB289021BFE6BA900BCF57A /* YutorialListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YutorialListTableViewController.swift; path = "The Yutorial.xcodeproj/../YutorialListTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		CEB289041BFE6EAF00BCF57A /* YutorialDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YutorialDetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEB288DA1A54C68000BCF57A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB288EF1A54C68100BCF57A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEB288D41A54C68000BCF57A = {
+			isa = PBXGroup;
+			children = (
+				CEB288DF1A54C68000BCF57A /* The Yutorial */,
+				CEB288F51A54C68100BCF57A /* The YutorialTests */,
+				CEB288DE1A54C68000BCF57A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEB288DE1A54C68000BCF57A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEB288DD1A54C68000BCF57A /* The Yutorial.app */,
+				CEB288F21A54C68100BCF57A /* The YutorialTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEB288DF1A54C68000BCF57A /* The Yutorial */ = {
+			isa = PBXGroup;
+			children = (
+				CEB288E21A54C68000BCF57A /* AppDelegate.swift */,
+				CEB288E41A54C68000BCF57A /* ViewController.swift */,
+				CEB288E61A54C68000BCF57A /* Main.storyboard */,
+				CEB289021BFE6BA900BCF57A /* YutorialListTableViewController.swift */,
+				CEB289041BFE6EAF00BCF57A /* YutorialDetailViewController.swift */,
+				CEB288E91A54C68100BCF57A /* Images.xcassets */,
+				CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */,
+				CEB288E01A54C68000BCF57A /* Supporting Files */,
+			);
+			path = "The Yutorial";
+			sourceTree = "<group>";
+		};
+		CEB288E01A54C68000BCF57A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEB288E11A54C68000BCF57A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CEB288F51A54C68100BCF57A /* The YutorialTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEB288F81A54C68100BCF57A /* The_YutorialTests.swift */,
+				CEB288F61A54C68100BCF57A /* Supporting Files */,
+			);
+			path = "The YutorialTests";
+			sourceTree = "<group>";
+		};
+		CEB288F61A54C68100BCF57A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEB288F71A54C68100BCF57A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEB288DC1A54C68000BCF57A /* The Yutorial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB288FC1A54C68100BCF57A /* Build configuration list for PBXNativeTarget "The Yutorial" */;
+			buildPhases = (
+				CEB288D91A54C68000BCF57A /* Sources */,
+				CEB288DA1A54C68000BCF57A /* Frameworks */,
+				CEB288DB1A54C68000BCF57A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The Yutorial";
+			productName = "The Yutorial";
+			productReference = CEB288DD1A54C68000BCF57A /* The Yutorial.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEB288F11A54C68100BCF57A /* The YutorialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB288FF1A54C68100BCF57A /* Build configuration list for PBXNativeTarget "The YutorialTests" */;
+			buildPhases = (
+				CEB288EE1A54C68100BCF57A /* Sources */,
+				CEB288EF1A54C68100BCF57A /* Frameworks */,
+				CEB288F01A54C68100BCF57A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEB288F41A54C68100BCF57A /* PBXTargetDependency */,
+			);
+			name = "The YutorialTests";
+			productName = "The YutorialTests";
+			productReference = CEB288F21A54C68100BCF57A /* The YutorialTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEB288D51A54C68000BCF57A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Nathan Addison";
+				TargetAttributes = {
+					CEB288DC1A54C68000BCF57A = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					CEB288F11A54C68100BCF57A = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = CEB288DC1A54C68000BCF57A;
+					};
+				};
+			};
+			buildConfigurationList = CEB288D81A54C68000BCF57A /* Build configuration list for PBXProject "The Yutorial" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEB288D41A54C68000BCF57A;
+			productRefGroup = CEB288DE1A54C68000BCF57A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEB288DC1A54C68000BCF57A /* The Yutorial */,
+				CEB288F11A54C68100BCF57A /* The YutorialTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEB288DB1A54C68000BCF57A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB288E81A54C68100BCF57A /* Main.storyboard in Resources */,
+				CEB288ED1A54C68100BCF57A /* LaunchScreen.xib in Resources */,
+				CEB288EA1A54C68100BCF57A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB288F01A54C68100BCF57A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEB288D91A54C68000BCF57A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB289051BFE6EAF00BCF57A /* YutorialDetailViewController.swift in Sources */,
+				CEB289031BFE6BA900BCF57A /* YutorialListTableViewController.swift in Sources */,
+				CEB288E51A54C68000BCF57A /* ViewController.swift in Sources */,
+				CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB288EE1A54C68100BCF57A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB288F91A54C68100BCF57A /* The_YutorialTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEB288F41A54C68100BCF57A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEB288DC1A54C68000BCF57A /* The Yutorial */;
+			targetProxy = CEB288F31A54C68100BCF57A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CEB288E61A54C68000BCF57A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEB288E71A54C68000BCF57A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEB288EC1A54C68100BCF57A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEB288FA1A54C68100BCF57A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEB288FB1A54C68100BCF57A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEB288FD1A54C68100BCF57A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "The Yutorial/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CEB288FE1A54C68100BCF57A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "The Yutorial/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CEB289001A54C68100BCF57A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "The YutorialTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Yutorial.app/The Yutorial";
+			};
+			name = Debug;
+		};
+		CEB289011A54C68100BCF57A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "The YutorialTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Yutorial.app/The Yutorial";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEB288D81A54C68000BCF57A /* Build configuration list for PBXProject "The Yutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB288FA1A54C68100BCF57A /* Debug */,
+				CEB288FB1A54C68100BCF57A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB288FC1A54C68100BCF57A /* Build configuration list for PBXNativeTarget "The Yutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB288FD1A54C68100BCF57A /* Debug */,
+				CEB288FE1A54C68100BCF57A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CEB288FF1A54C68100BCF57A /* Build configuration list for PBXNativeTarget "The YutorialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB289001A54C68100BCF57A /* Debug */,
+				CEB289011A54C68100BCF57A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEB288D51A54C68000BCF57A /* Project object */;
+}
