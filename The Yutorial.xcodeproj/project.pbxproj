@@ -83,9 +83,9 @@
 			children = (
 				CEB288E21A54C68000BCF57A /* AppDelegate.swift */,
 				CEB288E41A54C68000BCF57A /* ViewController.swift */,
-				CEB288E61A54C68000BCF57A /* Main.storyboard */,
 				CEB289021BFE6BA900BCF57A /* YutorialListTableViewController.swift */,
 				CEB289041BFE6EAF00BCF57A /* YutorialDetailViewController.swift */,
+				CEB288E61A54C68000BCF57A /* Main.storyboard */,
 				CEB288E91A54C68100BCF57A /* Images.xcassets */,
 				CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */,
 				CEB288E01A54C68000BCF57A /* Supporting Files */,
@@ -417,6 +417,7 @@
 				CEB288FE1A54C68100BCF57A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEB288FF1A54C68100BCF57A /* Build configuration list for PBXNativeTarget "The YutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +426,7 @@
 				CEB289011A54C68100BCF57A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
