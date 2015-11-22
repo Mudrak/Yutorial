@@ -22,6 +22,10 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="7Li-nH-Kvb" kind="show" identifier="showSteps" id="d2P-px-V6e"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -38,56 +42,42 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuTableView" destination="zvz-64-lsm" id="cuI-YL-smB"/>
-                        <segue destination="phR-97-fKJ" kind="show" identifier="showSteps" id="0dQ-l0-tsB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbf-8P-tla" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="976" y="300"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="KKY-JX-mhM">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Jwd-Xe-OLR" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MEU-pj-jpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1734" y="-382"/>
-        </scene>
         <!--Step View Controller-->
-        <scene sceneID="3mv-Kd-jER">
+        <scene sceneID="O8t-wj-ALh">
             <objects>
-                <viewController storyboardIdentifier="Step View Controller" id="phR-97-fKJ" customClass="StepViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fiP-Pa-v99"/>
-                        <viewControllerLayoutGuide type="bottom" id="4Zc-Yn-ahf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7kG-BX-uoU">
+                <tableViewController id="7Li-nH-Kvb" customClass="StepViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Uy-ep-qf4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-hK-fjL">
-                                <rect key="frame" x="0.0" y="64" width="600" height="600"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m3g-fZ-CWR">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <navigationItem title="Title" id="VUe-bj-yPM"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="stepTableView" destination="0Mf-hK-fjL" id="iZ0-oR-KmP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2G0-HB-1Hi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stepCell" id="EZN-zC-hfK">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EZN-zC-hfK" id="ciG-GX-Bfh">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7Li-nH-Kvb" id="sJi-fo-mxn"/>
+                            <outlet property="delegate" destination="7Li-nH-Kvb" id="1jI-A9-Edx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hPY-TB-r9X"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4h-4E-O3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="300"/>
+            <point key="canvasLocation" x="1712" y="300"/>
         </scene>
         <!--Yutorial Detail View Controller-->
         <scene sceneID="fTr-md-7kk">
@@ -104,14 +94,17 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5L-S6-JKy">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <animations/>
+                                <color key="barTintColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Add Yutorial" id="bum-6w-Yof">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="txB-e9-HM1">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="bJP-Wq-QzJ" kind="unwind" identifier="cancelSegue" unwindAction="cancel:" id="dLv-Qx-pQh"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="I31-PS-Ji1">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="bJP-Wq-QzJ" kind="unwind" identifier="doneSegue" unwindAction="done:" id="nZ2-BQ-ZNf"/>
                                             </connections>
@@ -119,10 +112,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-TT-g7w">
-                                <rect key="frame" x="84" y="178" width="407" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tutorial Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-TT-g7w">
+                                <rect key="frame" x="97" y="111" width="407" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -131,10 +124,10 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="n5L-S6-JKy" secondAttribute="trailing" id="A39-Ub-uV2"/>
                             <constraint firstItem="n5L-S6-JKy" firstAttribute="leading" secondItem="lg3-Uh-ZaC" secondAttribute="leading" id="HEu-tq-DJm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2mf-TT-g7w" secondAttribute="trailing" constant="93" id="XHq-NM-Duu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2mf-TT-g7w" secondAttribute="trailing" constant="80" id="XHq-NM-Duu"/>
                             <constraint firstItem="n5L-S6-JKy" firstAttribute="top" secondItem="72W-hC-Slt" secondAttribute="bottom" id="aog-xl-Thv"/>
-                            <constraint firstItem="2mf-TT-g7w" firstAttribute="leading" secondItem="lg3-Uh-ZaC" secondAttribute="leadingMargin" constant="68" id="azE-A7-OTn"/>
-                            <constraint firstItem="U58-WR-Fb6" firstAttribute="top" secondItem="2mf-TT-g7w" secondAttribute="bottom" constant="348" id="ezb-rN-rLj"/>
+                            <constraint firstItem="2mf-TT-g7w" firstAttribute="leading" secondItem="lg3-Uh-ZaC" secondAttribute="leadingMargin" constant="81" id="azE-A7-OTn"/>
+                            <constraint firstItem="U58-WR-Fb6" firstAttribute="top" secondItem="2mf-TT-g7w" secondAttribute="bottom" constant="415" id="ezb-rN-rLj"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -146,7 +139,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYN-xd-qvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bJP-Wq-QzJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="1096"/>
+            <point key="canvasLocation" x="976" y="1060"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vnO-Vj-gJD">
@@ -165,7 +158,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZa-n4-xpl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="192" y="300"/>
+            <point key="canvasLocation" x="278" y="166"/>
         </scene>
     </scenes>
 </document>

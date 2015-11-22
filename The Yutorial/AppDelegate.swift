@@ -17,10 +17,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        var pageController = UIPageControl.appearance()
-        pageController.pageIndicatorTintColor = UIColor.lightGrayColor()
-        pageController.currentPageIndicatorTintColor = UIColor.blackColor()
-        pageController.backgroundColor = UIColor.whiteColor()
+  
+        // UI Colors:
+        //      Dark Mint: #00a087
+        //      Light Mint: #00bc9e
+        //      Yellow: #ffcb46
+        //      Ghost White: #f8f8ff
+        //      Dark Plum: #502c4d
+        //      Flat White: #ecfof1
+        
+        let font = UIFont(name: "Montserrat-Regular", size: 16)!
+        
+        // Navigation bar styling:
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        
+        let attrs = [
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "Montserrat-Regular", size: 18)!
+        ]
+        UINavigationBar.appearance().titleTextAttributes = attrs
+        
+        //UINavigationBar.appearance().font = UIFont(name: "Montserrat-Regular", size: "15")
+        
+        //Status Bar color:
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        
+        // Table Views
+        // UITableViewCell.appearance().textLabel!.font = UIFont(name: "Montserrat-Regular", size: 16)!
         return true
     }
 

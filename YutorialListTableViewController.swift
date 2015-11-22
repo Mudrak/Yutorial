@@ -68,6 +68,7 @@ class YutorialListTableViewController: UITableViewController, UITableViewDataSou
 
         // Configure the cell...
         cell.textLabel!.text = yutorials[indexPath.row]
+        cell.textLabel!.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
 
         return cell
     }
@@ -86,14 +87,6 @@ class YutorialListTableViewController: UITableViewController, UITableViewDataSou
             
             // indexPath is set to the selected path
             let indexPath = self.menuTableView.indexPathForSelectedRow
-            
-            // bansheeInfo is set for the selected group
-//            let coasterSection = coasterCollection.coasters[indexPath.section].ridingGroups
-              //let yutorialInfo = "More about \(yutorialSection[indexPath.row].description)"
-            
-            // Let the new view controller have its info
-            //upcomingView.yutorialInformation = yutorialInfo
-            //self.menuTableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
     }
 

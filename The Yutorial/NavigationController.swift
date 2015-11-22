@@ -1,27 +1,21 @@
 //
-//  YutorialDetailViewController.swift
+//  NavigationController.swift
 //  
 //
-//  Created by Nathan Addison on 11/19/15.
+//  Created by admin on 11/22/15.
 //
 //
 
 import UIKit
 
-class YutorialDetailViewController: UIViewController {
+class NavigationController: UINavigationController {
 
-    @IBOutlet weak var yutorialName: UITextField!
-    var name: String = ""
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "doneSegue") {
-            name = yutorialName.text
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Status bar white font
+        //self.navigationBar.barStyle = UIBarStyle.
+        //self.navigationBar.tintColor = UIColor.whiteColor()
 
         // Do any additional setup after loading the view.
     }
