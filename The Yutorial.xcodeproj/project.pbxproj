@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844ED7FF1BFFFA1600712EFC /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844ED7FE1BFFFA1600712EFC /* StepViewController.swift */; };
+		844ED8011C0113C200712EFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844ED8001C0113C200712EFC /* Images.xcassets */; };
 		CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB288E21A54C68000BCF57A /* AppDelegate.swift */; };
 		CEB288E51A54C68000BCF57A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB288E41A54C68000BCF57A /* ViewController.swift */; };
 		CEB288E81A54C68100BCF57A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB288E61A54C68000BCF57A /* Main.storyboard */; };
-		CEB288EA1A54C68100BCF57A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB288E91A54C68100BCF57A /* Images.xcassets */; };
 		CEB288ED1A54C68100BCF57A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */; };
 		CEB288F91A54C68100BCF57A /* The_YutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB288F81A54C68100BCF57A /* The_YutorialTests.swift */; };
 		CEB289031BFE6BA900BCF57A /* YutorialListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB289021BFE6BA900BCF57A /* YutorialListTableViewController.swift */; };
@@ -28,12 +29,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		844ED7FE1BFFFA1600712EFC /* StepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
+		844ED8001C0113C200712EFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CEB288DD1A54C68000BCF57A /* The Yutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Yutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB288E11A54C68000BCF57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB288E21A54C68000BCF57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB288E41A54C68000BCF57A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEB288E71A54C68000BCF57A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CEB288E91A54C68100BCF57A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CEB288EC1A54C68100BCF57A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CEB288F21A54C68100BCF57A /* The YutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The YutorialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB288F71A54C68100BCF57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,9 +87,10 @@
 				CEB288E41A54C68000BCF57A /* ViewController.swift */,
 				CEB289021BFE6BA900BCF57A /* YutorialListTableViewController.swift */,
 				CEB289041BFE6EAF00BCF57A /* YutorialDetailViewController.swift */,
+				844ED7FE1BFFFA1600712EFC /* StepViewController.swift */,
 				CEB288E61A54C68000BCF57A /* Main.storyboard */,
-				CEB288E91A54C68100BCF57A /* Images.xcassets */,
 				CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */,
+				844ED8001C0113C200712EFC /* Images.xcassets */,
 				CEB288E01A54C68000BCF57A /* Supporting Files */,
 			);
 			path = "The Yutorial";
@@ -198,9 +201,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844ED8011C0113C200712EFC /* Images.xcassets in Resources */,
 				CEB288E81A54C68100BCF57A /* Main.storyboard in Resources */,
 				CEB288ED1A54C68100BCF57A /* LaunchScreen.xib in Resources */,
-				CEB288EA1A54C68100BCF57A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +223,7 @@
 			files = (
 				CEB289051BFE6EAF00BCF57A /* YutorialDetailViewController.swift in Sources */,
 				CEB289031BFE6BA900BCF57A /* YutorialListTableViewController.swift in Sources */,
+				844ED7FF1BFFFA1600712EFC /* StepViewController.swift in Sources */,
 				CEB288E51A54C68000BCF57A /* ViewController.swift in Sources */,
 				CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */,
 			);

@@ -8,23 +8,20 @@
 
 import UIKit
 
-class YutorialListTableViewController: UITableViewController {
+class YutorialListTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var menuTableView: UITableView!
     
     var yutorials = [String]()
     var newYutorials: String = ""
-    
-    
-    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        yutorials = ["Yutorial tutorial"]
+        yutorials = ["How to Create A Yutorial"]
         
     }
-    
         @IBAction func cancel(segue:UIStoryboardSegue) {
             
         }
@@ -75,6 +72,31 @@ class YutorialListTableViewController: UITableViewController {
         return cell
     }
     
+    //// Delegate function - navigation stuff:
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("showSteps", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "showSteps") {
+            
+            // upcomingView is set to BansheeDetailViewController
+            var upcomingView: StepViewController = segue.destinationViewController as! StepViewController
+            
+            // indexPath is set to the selected path
+            let indexPath = self.menuTableView.indexPathForSelectedRow
+            
+            // bansheeInfo is set for the selected group
+//            let coasterSection = coasterCollection.coasters[indexPath.section].ridingGroups
+              //let yutorialInfo = "More about \(yutorialSection[indexPath.row].description)"
+            
+            // Let the new view controller have its info
+            //upcomingView.yutorialInformation = yutorialInfo
+            //self.menuTableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
