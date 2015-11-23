@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-  
+        // MARK: STYLING /////////////////////////////////////////////
         // UI Colors:
         //      Dark Mint: #00a087
         //      Light Mint: #00bc9e
@@ -39,12 +39,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = attrs
 
         //UINavigationBar.appearance().font = UIFont(name: "Montserrat-Regular", size: "15")
+        UITextField.appearance().font = montserrat
+        
+        let barButton = UIBarButtonItem.appearance()
+        
+        if let font = UIFont(name: "Montserrat-Regular", size: 22) {
+            barButton.setTitleTextAttributes([NSFontAttributeName: font], forState: UIControlState.Normal)
+        }
         
         //Status Bar color:
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        ///////////////////////////////////
         
-        // Table Views
-        // UITableViewCell.appearance().textLabel!.font = UIFont(name: "Montserrat-Regular", size: 16)!
+        
         return true
     }
 

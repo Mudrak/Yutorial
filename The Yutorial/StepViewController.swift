@@ -36,11 +36,13 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         
         steps = [
-            "Click add button",
-            "Name Yutorial",
-            "Name steps",
-            "Make checklist for each step",
-            "Save & share. You're done!"
+            "Press the '+' add button",
+            "Name your Yutorial",
+            "Press Done",
+            "Name your steps",
+            "Make your checklist items for each step",
+            "Save & Share",
+            "Forget how to do a task, chore, or job? Look back at the Yutorial!"
         ]
         navigationItem.title = yutorialInformation
         
