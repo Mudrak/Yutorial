@@ -4,24 +4,44 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Yutorials-->
         <scene sceneID="zTS-ft-52p">
             <objects>
                 <tableViewController title="Yutorials" id="7WE-u3-Pnt" customClass="YutorialListTableViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zvz-64-lsm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" id="zvz-64-lsm">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="yutorialCell" id="NCX-3c-JNC">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="yutorialCell" rowHeight="77" id="NCX-3c-JNC" customClass="YutorialMenuTableViewCell" customModule="The_Yutorial" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NCX-3c-JNC" id="e6H-s5-a8U">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUk-sl-Xc2">
+                                            <rect key="frame" x="14" y="8" width="578" height="60"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
+                                            <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="yutorialLabel" destination="RUk-sl-Xc2" id="eOH-a6-cbp"/>
+                                    <segue destination="7Li-nH-Kvb" kind="show" identifier="showSteps" id="d2P-px-V6e"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -36,58 +56,103 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="menuTableView" destination="zvz-64-lsm" id="cuI-YL-smB"/>
-                        <segue destination="phR-97-fKJ" kind="show" identifier="showSteps" id="0dQ-l0-tsB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbf-8P-tla" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976" y="300"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="KKY-JX-mhM">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Jwd-Xe-OLR" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MEU-pj-jpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1734" y="-382"/>
+            <point key="canvasLocation" x="832" y="-100"/>
         </scene>
         <!--Step View Controller-->
-        <scene sceneID="3mv-Kd-jER">
+        <scene sceneID="O8t-wj-ALh">
             <objects>
-                <viewController storyboardIdentifier="Step View Controller" id="phR-97-fKJ" customClass="StepViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fiP-Pa-v99"/>
-                        <viewControllerLayoutGuide type="bottom" id="4Zc-Yn-ahf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7kG-BX-uoU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <tableViewController id="7Li-nH-Kvb" customClass="StepViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Uy-ep-qf4">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-hK-fjL">
-                                <rect key="frame" x="0.0" y="64" width="600" height="600"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m3g-fZ-CWR">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <navigationItem title="Title" id="VUe-bj-yPM"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stepCell" rowHeight="85" id="EZN-zC-hfK" customClass="StepCellTableViewCell" customModule="The_Yutorial" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EZN-zC-hfK" id="ciG-GX-Bfh">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="step1" translatesAutoresizingMaskIntoConstraints="NO" id="hcq-J7-Zhk">
+                                            <rect key="frame" x="8" y="9" width="69" height="67"/>
+                                            <animations/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBo-nf-krj">
+                                            <rect key="frame" x="85" y="12" width="661" height="64"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
+                                            <color key="textColor" red="0.0" green="0.62745098039215685" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="stepImageView" destination="hcq-J7-Zhk" id="vCC-YI-qgh"/>
+                                    <outlet property="stepLabel" destination="cBo-nf-krj" id="alo-kU-yQc"/>
+                                    <segue destination="aoU-8s-hnI" kind="show" id="WQN-WZ-fF3"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7Li-nH-Kvb" id="sJi-fo-mxn"/>
+                            <outlet property="delegate" destination="7Li-nH-Kvb" id="1jI-A9-Edx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hPY-TB-r9X"/>
                     <connections>
-                        <outlet property="stepTableView" destination="0Mf-hK-fjL" id="iZ0-oR-KmP"/>
+                        <outlet property="stepTableView" destination="0Uy-ep-qf4" id="eSR-aj-VJ4"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2G0-HB-1Hi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4h-4E-O3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="300"/>
+            <point key="canvasLocation" x="1714" y="16"/>
+        </scene>
+        <!--Step Checklist-->
+        <scene sceneID="QCC-Mv-GtK">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEV-bu-dIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="aoU-8s-hnI" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="6TW-rD-uJ2">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="vgD-t9-xdE">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IcA-bu-QVC">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IcA-bu-QVC" id="5NL-yG-0bf">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="aoU-8s-hnI" id="eEE-tz-JKH"/>
+                            <outlet property="delegate" destination="aoU-8s-hnI" id="lBC-I4-Z7c"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Step Checklist" id="hDI-Gh-yIY"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2598" y="144"/>
         </scene>
         <!--Yutorial Detail View Controller-->
         <scene sceneID="fTr-md-7kk">
@@ -98,20 +163,23 @@
                         <viewControllerLayoutGuide type="bottom" id="U58-WR-Fb6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lg3-Uh-ZaC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5L-S6-JKy">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
                                 <animations/>
+                                <color key="barTintColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Add Yutorial" id="bum-6w-Yof">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="txB-e9-HM1">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="bJP-Wq-QzJ" kind="unwind" identifier="cancelSegue" unwindAction="cancel:" id="dLv-Qx-pQh"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="I31-PS-Ji1">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="bJP-Wq-QzJ" kind="unwind" identifier="doneSegue" unwindAction="done:" id="nZ2-BQ-ZNf"/>
                                             </connections>
@@ -119,11 +187,11 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-TT-g7w">
-                                <rect key="frame" x="84" y="178" width="407" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Tutorial Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-TT-g7w">
+                                <rect key="frame" x="97" y="201" width="407" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <animations/>
@@ -131,10 +199,10 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="n5L-S6-JKy" secondAttribute="trailing" id="A39-Ub-uV2"/>
                             <constraint firstItem="n5L-S6-JKy" firstAttribute="leading" secondItem="lg3-Uh-ZaC" secondAttribute="leading" id="HEu-tq-DJm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2mf-TT-g7w" secondAttribute="trailing" constant="93" id="XHq-NM-Duu"/>
+                            <constraint firstItem="2mf-TT-g7w" firstAttribute="top" secondItem="n5L-S6-JKy" secondAttribute="bottom" constant="137" id="aKw-kG-GUZ"/>
                             <constraint firstItem="n5L-S6-JKy" firstAttribute="top" secondItem="72W-hC-Slt" secondAttribute="bottom" id="aog-xl-Thv"/>
-                            <constraint firstItem="2mf-TT-g7w" firstAttribute="leading" secondItem="lg3-Uh-ZaC" secondAttribute="leadingMargin" constant="68" id="azE-A7-OTn"/>
-                            <constraint firstItem="U58-WR-Fb6" firstAttribute="top" secondItem="2mf-TT-g7w" secondAttribute="bottom" constant="348" id="ezb-rN-rLj"/>
+                            <constraint firstItem="2mf-TT-g7w" firstAttribute="leading" secondItem="lg3-Uh-ZaC" secondAttribute="leadingMargin" constant="81" id="b1B-m9-u1M"/>
+                            <constraint firstItem="2mf-TT-g7w" firstAttribute="centerX" secondItem="n5L-S6-JKy" secondAttribute="centerX" id="bkE-tD-tdP"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -146,13 +214,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYN-xd-qvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bJP-Wq-QzJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="1096"/>
+            <point key="canvasLocation" x="832" y="1066"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vnO-Vj-gJD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xiV-iE-ViC" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c4u-r8-hKx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -165,7 +234,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZa-n4-xpl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="192" y="300"/>
+            <point key="canvasLocation" x="-50" y="-206"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="step1" width="352" height="352"/>
+    </resources>
 </document>
