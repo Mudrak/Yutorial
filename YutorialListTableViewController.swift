@@ -1,6 +1,6 @@
 //
 //  YutorialListTableViewController.swift
-//  
+//
 //
 //  Created by Nathan Addison on 11/19/15.
 //
@@ -15,7 +15,6 @@ class YutorialListTableViewController: UITableViewController, UITableViewDataSou
     var yutorials = [String]()
     var newYutorials: String = ""
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,19 +63,22 @@ class YutorialListTableViewController: UITableViewController, UITableViewDataSou
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("yutorialCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("yutorialCell", forIndexPath: indexPath) as!
+            YutorialMenuTableViewCell
 
         // Configure the cell...
-        cell.textLabel!.text = yutorials[indexPath.row]
+        cell.yutorialLabel.text = yutorials[indexPath.row]
+        cell.yutorialLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
+        cell.yutorialLabel.font = UIFont(name: "Montserrat-Regular", size: 16)
 
         return cell
     }
     
     //// Delegate function - navigation stuff:
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("showSteps", sender: self)
-    }
+//    
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        self.performSegueWithIdentifier("showSteps", sender: self)
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showSteps") {
@@ -85,14 +87,12 @@ class YutorialListTableViewController: UITableViewController, UITableViewDataSou
             var upcomingView: StepViewController = segue.destinationViewController as! StepViewController
             
             // indexPath is set to the selected path
-            let indexPath = self.menuTableView.indexPathForSelectedRow
+            let indexPath = self.menuTableView.indexPathForSelectedRow()
             
-            // bansheeInfo is set for the selected group
-//            let coasterSection = coasterCollection.coasters[indexPath.section].ridingGroups
-              //let yutorialInfo = "More about \(yutorialSection[indexPath.row].description)"
+            let yutorialInfo = yutorials[indexPath!.row]
             
             // Let the new view controller have its info
-            //upcomingView.yutorialInformation = yutorialInfo
+            upcomingView.yutorialInformation = yutorialInfo
             //self.menuTableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
     }
