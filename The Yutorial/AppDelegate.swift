@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //      Dark Plum: #502c4d
         //      Flat White: #ecfof1
         
-        let font = UIFont(name: "Montserrat-Regular", size: 16)!
+        let montserrat = UIFont(name: "Montserrat-Regular", size: 20)!
         
         // Navigation bar styling:
         UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
@@ -34,10 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let attrs = [
             NSForegroundColorAttributeName : UIColor.whiteColor(),
-            NSFontAttributeName : UIFont(name: "Montserrat-Regular", size: 18)!
+            NSFontAttributeName : UIFont(name: "Montserrat-Bold", size: 30)!
         ]
         UINavigationBar.appearance().titleTextAttributes = attrs
-        
+
         //UINavigationBar.appearance().font = UIFont(name: "Montserrat-Regular", size: "15")
         
         //Status Bar color:
