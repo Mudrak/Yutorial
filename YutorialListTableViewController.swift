@@ -67,9 +67,9 @@ class YutorialListTableViewController: UITableViewController, UITableViewDataSou
             YutorialMenuTableViewCell
 
         // Configure the cell...
-        cell.yutorialLabel.text = yutorials[indexPath.row]
         cell.yutorialLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         cell.yutorialLabel.font = UIFont(name: "Montserrat-Regular", size: 16)
+        cell.yutorialLabel.text = self.yutorials[indexPath.row]
 
         return cell
     }

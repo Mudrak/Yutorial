@@ -16,6 +16,7 @@
 		849AAD461C025AE300253DAF /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 849AAD421C025AE300253DAF /* Montserrat-UltraLight.otf */; };
 		849AAD481C02A0AF00253DAF /* StepCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAD471C02A0AF00253DAF /* StepCellTableViewCell.swift */; };
 		849AAD4A1C02CFBB00253DAF /* YutorialMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAD491C02CFBB00253DAF /* YutorialMenuTableViewCell.swift */; };
+		84A4E1571C04C6B2003C5896 /* StepDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4E1561C04C6B2003C5896 /* StepDetailViewController.swift */; };
 		CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB288E21A54C68000BCF57A /* AppDelegate.swift */; };
 		CEB288E81A54C68100BCF57A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB288E61A54C68000BCF57A /* Main.storyboard */; };
 		CEB288ED1A54C68100BCF57A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */; };
@@ -44,6 +45,7 @@
 		849AAD421C025AE300253DAF /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
 		849AAD471C02A0AF00253DAF /* StepCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCellTableViewCell.swift; sourceTree = "<group>"; };
 		849AAD491C02CFBB00253DAF /* YutorialMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YutorialMenuTableViewCell.swift; sourceTree = "<group>"; };
+		84A4E1561C04C6B2003C5896 /* StepDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepDetailViewController.swift; sourceTree = "<group>"; };
 		CEB288DD1A54C68000BCF57A /* The Yutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Yutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB288E11A54C68000BCF57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB288E21A54C68000BCF57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				849AAD491C02CFBB00253DAF /* YutorialMenuTableViewCell.swift */,
 				CEB289041BFE6EAF00BCF57A /* YutorialDetailViewController.swift */,
 				844ED7FE1BFFFA1600712EFC /* StepViewController.swift */,
+				84A4E1561C04C6B2003C5896 /* StepDetailViewController.swift */,
 				849AAD471C02A0AF00253DAF /* StepCellTableViewCell.swift */,
 				CEB288E61A54C68000BCF57A /* Main.storyboard */,
 				844ED8001C0113C200712EFC /* Images.xcassets */,
@@ -250,6 +253,7 @@
 				849AAD3E1C02545C00253DAF /* NavigationController.swift in Sources */,
 				844ED7FF1BFFFA1600712EFC /* StepViewController.swift in Sources */,
 				CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */,
+				84A4E1571C04C6B2003C5896 /* StepDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

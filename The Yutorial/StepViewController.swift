@@ -13,7 +13,7 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
     @IBOutlet var stepTableView: UITableView!
     
     var steps = [String]()
-    var newSteps: String = ""
+    var newStep: String = ""
     
     var yutorialInformation: String!
     
@@ -49,6 +49,18 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func cancel(segue:UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func done(segue:UIStoryboardSegue) {
+        var stepDetailVC = segue.sourceViewController as! StepDetailViewController
+        newStep = stepDetailVC.name
+        
+        steps.append(newStep)
+        
+        self.tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -80,15 +92,26 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("stepCell", forIndexPath: indexPath) as! StepCellTableViewCell
+//        let newCell = tableView.dequeueReusableCellWithIdentifier("newStepCell", forIndexPath: indexPath) as! StepCellTableViewCell
         
         // Configure the cell...
-        cell.stepLabel.text = steps[indexPath.row]
+        
         cell.stepLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         cell.stepLabel.font = UIFont(name: "Montserrat-Regular", size: 16)
         cell.stepImageView.image = stepImages[indexPath.row]
+        cell.stepLabel.text = steps[indexPath.row]
         
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "stepCell") {
+            // For segue to the checklist tableview
+        }
+    }
+    
+    // Dynamic cells for user-entered step data
+
     
 
     
