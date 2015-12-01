@@ -1,22 +1,23 @@
 //
-//  YutorialDetailViewController.swift
+//  StepDetailViewController.swift
 //  
 //
-//  Created by Nathan Addison on 11/19/15.
+//  Created by admin on 11/24/15.
 //
 //
 
 import UIKit
 
-class YutorialDetailViewController: UIViewController, UITextFieldDelegate {
+class StepDetailViewController: UIViewController {
 
-    @IBOutlet weak var yutorialName: UITextField!
-    var name: String = ""
+
+    @IBOutlet weak var stepName: UITextField!
+    var name: String!
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         if identifier == "doneSegue" {
             
-            if (yutorialName.text.isEmpty) {
+            if (stepName.text.isEmpty) {
                 
                 let alert = UIAlertView()
                 alert.title = "Blank!"
@@ -36,17 +37,17 @@ class YutorialDetailViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "doneSegue") {
-            name = yutorialName.text
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "doneSegue" {
+            name = stepName.text
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Makes cursor start in textField
-        self.yutorialName.becomeFirstResponder()
+        // Sets cursor focus on text field on load
+        self.stepName.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }
@@ -55,13 +56,7 @@ class YutorialDetailViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // UITextField Delegate:
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    //yutorialName.delegate = self
+
 
     /*
     // MARK: - Navigation

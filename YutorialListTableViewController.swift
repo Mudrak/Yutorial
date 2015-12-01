@@ -14,6 +14,7 @@ class YutorialListTableViewController: UITableViewController, UITableViewDataSou
     
     var yutorials = [String]()
     var newYutorials: String = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,9 +68,9 @@ class YutorialListTableViewController: UITableViewController, UITableViewDataSou
             YutorialMenuTableViewCell
 
         // Configure the cell...
-        cell.yutorialLabel.text = yutorials[indexPath.row]
         cell.yutorialLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
-        cell.yutorialLabel.font = UIFont(name: "Montserrat-Regular", size: 16)
+        cell.yutorialLabel.font = UIFont(name: "Montserrat-Regular", size: 25)
+        cell.yutorialLabel.text = self.yutorials[indexPath.row]
 
         return cell
     }
@@ -89,7 +90,14 @@ class YutorialListTableViewController: UITableViewController, UITableViewDataSou
             // indexPath is set to the selected path
             let indexPath = self.menuTableView.indexPathForSelectedRow()
             
-            let yutorialInfo = yutorials[indexPath!.row]
+            var yutorialInfo: String!
+            
+            if (indexPath!.row == 0) {
+                yutorialInfo = "How To"
+            }
+            else {
+                yutorialInfo = yutorials[indexPath!.row]
+            }
             
             // Let the new view controller have its info
             upcomingView.yutorialInformation = yutorialInfo
