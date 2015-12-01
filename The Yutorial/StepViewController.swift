@@ -12,8 +12,9 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
 
     @IBOutlet var stepTableView: UITableView!
     
-    var steps = [String]()
+    var steps = [String?]()
     var newStep: String = ""
+    var howToLoaded = false
     
     var yutorialInformation: String!
     
@@ -35,17 +36,18 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        steps = [
-            "Press the '+' add button",
-            "Name your Yutorial",
-            "Press Done",
-            "Name your steps",
-            "Make your checklist items for each step",
-            "Save & Share",
-            "Forget how to do a task, chore, or job? Look back at the Yutorial!"
-        ]
+        if (yutorialInformation == "How To") {
+            steps = [
+                "Press the '+' add button",
+                "Name your Yutorial",
+                "Press Done",
+                "Name your steps",
+                "Make your checklist items for each step",
+                "Save & Share",
+                "Forget how to do a task, chore, or job? Look back at the Yutorial!"
+            ]
+        }
         navigationItem.title = yutorialInformation
-        
 
         // Do any additional setup after loading the view.
     }
@@ -97,7 +99,7 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
         // Configure the cell...
         
         cell.stepLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
-        cell.stepLabel.font = UIFont(name: "Montserrat-Regular", size: 16)
+        cell.stepLabel.font = UIFont(name: "Montserrat-Regular", size: 25)
         cell.stepImageView.image = stepImages[indexPath.row]
         cell.stepLabel.text = steps[indexPath.row]
         

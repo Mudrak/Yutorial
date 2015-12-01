@@ -39,7 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = attrs
 
         //UINavigationBar.appearance().font = UIFont(name: "Montserrat-Regular", size: "15")
-        UITextField.appearance().font = montserrat
+        //UITextField.appearance().font = montserrat
+        UILabel.appearance().font = UIFont(name: "Montserrat-Regular", size: 25)!
         
         let barButton = UIBarButtonItem.appearance()
         

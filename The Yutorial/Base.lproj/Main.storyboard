@@ -10,6 +10,7 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -28,8 +29,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NCX-3c-JNC" id="e6H-s5-a8U">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUk-sl-Xc2">
-                                            <rect key="frame" x="14" y="8" width="578" height="60"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutorial Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUk-sl-Xc2">
+                                            <rect key="frame" x="14" y="0.0" width="578" height="76"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
                                             <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,7 +87,7 @@
                                             <rect key="frame" x="8" y="9" width="69" height="67"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvX-r3-4TC">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvX-r3-4TC">
                                             <rect key="frame" x="85" y="12" width="661" height="64"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
@@ -102,32 +103,6 @@
                                     <outlet property="stepImageView" destination="eIv-g1-FsZ" id="dsr-2g-yO7"/>
                                     <outlet property="stepLabel" destination="JvX-r3-4TC" id="uJv-Sn-mxq"/>
                                     <segue destination="aoU-8s-hnI" kind="show" id="9vc-YE-tr4"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newStepCell" rowHeight="85" id="WUH-hg-gca" customClass="StepCellTableViewCell" customModule="The_Yutorial" customModuleProvider="target">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WUH-hg-gca" id="9o3-L3-XXn">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="step1" translatesAutoresizingMaskIntoConstraints="NO" id="ENO-Ij-XVb">
-                                            <rect key="frame" x="8" y="9" width="69" height="67"/>
-                                            <animations/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqE-5X-E1u">
-                                            <rect key="frame" x="85" y="12" width="661" height="64"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
-                                            <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                                <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="stepImageView" destination="ENO-Ij-XVb" id="S4f-7C-3g6"/>
-                                    <outlet property="stepLabel" destination="QqE-5X-E1u" id="hnq-yn-55a"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -212,17 +187,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Tutorial Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-TT-g7w">
-                                <rect key="frame" x="97" y="201" width="407" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Tutorial Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-TT-g7w">
+                                <rect key="frame" x="16" y="170" width="736" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <color key="tintColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="SYK-ut-KdU" id="lEd-B4-W7S"/>
+                                </connections>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5L-S6-JKy">
-                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.24999999999999967" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="FHY-un-4R1">
+                                <rect key="frame" x="127" y="297" width="515" height="617"/>
+                                <animations/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n5L-S6-JKy">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <animations/>
                                 <items>
-                                    <navigationItem title="Add Yutorial" id="bum-6w-Yof">
+                                    <navigationItem title="Add Yutorial" prompt="" id="bum-6w-Yof">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="txB-e9-HM1">
                                             <connections>
                                                 <segue destination="bJP-Wq-QzJ" kind="unwind" identifier="cancelSegue" unwindAction="cancel:" id="dLv-Qx-pQh"/>
@@ -250,6 +234,7 @@
                     </view>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="yutorialName" destination="2mf-TT-g7w" id="KuK-2l-u4D"/>
                     </connections>
@@ -257,7 +242,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYN-xd-qvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bJP-Wq-QzJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="832" y="1066"/>
+            <point key="canvasLocation" x="832" y="1080"/>
         </scene>
         <!--Enter Step Title-->
         <scene sceneID="RsH-hZ-fPi">
@@ -271,8 +256,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Step Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nMc-cs-u4a">
+                                <rect key="frame" x="16" y="189" width="736" height="30"/>
+                                <animations/>
+                                <color key="tintColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="OQj-Gd-bGP">
+                                <rect key="frame" x="127" y="308" width="515" height="617"/>
+                                <animations/>
+                            </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgu-Vb-XXF">
-                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <animations/>
                                 <items>
                                     <navigationItem title="Add Steps" id="kX7-co-91f">
@@ -289,12 +286,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nMc-cs-u4a">
-                                <rect key="frame" x="76" y="189" width="443" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -331,5 +322,6 @@
     </scenes>
     <resources>
         <image name="step1" width="352" height="352"/>
+        <image name="yutorial.logo2" width="2282" height="4026"/>
     </resources>
 </document>

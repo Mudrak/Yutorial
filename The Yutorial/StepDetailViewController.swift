@@ -14,6 +14,29 @@ class StepDetailViewController: UIViewController {
     @IBOutlet weak var stepName: UITextField!
     var name: String!
     
+    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        if identifier == "doneSegue" {
+            
+            if (stepName.text.isEmpty) {
+                
+                let alert = UIAlertView()
+                alert.title = "Blank!"
+                alert.message = "Enter a title or cancel"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+                
+                return false
+            }
+                
+            else {
+                return true
+            }
+        }
+        
+        // by default, transition
+        return true
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "doneSegue" {
             name = stepName.text
@@ -22,6 +45,9 @@ class StepDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Sets cursor focus on text field on load
+        self.stepName.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }

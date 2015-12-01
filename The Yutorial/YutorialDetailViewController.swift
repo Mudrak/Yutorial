@@ -8,10 +8,33 @@
 
 import UIKit
 
-class YutorialDetailViewController: UIViewController {
+class YutorialDetailViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var yutorialName: UITextField!
     var name: String = ""
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        if identifier == "doneSegue" {
+            
+            if (yutorialName.text.isEmpty) {
+                
+                let alert = UIAlertView()
+                alert.title = "Blank!"
+                alert.message = "Enter a title or cancel"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+                
+                return false
+            }
+                
+            else {
+                return true
+            }
+        }
+        
+        // by default, transition
+        return true
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "doneSegue") {
@@ -22,6 +45,8 @@ class YutorialDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Makes cursor start in textField
+        self.yutorialName.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }
@@ -31,6 +56,12 @@ class YutorialDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // UITextField Delegate:
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    //yutorialName.delegate = self
 
     /*
     // MARK: - Navigation
