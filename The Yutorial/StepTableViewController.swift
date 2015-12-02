@@ -1,14 +1,14 @@
 //
-//  StepViewController.swift
+//  StepTableViewController.swift
 //  
 //
-//  Created by admin on 11/20/15.
+//  Created by Erik Mudrak on 11/20/15.
 //
 //
 
 import UIKit
 
-class StepViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class StepTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var stepTableView: UITableView!
     
@@ -36,6 +36,7 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // If the first intro cell is selected, fill it with hardcoded data
         if (yutorialInformation == "How To") {
             steps = [
                 "Press the '+' add button",
@@ -56,8 +57,8 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
     }
     
     @IBAction func done(segue:UIStoryboardSegue) {
-        var stepDetailVC = segue.sourceViewController as! StepDetailViewController
-        newStep = stepDetailVC.name
+        var addStepVC = segue.sourceViewController as! AddStepViewController
+        newStep = addStepVC.name
         
         steps.append(newStep)
         
@@ -93,8 +94,8 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
 //    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("stepCell", forIndexPath: indexPath) as! StepCellTableViewCell
-//        let newCell = tableView.dequeueReusableCellWithIdentifier("newStepCell", forIndexPath: indexPath) as! StepCellTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("stepCell", forIndexPath: indexPath) as! StepTableViewCell
+//        let newCell = tableView.dequeueReusableCellWithIdentifier("newStepCell", forIndexPath: indexPath) as! StepTableViewCell
         
         // Configure the cell...
         
@@ -107,16 +108,29 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "stepCell") {
+        if (segue.identifier == "showDetails") {
             // For segue to the checklist tableview
+            // upcomingView is set to ChecklistViewController
+            var upcomingView: StepDetailViewController = segue.destinationViewController as! StepDetailViewController
+            
+            // indexPath is set to the selected path
+            let indexPath = self.stepTableView.indexPathForSelectedRow()
+            
+            //var stepInfo: [String: UIImage]
+            var stepInfo: String!
+            
+            // Make the first cell different than the user created others
+            //stepInfo = [steps[indexPath!.row] : stepImages[indexPath!.row]]
+            stepInfo = steps[indexPath!.row]
+            
+            // Let the new view controller have its info
+            upcomingView.stepInformation = stepInfo
+            //self.menuTableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
     }
     
     // Dynamic cells for user-entered step data
 
-    
-
-    
 //    func viewControllerAtIndex(index: Int) -> StepViewController {
 //        
 //        if((self.pageTableViews.count == 0) || (index >= self.pageTableViews.count)) {

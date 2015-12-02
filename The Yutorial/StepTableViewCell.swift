@@ -1,14 +1,14 @@
 //
-//  StepCellTableViewCell.swift
+//  StepTableViewCell.swift
 //  
 //
-//  Created by admin on 11/22/15.
+//  Created by Erik Mudrak on 11/22/15.
 //
 //
 
 import UIKit
 
-class StepCellTableViewCell: UITableViewCell {
+class StepTableViewCell: UITableViewCell {
 
     @IBOutlet weak var stepImageView: UIImageView!
     @IBOutlet weak var stepLabel: UILabel!

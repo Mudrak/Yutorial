@@ -1,5 +1,5 @@
 //
-//  YutorialDetailViewController.swift
+//  AddYutorialViewController.swift
 //  
 //
 //  Created by Nathan Addison on 11/19/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YutorialDetailViewController: UIViewController, UITextFieldDelegate {
+class AddYutorialViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var yutorialName: UITextField!
     var name: String = ""

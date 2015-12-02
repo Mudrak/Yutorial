@@ -2,52 +2,18 @@
 //  StepDetailViewController.swift
 //  
 //
-//  Created by admin on 11/24/15.
+//  Created by Erik Mudrak on 12/1/15.
 //
 //
 
 import UIKit
 
-class StepDetailViewController: UIViewController {
+class StepDetailViewController: UITableViewController {
+    
+    var stepInformation: String! 
 
-
-    @IBOutlet weak var stepName: UITextField!
-    var name: String!
-    
-    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
-        if identifier == "doneSegue" {
-            
-            if (stepName.text.isEmpty) {
-                
-                let alert = UIAlertView()
-                alert.title = "Blank!"
-                alert.message = "Enter a title or cancel"
-                alert.addButtonWithTitle("Ok")
-                alert.show()
-                
-                return false
-            }
-                
-            else {
-                return true
-            }
-        }
-        
-        // by default, transition
-        return true
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "doneSegue" {
-            name = stepName.text
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Sets cursor focus on text field on load
-        self.stepName.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }
@@ -56,7 +22,7 @@ class StepDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 
     /*
     // MARK: - Navigation
