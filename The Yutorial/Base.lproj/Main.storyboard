@@ -17,7 +17,7 @@
         <!--Yutorials-->
         <scene sceneID="zTS-ft-52p">
             <objects>
-                <tableViewController title="Yutorials" id="7WE-u3-Pnt" customClass="YutorialListTableViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Yutorials" id="7WE-u3-Pnt" customClass="YutorialMenuTableViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" id="zvz-64-lsm">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,8 +29,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NCX-3c-JNC" id="e6H-s5-a8U">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutorial Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUk-sl-Xc2">
-                                            <rect key="frame" x="14" y="0.0" width="578" height="76"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yutorial Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUk-sl-Xc2">
+                                            <rect key="frame" x="14" y="0.0" width="746" height="76"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
                                             <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -68,17 +68,17 @@
             </objects>
             <point key="canvasLocation" x="832" y="-100"/>
         </scene>
-        <!--Step View Controller-->
+        <!--Step Table View Controller-->
         <scene sceneID="O8t-wj-ALh">
             <objects>
-                <tableViewController id="7Li-nH-Kvb" customClass="StepViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7Li-nH-Kvb" customClass="StepTableViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Uy-ep-qf4">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stepCell" rowHeight="85" id="79P-nM-jCP" customClass="StepCellTableViewCell" customModule="The_Yutorial" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stepCell" rowHeight="85" id="79P-nM-jCP" customClass="StepTableViewCell" customModule="The_Yutorial" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="79P-nM-jCP" id="fvZ-mB-qUf">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -87,7 +87,7 @@
                                             <rect key="frame" x="8" y="9" width="69" height="67"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvX-r3-4TC">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvX-r3-4TC">
                                             <rect key="frame" x="85" y="12" width="661" height="64"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
@@ -102,7 +102,7 @@
                                 <connections>
                                     <outlet property="stepImageView" destination="eIv-g1-FsZ" id="dsr-2g-yO7"/>
                                     <outlet property="stepLabel" destination="JvX-r3-4TC" id="uJv-Sn-mxq"/>
-                                    <segue destination="aoU-8s-hnI" kind="show" id="9vc-YE-tr4"/>
+                                    <segue destination="aoU-8s-hnI" kind="show" identifier="showDetails" id="9vc-YE-tr4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="1714" y="16"/>
         </scene>
-        <!--Step Checklist-->
+        <!--Step Details-->
         <scene sceneID="QCC-Mv-GtK">
             <objects>
-                <tableViewController id="aoU-8s-hnI" sceneMemberID="viewController">
+                <tableViewController id="aoU-8s-hnI" customClass="StepDetailViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="6TW-rD-uJ2">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,18 +167,17 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Step Checklist" id="hDI-Gh-yIY"/>
+                    <navigationItem key="navigationItem" title="Step Details" id="hDI-Gh-yIY"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEV-bu-dIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2598" y="144"/>
         </scene>
-        <!--Yutorial Detail View Controller-->
+        <!--Add Yutorial View Controller-->
         <scene sceneID="fTr-md-7kk">
             <objects>
-                <viewController id="SYK-ut-KdU" customClass="YutorialDetailViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SYK-ut-KdU" customClass="AddYutorialViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="72W-hC-Slt"/>
                         <viewControllerLayoutGuide type="bottom" id="U58-WR-Fb6"/>
@@ -202,8 +201,8 @@
                                 <rect key="frame" x="127" y="297" width="515" height="617"/>
                                 <animations/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n5L-S6-JKy">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5L-S6-JKy">
+                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
                                 <animations/>
                                 <items>
                                     <navigationItem title="Add Yutorial" prompt="" id="bum-6w-Yof">
@@ -234,7 +233,6 @@
                     </view>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="yutorialName" destination="2mf-TT-g7w" id="KuK-2l-u4D"/>
                     </connections>
@@ -247,7 +245,7 @@
         <!--Enter Step Title-->
         <scene sceneID="RsH-hZ-fPi">
             <objects>
-                <viewController title="Enter Step Title" id="LLS-xT-fGM" customClass="StepDetailViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Enter Step Title" id="LLS-xT-fGM" customClass="AddStepViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OSp-FJ-1zk"/>
                         <viewControllerLayoutGuide type="bottom" id="bIG-3N-h3G"/>
@@ -263,13 +261,16 @@
                                 <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="LLS-xT-fGM" id="93J-gn-IxN"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="OQj-Gd-bGP">
                                 <rect key="frame" x="127" y="308" width="515" height="617"/>
                                 <animations/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgu-Vb-XXF">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
                                 <animations/>
                                 <items>
                                     <navigationItem title="Add Steps" id="kX7-co-91f">
@@ -290,7 +291,6 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="stepName" destination="nMc-cs-u4a" id="CqU-0W-AYk"/>
                     </connections>

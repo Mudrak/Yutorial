@@ -1,5 +1,5 @@
 //
-//  YutorialListTableViewController.swift
+//  YutorialMenuTableViewController.swift
 //
 //
 //  Created by Nathan Addison on 11/19/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YutorialListTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class YutorialMenuTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var menuTableView: UITableView!
     
@@ -27,8 +27,8 @@ class YutorialListTableViewController: UITableViewController, UITableViewDataSou
         }
         
         @IBAction func done(segue:UIStoryboardSegue) {
-            var yutorialDetailVC = segue.sourceViewController as! YutorialDetailViewController
-            newYutorials = yutorialDetailVC.name
+            var addYutorialVC = segue.sourceViewController as! AddYutorialViewController
+            newYutorials = addYutorialVC.name
             
             yutorials.append(newYutorials)
             
@@ -85,13 +85,14 @@ class YutorialListTableViewController: UITableViewController, UITableViewDataSou
         if (segue.identifier == "showSteps") {
             
             // upcomingView is set to BansheeDetailViewController
-            var upcomingView: StepViewController = segue.destinationViewController as! StepViewController
+            var upcomingView: StepTableViewController = segue.destinationViewController as! StepTableViewController
             
             // indexPath is set to the selected path
             let indexPath = self.menuTableView.indexPathForSelectedRow()
             
             var yutorialInfo: String!
             
+            // Make the first cell different than the user created others
             if (indexPath!.row == 0) {
                 yutorialInfo = "How To"
             }
