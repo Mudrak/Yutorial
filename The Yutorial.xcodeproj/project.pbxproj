@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84498AB41C138F87009F0C78 /* checklistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84498AB31C138F87009F0C78 /* checklistCell.swift */; };
 		844ED8011C0113C200712EFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844ED8001C0113C200712EFC /* Images.xcassets */; };
 		848AD6E81C0E0D43008A4EFA /* AddStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD6E31C0E0D43008A4EFA /* AddStepViewController.swift */; };
 		848AD6E91C0E0D43008A4EFA /* AddYutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD6E41C0E0D43008A4EFA /* AddYutorialViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84498AB31C138F87009F0C78 /* checklistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checklistCell.swift; sourceTree = "<group>"; };
 		844ED8001C0113C200712EFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		848AD6E31C0E0D43008A4EFA /* AddStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStepViewController.swift; sourceTree = "<group>"; };
 		848AD6E41C0E0D43008A4EFA /* AddYutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddYutorialViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				848AD6E51C0E0D43008A4EFA /* StepTableViewCell.swift */,
 				848AD6E31C0E0D43008A4EFA /* AddStepViewController.swift */,
 				84AF9DBB1C0E0E9500B089D3 /* StepDetailViewController.swift */,
+				84498AB31C138F87009F0C78 /* checklistCell.swift */,
 				CEB288E61A54C68000BCF57A /* Main.storyboard */,
 				844ED8001C0113C200712EFC /* Images.xcassets */,
 				CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */,
@@ -241,6 +244,7 @@
 				84AF9DBC1C0E0E9500B089D3 /* StepDetailViewController.swift in Sources */,
 				848AD6EC1C0E0D43008A4EFA /* YutorialMenuTableViewController.swift in Sources */,
 				849AAD4A1C02CFBB00253DAF /* YutorialMenuTableViewCell.swift in Sources */,
+				84498AB41C138F87009F0C78 /* checklistCell.swift in Sources */,
 				849AAD3E1C02545C00253DAF /* NavigationController.swift in Sources */,
 				848AD6EB1C0E0D43008A4EFA /* StepTableViewController.swift in Sources */,
 				CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */,
