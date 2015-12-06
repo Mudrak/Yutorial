@@ -118,13 +118,16 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
             
             //var stepInfo: [String: UIImage]
             var stepInfo: String!
+            var stepNum: UIImage!
             
             // Make the first cell different than the user created others
             //stepInfo = [steps[indexPath!.row] : stepImages[indexPath!.row]]
             stepInfo = steps[indexPath!.row]
+            stepNum = stepImages[indexPath!.row]
             
             // Let the new view controller have its info
             upcomingView.stepInformation = stepInfo
+            upcomingView.stepNumber = stepNum
             //self.menuTableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
     }
