@@ -12,6 +12,7 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -31,8 +32,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NCX-3c-JNC" id="e6H-s5-a8U">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yutorial Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUk-sl-Xc2">
-                                            <rect key="frame" x="82" y="0.0" width="678" height="76"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yutorial Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUk-sl-Xc2">
+                                            <rect key="frame" x="82" y="0.0" width="612" height="76"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
                                             <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,6 +43,15 @@
                                             <rect key="frame" x="13" y="13" width="53" height="49"/>
                                             <animations/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQW-T3-Qng">
+                                            <rect key="frame" x="702" y="8" width="58" height="60"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                            <state key="normal" title="Edit">
+                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -216,23 +226,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Tutorial Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-TT-g7w">
-                                <rect key="frame" x="16" y="170" width="736" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Tutorial Title" textAlignment="center" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-TT-g7w">
+                                <rect key="frame" x="16" y="180" width="736" height="30"/>
                                 <animations/>
-                                <color key="tintColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="SYK-ut-KdU" id="lEd-B4-W7S"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" alpha="0.24999999999999967" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="FHY-un-4R1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="FHY-un-4R1">
                                 <rect key="frame" x="127" y="297" width="515" height="617"/>
                                 <animations/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5L-S6-JKy">
-                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="74"/>
                                 <animations/>
                                 <items>
                                     <navigationItem title="Add Yutorial" prompt="" id="bum-6w-Yof">
@@ -251,13 +261,13 @@
                             </navigationBar>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="n5L-S6-JKy" secondAttribute="trailing" id="A39-Ub-uV2"/>
                             <constraint firstItem="n5L-S6-JKy" firstAttribute="leading" secondItem="lg3-Uh-ZaC" secondAttribute="leading" id="HEu-tq-DJm"/>
-                            <constraint firstItem="2mf-TT-g7w" firstAttribute="top" secondItem="n5L-S6-JKy" secondAttribute="bottom" constant="137" id="aKw-kG-GUZ"/>
-                            <constraint firstItem="n5L-S6-JKy" firstAttribute="top" secondItem="72W-hC-Slt" secondAttribute="bottom" id="aog-xl-Thv"/>
-                            <constraint firstItem="2mf-TT-g7w" firstAttribute="leading" secondItem="lg3-Uh-ZaC" secondAttribute="leadingMargin" constant="81" id="b1B-m9-u1M"/>
+                            <constraint firstItem="2mf-TT-g7w" firstAttribute="top" secondItem="n5L-S6-JKy" secondAttribute="bottom" constant="106" id="aKw-kG-GUZ"/>
+                            <constraint firstItem="n5L-S6-JKy" firstAttribute="top" secondItem="72W-hC-Slt" secondAttribute="bottom" constant="-20" id="aog-xl-Thv"/>
+                            <constraint firstItem="2mf-TT-g7w" firstAttribute="leading" secondItem="lg3-Uh-ZaC" secondAttribute="leadingMargin" id="b1B-m9-u1M"/>
                             <constraint firstItem="2mf-TT-g7w" firstAttribute="centerX" secondItem="n5L-S6-JKy" secondAttribute="centerX" id="bkE-tD-tdP"/>
                         </constraints>
                     </view>
@@ -284,18 +294,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Step Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nMc-cs-u4a">
-                                <rect key="frame" x="16" y="189" width="736" height="30"/>
-                                <animations/>
-                                <color key="tintColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="LLS-xT-fGM" id="93J-gn-IxN"/>
-                                </connections>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="OQj-Gd-bGP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="OQj-Gd-bGP">
                                 <rect key="frame" x="127" y="308" width="515" height="617"/>
                                 <animations/>
                             </imageView>
@@ -317,9 +316,20 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Step Title" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="nMc-cs-u4a">
+                                <rect key="frame" x="16" y="150" width="736" height="30"/>
+                                <animations/>
+                                <color key="tintColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="LLS-xT-fGM" id="93J-gn-IxN"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="stepName" destination="nMc-cs-u4a" id="CqU-0W-AYk"/>
