@@ -23,7 +23,7 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         
     }
         @IBAction func cancel(segue:UIStoryboardSegue) {
-            
+            self.dismissViewControllerAnimated(true, completion: {})
         }
         
         @IBAction func done(segue:UIStoryboardSegue) {
@@ -33,6 +33,8 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             yutorials.append(newYutorials)
             
             self.tableView.reloadData()
+            
+            self.dismissViewControllerAnimated(true, completion: {})
         }
         
 

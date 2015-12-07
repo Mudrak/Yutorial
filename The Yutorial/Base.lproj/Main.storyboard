@@ -13,6 +13,7 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -71,7 +72,7 @@
                     <navigationItem key="navigationItem" title="Yutorials" id="c97-PY-Mdu">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="xJ1-SI-2lj">
                             <connections>
-                                <segue destination="SYK-ut-KdU" kind="presentation" id="eS3-Av-LlN"/>
+                                <segue destination="SYK-ut-KdU" kind="presentation" modalPresentationStyle="formSheet" id="eS3-Av-LlN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -118,7 +119,7 @@
                                 <connections>
                                     <outlet property="stepImageView" destination="eIv-g1-FsZ" id="dsr-2g-yO7"/>
                                     <outlet property="stepLabel" destination="JvX-r3-4TC" id="uJv-Sn-mxq"/>
-                                    <segue destination="puq-rg-dUz" kind="show" identifier="showDetails" id="eTs-2E-Kz9"/>
+                                    <segue destination="puq-rg-dUz" kind="show" identifier="showDetails" id="fh3-um-rli"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -131,7 +132,7 @@
                     <navigationItem key="navigationItem" id="hPY-TB-r9X">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QxA-rE-N78">
                             <connections>
-                                <segue destination="LLS-xT-fGM" kind="presentation" id="xGB-Bp-Pla"/>
+                                <segue destination="LLS-xT-fGM" kind="presentation" modalPresentationStyle="formSheet" id="xGB-Bp-Pla"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -148,6 +149,7 @@
         <!--Step Detail View Controller-->
         <scene sceneID="By1-cG-mBt">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6e-f8-38b" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="puq-rg-dUz" customClass="StepDetailViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oET-wy-gPd"/>
@@ -168,29 +170,34 @@
                                 <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cCT-9Z-GM2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cCT-9Z-GM2">
                                 <rect key="frame" x="0.0" y="190" width="768" height="840"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="checklistItem" rowHeight="85" id="jKF-fz-y0u" customClass="checklistCell" customModule="The_Yutorial" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleAspectFit" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="checklistItem" rowHeight="85" id="jKF-fz-y0u" customClass="checklistCell" customModule="The_Yutorial" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jKF-fz-y0u" id="OW1-In-SpK">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Checklist Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lt1-aB-0JD">
-                                                    <rect key="frame" x="35" y="20" width="768" height="43"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Checklist Item" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lt1-aB-0JD">
+                                                    <rect key="frame" x="80" y="0.0" width="723" height="85"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
                                                     <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check.gray" translatesAutoresizingMaskIntoConstraints="NO" id="zbe-oQ-boH">
+                                                    <rect key="frame" x="8" y="17" width="56" height="52"/>
+                                                    <animations/>
+                                                </imageView>
                                             </subviews>
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
+                                            <outlet property="checkboxImage" destination="zbe-oQ-boH" id="YOm-Id-0LI"/>
                                             <outlet property="checklistLabel" destination="lt1-aB-0JD" id="PVJ-0g-gt6"/>
                                         </connections>
                                     </tableViewCell>
@@ -204,15 +211,23 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="6oF-Gs-L8l">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="juU-6m-IMV">
+                            <connections>
+                                <segue destination="OVv-Ev-Pdi" kind="presentation" modalPresentationStyle="formSheet" id="pfP-MT-6Ui"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="checklistTable" destination="cCT-9Z-GM2" id="xrH-cm-YPT"/>
                         <outlet property="stepDetailImage" destination="6hc-ff-ncJ" id="7gf-qB-SCd"/>
                         <outlet property="stepDetailTitle" destination="FC1-7P-9fD" id="SuP-1K-zEh"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u6e-f8-38b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2600" y="122"/>
+            <point key="canvasLocation" x="2596" y="130"/>
         </scene>
         <!--Add Yutorial View Controller-->
         <scene sceneID="fTr-md-7kk">
@@ -223,26 +238,11 @@
                         <viewControllerLayoutGuide type="bottom" id="U58-WR-Fb6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lg3-Uh-ZaC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Tutorial Title" textAlignment="center" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-TT-g7w">
-                                <rect key="frame" x="16" y="180" width="736" height="30"/>
-                                <animations/>
-                                <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="SYK-ut-KdU" id="lEd-B4-W7S"/>
-                                </connections>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="FHY-un-4R1">
-                                <rect key="frame" x="127" y="297" width="515" height="617"/>
-                                <animations/>
-                            </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5L-S6-JKy">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="74"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="74"/>
                                 <animations/>
                                 <items>
                                     <navigationItem title="Add Yutorial" prompt="" id="bum-6w-Yof">
@@ -259,14 +259,29 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="ziH-K5-Vvf">
+                                <rect key="frame" x="165" y="251" width="211" height="332"/>
+                                <animations/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Tutorial Title" textAlignment="center" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-TT-g7w">
+                                <rect key="frame" x="16" y="162" width="508" height="30"/>
+                                <animations/>
+                                <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="SYK-ut-KdU" id="lEd-B4-W7S"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="n5L-S6-JKy" secondAttribute="trailing" id="A39-Ub-uV2"/>
                             <constraint firstItem="n5L-S6-JKy" firstAttribute="leading" secondItem="lg3-Uh-ZaC" secondAttribute="leading" id="HEu-tq-DJm"/>
-                            <constraint firstItem="2mf-TT-g7w" firstAttribute="top" secondItem="n5L-S6-JKy" secondAttribute="bottom" constant="106" id="aKw-kG-GUZ"/>
-                            <constraint firstItem="n5L-S6-JKy" firstAttribute="top" secondItem="72W-hC-Slt" secondAttribute="bottom" constant="-20" id="aog-xl-Thv"/>
+                            <constraint firstItem="2mf-TT-g7w" firstAttribute="top" secondItem="n5L-S6-JKy" secondAttribute="bottom" constant="88" id="aKw-kG-GUZ"/>
+                            <constraint firstItem="n5L-S6-JKy" firstAttribute="top" secondItem="72W-hC-Slt" secondAttribute="bottom" id="aog-xl-Thv"/>
                             <constraint firstItem="2mf-TT-g7w" firstAttribute="leading" secondItem="lg3-Uh-ZaC" secondAttribute="leadingMargin" id="b1B-m9-u1M"/>
                             <constraint firstItem="2mf-TT-g7w" firstAttribute="centerX" secondItem="n5L-S6-JKy" secondAttribute="centerX" id="bkE-tD-tdP"/>
                         </constraints>
@@ -282,24 +297,31 @@
             </objects>
             <point key="canvasLocation" x="832" y="1080"/>
         </scene>
-        <!--Enter Step Title-->
+        <!--Add Step Title-->
         <scene sceneID="RsH-hZ-fPi">
             <objects>
-                <viewController title="Enter Step Title" id="LLS-xT-fGM" customClass="AddStepViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Step Title" id="LLS-xT-fGM" customClass="AddStepViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OSp-FJ-1zk"/>
                         <viewControllerLayoutGuide type="bottom" id="bIG-3N-h3G"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3yA-HN-M1m">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="OQj-Gd-bGP">
-                                <rect key="frame" x="127" y="308" width="515" height="617"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Step Title" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="nMc-cs-u4a">
+                                <rect key="frame" x="16" y="150" width="508" height="30"/>
                                 <animations/>
-                            </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgu-Vb-XXF">
-                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                                <color key="tintColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="LLS-xT-fGM" id="93J-gn-IxN"/>
+                                </connections>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgu-Vb-XXF">
+                                <rect key="frame" x="0.0" y="19" width="540" height="44"/>
                                 <animations/>
                                 <items>
                                     <navigationItem title="Add Steps" id="kX7-co-91f">
@@ -316,20 +338,27 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Step Title" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="nMc-cs-u4a">
-                                <rect key="frame" x="16" y="150" width="736" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="Z4h-ER-B7J">
+                                <rect key="frame" x="165" y="233" width="211" height="332"/>
                                 <animations/>
-                                <color key="tintColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="LLS-xT-fGM" id="93J-gn-IxN"/>
-                                </connections>
-                            </textField>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="211" id="JOW-Ri-7OO"/>
+                                    <constraint firstAttribute="height" constant="332" id="Y0X-W4-LhF"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Z4h-ER-B7J" firstAttribute="top" secondItem="nMc-cs-u4a" secondAttribute="bottom" constant="53" id="8JD-Wt-UJX"/>
+                            <constraint firstItem="Z4h-ER-B7J" firstAttribute="centerX" secondItem="nMc-cs-u4a" secondAttribute="centerX" id="A2K-WE-M4q"/>
+                            <constraint firstItem="wgu-Vb-XXF" firstAttribute="leading" secondItem="3yA-HN-M1m" secondAttribute="leading" id="AGu-0a-xcO"/>
+                            <constraint firstItem="nMc-cs-u4a" firstAttribute="centerX" secondItem="wgu-Vb-XXF" secondAttribute="centerX" id="BiM-ig-f7D"/>
+                            <constraint firstItem="nMc-cs-u4a" firstAttribute="leading" secondItem="3yA-HN-M1m" secondAttribute="leadingMargin" id="GfU-Wi-cH5"/>
+                            <constraint firstItem="wgu-Vb-XXF" firstAttribute="top" secondItem="3yA-HN-M1m" secondAttribute="topMargin" constant="19" id="HYZ-AA-9To"/>
+                            <constraint firstAttribute="trailing" secondItem="wgu-Vb-XXF" secondAttribute="trailing" id="Ioi-sf-mLA"/>
+                            <constraint firstItem="nMc-cs-u4a" firstAttribute="top" secondItem="wgu-Vb-XXF" secondAttribute="bottom" constant="87" id="pa7-uw-6ZC"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="stepName" destination="nMc-cs-u4a" id="CqU-0W-AYk"/>
@@ -337,7 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ann-z7-NfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="1182"/>
+            <point key="canvasLocation" x="1714" y="1140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vnO-Vj-gJD">
@@ -359,8 +388,87 @@
             </objects>
             <point key="canvasLocation" x="-50" y="-206"/>
         </scene>
+        <!--Add Checklist Item-->
+        <scene sceneID="vTQ-NT-znL">
+            <objects>
+                <viewController title="Add Checklist Item" id="OVv-Ev-Pdi" customClass="AddChecklistViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IEW-5r-nrK"/>
+                        <viewControllerLayoutGuide type="bottom" id="cux-xt-xGQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wIh-G5-q8T">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Checklist Details &amp; Info" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="X0m-DU-Vws">
+                                <rect key="frame" x="16" y="151" width="508" height="30"/>
+                                <animations/>
+                                <color key="tintColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EBj-ZS-Evw"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OVv-Ev-Pdi" id="Qmh-VS-4cC"/>
+                                </connections>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGg-Gd-15D">
+                                <rect key="frame" x="0.0" y="16" width="540" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ti8-mR-x3n"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Add Checklist Items" id="AmZ-GS-Mvw">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hxX-tF-GzK">
+                                            <connections>
+                                                <segue destination="o0H-7Y-Mtk" kind="unwind" identifier="cancelSegue" unwindAction="cancel:" id="ExC-UL-cpx"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="MU6-n7-UxS">
+                                            <connections>
+                                                <segue destination="o0H-7Y-Mtk" kind="unwind" identifier="doneSegue" unwindAction="done:" id="Ri9-11-hPj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="nmh-eB-k7z">
+                                <rect key="frame" x="165" y="240" width="211" height="332"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="211" id="1ts-ir-fnD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="X0m-DU-Vws" firstAttribute="top" secondItem="AGg-Gd-15D" secondAttribute="bottom" constant="91" id="3Gz-Pw-KLa"/>
+                            <constraint firstItem="X0m-DU-Vws" firstAttribute="centerX" secondItem="AGg-Gd-15D" secondAttribute="centerX" id="EKx-yT-FJa"/>
+                            <constraint firstItem="X0m-DU-Vws" firstAttribute="centerX" secondItem="nmh-eB-k7z" secondAttribute="centerX" id="VjP-jc-kR4"/>
+                            <constraint firstAttribute="trailing" secondItem="AGg-Gd-15D" secondAttribute="trailing" id="feq-76-u6E"/>
+                            <constraint firstItem="cux-xt-xGQ" firstAttribute="top" secondItem="nmh-eB-k7z" secondAttribute="bottom" constant="48" id="jvU-IG-OqH"/>
+                            <constraint firstItem="nmh-eB-k7z" firstAttribute="top" secondItem="X0m-DU-Vws" secondAttribute="bottom" constant="59" id="rZw-jn-SeD"/>
+                            <constraint firstItem="X0m-DU-Vws" firstAttribute="leading" secondItem="wIh-G5-q8T" secondAttribute="leadingMargin" id="vZ8-JL-Xr6"/>
+                            <constraint firstItem="AGg-Gd-15D" firstAttribute="leading" secondItem="wIh-G5-q8T" secondAttribute="leading" id="vvT-W2-orr"/>
+                            <constraint firstItem="AGg-Gd-15D" firstAttribute="top" secondItem="IEW-5r-nrK" secondAttribute="bottom" constant="16" id="wBP-r7-ZWb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="checklistName" destination="X0m-DU-Vws" id="MCS-Oo-7CF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jV4-kU-P4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="o0H-7Y-Mtk" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2596" y="1340"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="check.gray" width="128" height="128"/>
         <image name="step1" width="352" height="352"/>
         <image name="yutorial.Y" width="1574" height="1739"/>
         <image name="yutorial.logo2" width="2282" height="4026"/>

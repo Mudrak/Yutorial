@@ -1,22 +1,24 @@
 //
-//  AddYutorialViewController.swift
+//  AddChecklistViewController.swift
 //  
 //
-//  Created by Nathan Addison on 11/19/15.
+//  Created by admin on 12/6/15.
 //
 //
 
 import UIKit
 
-class AddYutorialViewController: UIViewController, UITextFieldDelegate {
+class AddChecklistViewController: UIViewController {
 
-    @IBOutlet weak var yutorialName: UITextField!
+
+    @IBOutlet weak var checklistName: UITextField!
     var name: String = ""
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         if identifier == "doneSegue" {
             
-            if (yutorialName.text.isEmpty) {
+            // Catches user from entering blank text
+            if (checklistName.text.isEmpty) {
                 
                 let alert = UIAlertView()
                 alert.title = "Blank!"
@@ -36,24 +38,16 @@ class AddYutorialViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "doneSegue") {
-            name = yutorialName.text
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "doneSegue" {
+            name = checklistName.text
         }
-    }
-    @IBAction func cancel(segue:UIStoryboardSegue) {
-        
-    }
-    
-    @IBAction func done(segue:UIStoryboardSegue) {
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Makes cursor start in textField
-        self.yutorialName.becomeFirstResponder()
+        self.checklistName.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }
@@ -62,14 +56,12 @@ class AddYutorialViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     // UITextField Delegate:
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    //yutorialName.delegate = self
-
     /*
     // MARK: - Navigation
 

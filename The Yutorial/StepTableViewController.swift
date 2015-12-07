@@ -52,10 +52,8 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func cancel(segue:UIStoryboardSegue) {
-        
-    }
     
+    // Controls the actions of the Done and Cancel bar button items
     @IBAction func done(segue:UIStoryboardSegue) {
         var addStepVC = segue.sourceViewController as! AddStepViewController
         newStep = addStepVC.name
@@ -63,6 +61,12 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
         steps.append(newStep)
         
         self.tableView.reloadData()
+        
+        self.dismissViewControllerAnimated(true, completion: {})
+    }
+    
+    @IBAction func cancel(segue:UIStoryboardSegue) {
+        self.dismissViewControllerAnimated(true, completion: {})
     }
 
     override func didReceiveMemoryWarning() {
@@ -128,6 +132,7 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
             // Let the new view controller have its info
             upcomingView.stepInformation = stepInfo
             upcomingView.stepNumber = stepNum
+            upcomingView.yutorialTitle = yutorialInformation
             //self.menuTableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
     }

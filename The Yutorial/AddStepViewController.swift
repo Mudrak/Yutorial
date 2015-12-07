@@ -17,6 +17,7 @@ class AddStepViewController: UIViewController, UITextFieldDelegate {
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         if identifier == "doneSegue" {
             
+            // Catches user from entering a blank title
             if (stepName.text.isEmpty) {
                 
                 let alert = UIAlertView()
