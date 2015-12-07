@@ -11,6 +11,7 @@ import UIKit
 class checklistCell: UITableViewCell {
 
     @IBOutlet weak var checklistLabel: UILabel!
+    @IBOutlet weak var checkboxImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
