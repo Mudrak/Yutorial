@@ -1,17 +1,17 @@
 //
-//  YutorialMenuTableViewCell.swift
+//  checklistCell.swift
 //  
 //
-//  Created by admin on 11/22/15.
+//  Created by admin on 12/5/15.
 //
 //
 
 import UIKit
 
-class YutorialMenuTableViewCell: UITableViewCell {
+class checklistCell: UITableViewCell {
 
-    @IBOutlet weak var yutorialLabel: UILabel!
-    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var checklistLabel: UILabel!
+    @IBOutlet weak var checkboxImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

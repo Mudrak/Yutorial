@@ -1,19 +1,20 @@
 //
-//  StepViewController.swift
+//  StepTableViewController.swift
 //  
 //
-//  Created by admin on 11/20/15.
+//  Created by Erik Mudrak on 11/20/15.
 //
 //
 
 import UIKit
 
-class StepViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class StepTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var stepTableView: UITableView!
     
-    var steps = [String]()
-    var newSteps: String = ""
+    var steps = [String?]()
+    var newStep: String = ""
+    var howToLoaded = false
     
     var yutorialInformation: String!
     
@@ -35,19 +36,37 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        steps = [
-            "Press the '+' add button",
-            "Name your Yutorial",
-            "Press Done",
-            "Name your steps",
-            "Make your checklist items for each step",
-            "Save & Share",
-            "Forget how to do a task, chore, or job? Look back at the Yutorial!"
-        ]
+        // If the first intro cell is selected, fill it with hardcoded data
+        if (yutorialInformation == "How To") {
+            steps = [
+                "Press the '+' add button",
+                "Name your Yutorial",
+                "Press Done",
+                "Name your steps",
+                "Make your checklist items for each step",
+                "Save & Share",
+                "Forget how to do a task, chore, or job? Look back at the Yutorial!"
+            ]
+        }
         navigationItem.title = yutorialInformation
-        
 
         // Do any additional setup after loading the view.
+    }
+    
+    // Controls the actions of the Done and Cancel bar button items
+    @IBAction func done(segue:UIStoryboardSegue) {
+        var addStepVC = segue.sourceViewController as! AddStepViewController
+        newStep = addStepVC.name
+        
+        steps.append(newStep)
+        
+        self.tableView.reloadData()
+        
+        self.dismissViewControllerAnimated(true, completion: {})
+    }
+    
+    @IBAction func cancel(segue:UIStoryboardSegue) {
+        self.dismissViewControllerAnimated(true, completion: {})
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,19 +98,47 @@ class StepViewController: UITableViewController, UITableViewDataSource, UITableV
 //    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("stepCell", forIndexPath: indexPath) as! StepCellTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("stepCell", forIndexPath: indexPath) as! StepTableViewCell
+//        let newCell = tableView.dequeueReusableCellWithIdentifier("newStepCell", forIndexPath: indexPath) as! StepTableViewCell
         
         // Configure the cell...
-        cell.stepLabel.text = steps[indexPath.row]
+        
         cell.stepLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
-        cell.stepLabel.font = UIFont(name: "Montserrat-Regular", size: 16)
+        cell.stepLabel.font = UIFont(name: "Montserrat-Regular", size: 25)
         cell.stepImageView.image = stepImages[indexPath.row]
+        cell.stepLabel.text = steps[indexPath.row]
         
         return cell
     }
     
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "showDetails") {
+            // For segue to the checklist tableview
+            // upcomingView is set to ChecklistViewController
+            var upcomingView: StepDetailViewController = segue.destinationViewController as! StepDetailViewController
+            
+            // indexPath is set to the selected path
+            let indexPath = self.stepTableView.indexPathForSelectedRow()
+            
+            //var stepInfo: [String: UIImage]
+            var stepInfo: String!
+            var stepNum: UIImage!
+            
+            // Make the first cell different than the user created others
+            //stepInfo = [steps[indexPath!.row] : stepImages[indexPath!.row]]
+            stepInfo = steps[indexPath!.row]
+            stepNum = stepImages[indexPath!.row]
+            
+            // Let the new view controller have its info
+            upcomingView.stepInformation = stepInfo
+            upcomingView.stepNumber = stepNum
+            upcomingView.yutorialTitle = yutorialInformation
+            //self.menuTableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+    }
     
+    // Dynamic cells for user-entered step data
+
 //    func viewControllerAtIndex(index: Int) -> StepViewController {
 //        
 //        if((self.pageTableViews.count == 0) || (index >= self.pageTableViews.count)) {

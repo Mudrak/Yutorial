@@ -2,7 +2,7 @@
 //  NavigationController.swift
 //  
 //
-//  Created by admin on 11/22/15.
+//  Created by Erik Mudrak on 11/22/15.
 //
 //
 

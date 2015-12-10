@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		844ED7FF1BFFFA1600712EFC /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844ED7FE1BFFFA1600712EFC /* StepViewController.swift */; };
+		842CC2A01C17F7E200CDF794 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 842CC29C1C17F7E200CDF794 /* Montserrat-Bold.otf */; };
+		842CC2A11C17F7E200CDF794 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 842CC29D1C17F7E200CDF794 /* Montserrat-Light.otf */; };
+		842CC2A21C17F7E200CDF794 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 842CC29E1C17F7E200CDF794 /* Montserrat-Regular.otf */; };
+		842CC2A31C17F7E200CDF794 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 842CC29F1C17F7E200CDF794 /* Montserrat-UltraLight.otf */; };
+		842CC2A51C19DF5100CDF794 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842CC2A41C19DF5100CDF794 /* Data.swift */; };
+		84498AB41C138F87009F0C78 /* checklistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84498AB31C138F87009F0C78 /* checklistCell.swift */; };
+		84498AB61C14F332009F0C78 /* AddChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84498AB51C14F332009F0C78 /* AddChecklistViewController.swift */; };
 		844ED8011C0113C200712EFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844ED8001C0113C200712EFC /* Images.xcassets */; };
+		848AD6E81C0E0D43008A4EFA /* AddStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD6E31C0E0D43008A4EFA /* AddStepViewController.swift */; };
+		848AD6E91C0E0D43008A4EFA /* AddYutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD6E41C0E0D43008A4EFA /* AddYutorialViewController.swift */; };
+		848AD6EA1C0E0D43008A4EFA /* StepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD6E51C0E0D43008A4EFA /* StepTableViewCell.swift */; };
+		848AD6EB1C0E0D43008A4EFA /* StepTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD6E61C0E0D43008A4EFA /* StepTableViewController.swift */; };
+		848AD6EC1C0E0D43008A4EFA /* YutorialMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD6E71C0E0D43008A4EFA /* YutorialMenuTableViewController.swift */; };
 		849AAD3E1C02545C00253DAF /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAD3D1C02545C00253DAF /* NavigationController.swift */; };
-		849AAD431C025AE300253DAF /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 849AAD3F1C025AE300253DAF /* Montserrat-Bold.otf */; };
-		849AAD441C025AE300253DAF /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 849AAD401C025AE300253DAF /* Montserrat-Light.otf */; };
-		849AAD451C025AE300253DAF /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 849AAD411C025AE300253DAF /* Montserrat-Regular.otf */; };
-		849AAD461C025AE300253DAF /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 849AAD421C025AE300253DAF /* Montserrat-UltraLight.otf */; };
-		849AAD481C02A0AF00253DAF /* StepCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAD471C02A0AF00253DAF /* StepCellTableViewCell.swift */; };
 		849AAD4A1C02CFBB00253DAF /* YutorialMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAD491C02CFBB00253DAF /* YutorialMenuTableViewCell.swift */; };
+		84AF9DBA1C0E0E6900B089D3 /* font in Resources */ = {isa = PBXBuildFile; fileRef = 84AF9DB91C0E0E6900B089D3 /* font */; };
+		84AF9DBC1C0E0E9500B089D3 /* StepDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF9DBB1C0E0E9500B089D3 /* StepDetailViewController.swift */; };
 		CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB288E21A54C68000BCF57A /* AppDelegate.swift */; };
 		CEB288E81A54C68100BCF57A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB288E61A54C68000BCF57A /* Main.storyboard */; };
 		CEB288ED1A54C68100BCF57A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */; };
 		CEB288F91A54C68100BCF57A /* The_YutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB288F81A54C68100BCF57A /* The_YutorialTests.swift */; };
-		CEB289031BFE6BA900BCF57A /* YutorialListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB289021BFE6BA900BCF57A /* YutorialListTableViewController.swift */; };
-		CEB289051BFE6EAF00BCF57A /* YutorialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB289041BFE6EAF00BCF57A /* YutorialDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,15 +41,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		844ED7FE1BFFFA1600712EFC /* StepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
+		842CC29C1C17F7E200CDF794 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.otf"; path = "../Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		842CC29D1C17F7E200CDF794 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.otf"; path = "../Montserrat-Light.otf"; sourceTree = "<group>"; };
+		842CC29E1C17F7E200CDF794 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.otf"; path = "../Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		842CC29F1C17F7E200CDF794 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-UltraLight.otf"; path = "../Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
+		842CC2A41C19DF5100CDF794 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		84498AB31C138F87009F0C78 /* checklistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checklistCell.swift; sourceTree = "<group>"; };
+		84498AB51C14F332009F0C78 /* AddChecklistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChecklistViewController.swift; sourceTree = "<group>"; };
 		844ED8001C0113C200712EFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		848AD6E31C0E0D43008A4EFA /* AddStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStepViewController.swift; sourceTree = "<group>"; };
+		848AD6E41C0E0D43008A4EFA /* AddYutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddYutorialViewController.swift; sourceTree = "<group>"; };
+		848AD6E51C0E0D43008A4EFA /* StepTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTableViewCell.swift; sourceTree = "<group>"; };
+		848AD6E61C0E0D43008A4EFA /* StepTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTableViewController.swift; sourceTree = "<group>"; };
+		848AD6E71C0E0D43008A4EFA /* YutorialMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YutorialMenuTableViewController.swift; sourceTree = "<group>"; };
 		849AAD3D1C02545C00253DAF /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		849AAD3F1C025AE300253DAF /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
-		849AAD401C025AE300253DAF /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
-		849AAD411C025AE300253DAF /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
-		849AAD421C025AE300253DAF /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
-		849AAD471C02A0AF00253DAF /* StepCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCellTableViewCell.swift; sourceTree = "<group>"; };
 		849AAD491C02CFBB00253DAF /* YutorialMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YutorialMenuTableViewCell.swift; sourceTree = "<group>"; };
+		84AF9DB91C0E0E6900B089D3 /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = font; sourceTree = "<group>"; };
+		84AF9DBB1C0E0E9500B089D3 /* StepDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepDetailViewController.swift; sourceTree = "<group>"; };
 		CEB288DD1A54C68000BCF57A /* The Yutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Yutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB288E11A54C68000BCF57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB288E21A54C68000BCF57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,8 +66,6 @@
 		CEB288F21A54C68100BCF57A /* The YutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The YutorialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB288F71A54C68100BCF57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB288F81A54C68100BCF57A /* The_YutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_YutorialTests.swift; sourceTree = "<group>"; };
-		CEB289021BFE6BA900BCF57A /* YutorialListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YutorialListTableViewController.swift; path = "The Yutorial.xcodeproj/../YutorialListTableViewController.swift"; sourceTree = SOURCE_ROOT; };
-		CEB289041BFE6EAF00BCF57A /* YutorialDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YutorialDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +109,16 @@
 			children = (
 				CEB288E21A54C68000BCF57A /* AppDelegate.swift */,
 				849AAD3D1C02545C00253DAF /* NavigationController.swift */,
-				CEB289021BFE6BA900BCF57A /* YutorialListTableViewController.swift */,
+				848AD6E71C0E0D43008A4EFA /* YutorialMenuTableViewController.swift */,
 				849AAD491C02CFBB00253DAF /* YutorialMenuTableViewCell.swift */,
-				CEB289041BFE6EAF00BCF57A /* YutorialDetailViewController.swift */,
-				844ED7FE1BFFFA1600712EFC /* StepViewController.swift */,
-				849AAD471C02A0AF00253DAF /* StepCellTableViewCell.swift */,
+				848AD6E41C0E0D43008A4EFA /* AddYutorialViewController.swift */,
+				848AD6E61C0E0D43008A4EFA /* StepTableViewController.swift */,
+				848AD6E51C0E0D43008A4EFA /* StepTableViewCell.swift */,
+				848AD6E31C0E0D43008A4EFA /* AddStepViewController.swift */,
+				84AF9DBB1C0E0E9500B089D3 /* StepDetailViewController.swift */,
+				84498AB31C138F87009F0C78 /* checklistCell.swift */,
+				84498AB51C14F332009F0C78 /* AddChecklistViewController.swift */,
+				842CC2A41C19DF5100CDF794 /* Data.swift */,
 				CEB288E61A54C68000BCF57A /* Main.storyboard */,
 				844ED8001C0113C200712EFC /* Images.xcassets */,
 				CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */,
@@ -113,10 +130,11 @@
 		CEB288E01A54C68000BCF57A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				849AAD3F1C025AE300253DAF /* Montserrat-Bold.otf */,
-				849AAD401C025AE300253DAF /* Montserrat-Light.otf */,
-				849AAD411C025AE300253DAF /* Montserrat-Regular.otf */,
-				849AAD421C025AE300253DAF /* Montserrat-UltraLight.otf */,
+				842CC29C1C17F7E200CDF794 /* Montserrat-Bold.otf */,
+				842CC29D1C17F7E200CDF794 /* Montserrat-Light.otf */,
+				842CC29E1C17F7E200CDF794 /* Montserrat-Regular.otf */,
+				842CC29F1C17F7E200CDF794 /* Montserrat-UltraLight.otf */,
+				84AF9DB91C0E0E6900B089D3 /* font */,
 				CEB288E11A54C68000BCF57A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -219,13 +237,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849AAD441C025AE300253DAF /* Montserrat-Light.otf in Resources */,
+				842CC2A01C17F7E200CDF794 /* Montserrat-Bold.otf in Resources */,
+				842CC2A11C17F7E200CDF794 /* Montserrat-Light.otf in Resources */,
+				842CC2A21C17F7E200CDF794 /* Montserrat-Regular.otf in Resources */,
+				842CC2A31C17F7E200CDF794 /* Montserrat-UltraLight.otf in Resources */,
 				844ED8011C0113C200712EFC /* Images.xcassets in Resources */,
-				849AAD461C025AE300253DAF /* Montserrat-UltraLight.otf in Resources */,
+				84AF9DBA1C0E0E6900B089D3 /* font in Resources */,
 				CEB288E81A54C68100BCF57A /* Main.storyboard in Resources */,
 				CEB288ED1A54C68100BCF57A /* LaunchScreen.xib in Resources */,
-				849AAD431C025AE300253DAF /* Montserrat-Bold.otf in Resources */,
-				849AAD451C025AE300253DAF /* Montserrat-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,13 +262,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEB289051BFE6EAF00BCF57A /* YutorialDetailViewController.swift in Sources */,
+				848AD6E91C0E0D43008A4EFA /* AddYutorialViewController.swift in Sources */,
+				84AF9DBC1C0E0E9500B089D3 /* StepDetailViewController.swift in Sources */,
+				84498AB61C14F332009F0C78 /* AddChecklistViewController.swift in Sources */,
+				848AD6EC1C0E0D43008A4EFA /* YutorialMenuTableViewController.swift in Sources */,
 				849AAD4A1C02CFBB00253DAF /* YutorialMenuTableViewCell.swift in Sources */,
-				849AAD481C02A0AF00253DAF /* StepCellTableViewCell.swift in Sources */,
-				CEB289031BFE6BA900BCF57A /* YutorialListTableViewController.swift in Sources */,
+				84498AB41C138F87009F0C78 /* checklistCell.swift in Sources */,
 				849AAD3E1C02545C00253DAF /* NavigationController.swift in Sources */,
-				844ED7FF1BFFFA1600712EFC /* StepViewController.swift in Sources */,
+				842CC2A51C19DF5100CDF794 /* Data.swift in Sources */,
+				848AD6EB1C0E0D43008A4EFA /* StepTableViewController.swift in Sources */,
 				CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */,
+				848AD6E81C0E0D43008A4EFA /* AddStepViewController.swift in Sources */,
+				848AD6EA1C0E0D43008A4EFA /* StepTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

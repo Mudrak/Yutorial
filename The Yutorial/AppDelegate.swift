@@ -17,14 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        // MARK: STYLING /////////////////////////////////////////////
+        /* MARK: STYLING /////////////////////////////////////////////
         // UI Colors:
+        UIColor(red: /255, green: /255, blue: /255, alpha: 1.0)
+        
         //      Dark Mint: #00a087
+                    UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         //      Light Mint: #00bc9e
+                    UIColor(red: 0/255, green: 188/255, blue: 158/255, alpha: 1.0)
+        //      Faint Mint: #4ECDB8
+                    UIColor(red: 78/255, green: 205/255, blue: 184/255, alpha: 1.0)
         //      Yellow: #ffcb46
         //      Ghost White: #f8f8ff
         //      Dark Plum: #502c4d
+                    UIColor(red: 80/255, green: 44/255, blue: 77/255, alpha: 1.0)
         //      Flat White: #ecfof1
+
+        */
         
         let montserrat = UIFont(name: "Montserrat-Regular", size: 20)!
         
@@ -39,7 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = attrs
 
         //UINavigationBar.appearance().font = UIFont(name: "Montserrat-Regular", size: "15")
-        UITextField.appearance().font = montserrat
+        //UITextField.appearance().font = montserrat
+        UILabel.appearance().font = UIFont(name: "Montserrat-Regular", size: 25)!
         
         let barButton = UIBarButtonItem.appearance()
         
