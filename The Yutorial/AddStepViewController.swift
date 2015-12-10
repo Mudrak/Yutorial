@@ -28,6 +28,10 @@ class AddStepViewController: UIViewController, UITextFieldDelegate {
                 
                 return false
             }
+<<<<<<< HEAD
+=======
+                
+>>>>>>> master
             else {
                 return true
             }

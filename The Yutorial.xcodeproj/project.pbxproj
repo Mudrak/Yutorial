@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		842CC2A01C17F7E200CDF794 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 842CC29C1C17F7E200CDF794 /* Montserrat-Bold.otf */; };
 		842CC2A11C17F7E200CDF794 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 842CC29D1C17F7E200CDF794 /* Montserrat-Light.otf */; };
 		842CC2A21C17F7E200CDF794 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 842CC29E1C17F7E200CDF794 /* Montserrat-Regular.otf */; };
 		842CC2A31C17F7E200CDF794 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 842CC29F1C17F7E200CDF794 /* Montserrat-UltraLight.otf */; };
 		842CC2A51C19DF5100CDF794 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842CC2A41C19DF5100CDF794 /* Data.swift */; };
+=======
+>>>>>>> master
 		84498AB41C138F87009F0C78 /* checklistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84498AB31C138F87009F0C78 /* checklistCell.swift */; };
 		84498AB61C14F332009F0C78 /* AddChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84498AB51C14F332009F0C78 /* AddChecklistViewController.swift */; };
 		844ED8011C0113C200712EFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844ED8001C0113C200712EFC /* Images.xcassets */; };
@@ -41,11 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		842CC29C1C17F7E200CDF794 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.otf"; path = "../Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		842CC29D1C17F7E200CDF794 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.otf"; path = "../Montserrat-Light.otf"; sourceTree = "<group>"; };
 		842CC29E1C17F7E200CDF794 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.otf"; path = "../Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		842CC29F1C17F7E200CDF794 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-UltraLight.otf"; path = "../Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
 		842CC2A41C19DF5100CDF794 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> master
 		84498AB31C138F87009F0C78 /* checklistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checklistCell.swift; sourceTree = "<group>"; };
 		84498AB51C14F332009F0C78 /* AddChecklistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChecklistViewController.swift; sourceTree = "<group>"; };
 		844ED8001C0113C200712EFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -118,7 +124,10 @@
 				84AF9DBB1C0E0E9500B089D3 /* StepDetailViewController.swift */,
 				84498AB31C138F87009F0C78 /* checklistCell.swift */,
 				84498AB51C14F332009F0C78 /* AddChecklistViewController.swift */,
+<<<<<<< HEAD
 				842CC2A41C19DF5100CDF794 /* Data.swift */,
+=======
+>>>>>>> master
 				CEB288E61A54C68000BCF57A /* Main.storyboard */,
 				844ED8001C0113C200712EFC /* Images.xcassets */,
 				CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */,
@@ -130,10 +139,13 @@
 		CEB288E01A54C68000BCF57A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				842CC29C1C17F7E200CDF794 /* Montserrat-Bold.otf */,
 				842CC29D1C17F7E200CDF794 /* Montserrat-Light.otf */,
 				842CC29E1C17F7E200CDF794 /* Montserrat-Regular.otf */,
 				842CC29F1C17F7E200CDF794 /* Montserrat-UltraLight.otf */,
+=======
+>>>>>>> master
 				84AF9DB91C0E0E6900B089D3 /* font */,
 				CEB288E11A54C68000BCF57A /* Info.plist */,
 			);
@@ -237,10 +249,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				842CC2A01C17F7E200CDF794 /* Montserrat-Bold.otf in Resources */,
 				842CC2A11C17F7E200CDF794 /* Montserrat-Light.otf in Resources */,
 				842CC2A21C17F7E200CDF794 /* Montserrat-Regular.otf in Resources */,
 				842CC2A31C17F7E200CDF794 /* Montserrat-UltraLight.otf in Resources */,
+=======
+>>>>>>> master
 				844ED8011C0113C200712EFC /* Images.xcassets in Resources */,
 				84AF9DBA1C0E0E6900B089D3 /* font in Resources */,
 				CEB288E81A54C68100BCF57A /* Main.storyboard in Resources */,
@@ -269,7 +284,10 @@
 				849AAD4A1C02CFBB00253DAF /* YutorialMenuTableViewCell.swift in Sources */,
 				84498AB41C138F87009F0C78 /* checklistCell.swift in Sources */,
 				849AAD3E1C02545C00253DAF /* NavigationController.swift in Sources */,
+<<<<<<< HEAD
 				842CC2A51C19DF5100CDF794 /* Data.swift in Sources */,
+=======
+>>>>>>> master
 				848AD6EB1C0E0D43008A4EFA /* StepTableViewController.swift in Sources */,
 				CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */,
 				848AD6E81C0E0D43008A4EFA /* AddStepViewController.swift in Sources */,

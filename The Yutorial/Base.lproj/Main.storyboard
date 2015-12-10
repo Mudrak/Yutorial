@@ -13,6 +13,10 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+<<<<<<< HEAD
+=======
+            <string>Montserrat-Regular</string>
+>>>>>>> master
         </mutableArray>
     </customFonts>
     <scenes>
@@ -43,6 +47,18 @@
                                             <rect key="frame" x="13" y="13" width="53" height="49"/>
                                             <animations/>
                                         </imageView>
+<<<<<<< HEAD
+=======
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQW-T3-Qng">
+                                            <rect key="frame" x="702" y="8" width="58" height="60"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                            <state key="normal" title="Edit">
+                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+>>>>>>> master
                                     </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -62,7 +78,11 @@
                     <navigationItem key="navigationItem" title="Yutorials" id="c97-PY-Mdu">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="xJ1-SI-2lj">
                             <connections>
+<<<<<<< HEAD
                                 <segue destination="SYK-ut-KdU" kind="presentation" identifier="addYutorial" modalPresentationStyle="formSheet" id="eS3-Av-LlN"/>
+=======
+                                <segue destination="SYK-ut-KdU" kind="presentation" modalPresentationStyle="formSheet" id="eS3-Av-LlN"/>
+>>>>>>> master
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -140,6 +160,10 @@
         <!--Step Detail View Controller-->
         <scene sceneID="By1-cG-mBt">
             <objects>
+<<<<<<< HEAD
+=======
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6e-f8-38b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+>>>>>>> master
                 <viewController id="puq-rg-dUz" customClass="StepDetailViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oET-wy-gPd"/>
@@ -216,7 +240,10 @@
                         <outlet property="stepDetailTitle" destination="FC1-7P-9fD" id="SuP-1K-zEh"/>
                     </connections>
                 </viewController>
+<<<<<<< HEAD
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6e-f8-38b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+=======
+>>>>>>> master
             </objects>
             <point key="canvasLocation" x="2596" y="130"/>
         </scene>
@@ -250,9 +277,19 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+<<<<<<< HEAD
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Tutorial Title" textAlignment="center" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-TT-g7w">
                                 <rect key="frame" x="16" y="162" width="508" height="30"/>
                                 <animations/>
+=======
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="ziH-K5-Vvf">
+                                <rect key="frame" x="165" y="251" width="211" height="332"/>
+                                <animations/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Tutorial Title" textAlignment="center" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-TT-g7w">
+                                <rect key="frame" x="16" y="162" width="508" height="30"/>
+                                <animations/>
+>>>>>>> master
                                 <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
@@ -300,7 +337,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Step Title" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="nMc-cs-u4a">
+=======
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Step Title" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="nMc-cs-u4a">
+>>>>>>> master
                                 <rect key="frame" x="16" y="150" width="508" height="30"/>
                                 <animations/>
                                 <color key="tintColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -329,7 +370,11 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+<<<<<<< HEAD
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="Z4h-ER-B7J">
+=======
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="Z4h-ER-B7J">
+>>>>>>> master
                                 <rect key="frame" x="165" y="233" width="211" height="332"/>
                                 <animations/>
                                 <constraints>
@@ -391,7 +436,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Checklist Details &amp; Info" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="X0m-DU-Vws">
+=======
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Checklist Details &amp; Info" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="X0m-DU-Vws">
+>>>>>>> master
                                 <rect key="frame" x="16" y="151" width="508" height="30"/>
                                 <animations/>
                                 <color key="tintColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -426,7 +475,11 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+<<<<<<< HEAD
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="nmh-eB-k7z">
+=======
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="nmh-eB-k7z">
+>>>>>>> master
                                 <rect key="frame" x="165" y="240" width="211" height="332"/>
                                 <animations/>
                                 <constraints>
