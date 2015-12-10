@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843AA8FC1C19ECBA00E4C3B3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AA8F91C19ECBA00E4C3B3 /* Data.swift */; };
+		843AA8FD1C19ECBA00E4C3B3 /* YutorialMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AA8FA1C19ECBA00E4C3B3 /* YutorialMenuTableViewController.swift */; };
+		843AA8FE1C19ECBA00E4C3B3 /* AddYutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AA8FB1C19ECBA00E4C3B3 /* AddYutorialViewController.swift */; };
 		84498AB41C138F87009F0C78 /* checklistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84498AB31C138F87009F0C78 /* checklistCell.swift */; };
 		84498AB61C14F332009F0C78 /* AddChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84498AB51C14F332009F0C78 /* AddChecklistViewController.swift */; };
 		844ED8011C0113C200712EFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844ED8001C0113C200712EFC /* Images.xcassets */; };
 		848AD6E81C0E0D43008A4EFA /* AddStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD6E31C0E0D43008A4EFA /* AddStepViewController.swift */; };
-		848AD6E91C0E0D43008A4EFA /* AddYutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD6E41C0E0D43008A4EFA /* AddYutorialViewController.swift */; };
 		848AD6EA1C0E0D43008A4EFA /* StepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD6E51C0E0D43008A4EFA /* StepTableViewCell.swift */; };
 		848AD6EB1C0E0D43008A4EFA /* StepTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD6E61C0E0D43008A4EFA /* StepTableViewController.swift */; };
-		848AD6EC1C0E0D43008A4EFA /* YutorialMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD6E71C0E0D43008A4EFA /* YutorialMenuTableViewController.swift */; };
 		849AAD3E1C02545C00253DAF /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAD3D1C02545C00253DAF /* NavigationController.swift */; };
 		849AAD4A1C02CFBB00253DAF /* YutorialMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAD491C02CFBB00253DAF /* YutorialMenuTableViewCell.swift */; };
 		84AF9DBA1C0E0E6900B089D3 /* font in Resources */ = {isa = PBXBuildFile; fileRef = 84AF9DB91C0E0E6900B089D3 /* font */; };
@@ -36,14 +37,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		843AA8F91C19ECBA00E4C3B3 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data.swift; path = ../Data.swift; sourceTree = "<group>"; };
+		843AA8FA1C19ECBA00E4C3B3 /* YutorialMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YutorialMenuTableViewController.swift; path = ../YutorialMenuTableViewController.swift; sourceTree = "<group>"; };
+		843AA8FB1C19ECBA00E4C3B3 /* AddYutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddYutorialViewController.swift; path = ../AddYutorialViewController.swift; sourceTree = "<group>"; };
 		84498AB31C138F87009F0C78 /* checklistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checklistCell.swift; sourceTree = "<group>"; };
 		84498AB51C14F332009F0C78 /* AddChecklistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChecklistViewController.swift; sourceTree = "<group>"; };
 		844ED8001C0113C200712EFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		848AD6E31C0E0D43008A4EFA /* AddStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStepViewController.swift; sourceTree = "<group>"; };
-		848AD6E41C0E0D43008A4EFA /* AddYutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddYutorialViewController.swift; sourceTree = "<group>"; };
 		848AD6E51C0E0D43008A4EFA /* StepTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTableViewCell.swift; sourceTree = "<group>"; };
 		848AD6E61C0E0D43008A4EFA /* StepTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTableViewController.swift; sourceTree = "<group>"; };
-		848AD6E71C0E0D43008A4EFA /* YutorialMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YutorialMenuTableViewController.swift; sourceTree = "<group>"; };
 		849AAD3D1C02545C00253DAF /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		849AAD491C02CFBB00253DAF /* YutorialMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YutorialMenuTableViewCell.swift; sourceTree = "<group>"; };
 		84AF9DB91C0E0E6900B089D3 /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = font; sourceTree = "<group>"; };
@@ -99,15 +101,16 @@
 			children = (
 				CEB288E21A54C68000BCF57A /* AppDelegate.swift */,
 				849AAD3D1C02545C00253DAF /* NavigationController.swift */,
-				848AD6E71C0E0D43008A4EFA /* YutorialMenuTableViewController.swift */,
+				843AA8FA1C19ECBA00E4C3B3 /* YutorialMenuTableViewController.swift */,
 				849AAD491C02CFBB00253DAF /* YutorialMenuTableViewCell.swift */,
-				848AD6E41C0E0D43008A4EFA /* AddYutorialViewController.swift */,
+				843AA8FB1C19ECBA00E4C3B3 /* AddYutorialViewController.swift */,
 				848AD6E61C0E0D43008A4EFA /* StepTableViewController.swift */,
 				848AD6E51C0E0D43008A4EFA /* StepTableViewCell.swift */,
 				848AD6E31C0E0D43008A4EFA /* AddStepViewController.swift */,
 				84AF9DBB1C0E0E9500B089D3 /* StepDetailViewController.swift */,
 				84498AB31C138F87009F0C78 /* checklistCell.swift */,
 				84498AB51C14F332009F0C78 /* AddChecklistViewController.swift */,
+				843AA8F91C19ECBA00E4C3B3 /* Data.swift */,
 				CEB288E61A54C68000BCF57A /* Main.storyboard */,
 				844ED8001C0113C200712EFC /* Images.xcassets */,
 				CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */,
@@ -243,16 +246,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848AD6E91C0E0D43008A4EFA /* AddYutorialViewController.swift in Sources */,
 				84AF9DBC1C0E0E9500B089D3 /* StepDetailViewController.swift in Sources */,
+				843AA8FC1C19ECBA00E4C3B3 /* Data.swift in Sources */,
 				84498AB61C14F332009F0C78 /* AddChecklistViewController.swift in Sources */,
-				848AD6EC1C0E0D43008A4EFA /* YutorialMenuTableViewController.swift in Sources */,
 				849AAD4A1C02CFBB00253DAF /* YutorialMenuTableViewCell.swift in Sources */,
 				84498AB41C138F87009F0C78 /* checklistCell.swift in Sources */,
 				849AAD3E1C02545C00253DAF /* NavigationController.swift in Sources */,
 				848AD6EB1C0E0D43008A4EFA /* StepTableViewController.swift in Sources */,
+				843AA8FE1C19ECBA00E4C3B3 /* AddYutorialViewController.swift in Sources */,
 				CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */,
 				848AD6E81C0E0D43008A4EFA /* AddStepViewController.swift in Sources */,
+				843AA8FD1C19ECBA00E4C3B3 /* YutorialMenuTableViewController.swift in Sources */,
 				848AD6EA1C0E0D43008A4EFA /* StepTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

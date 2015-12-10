@@ -10,10 +10,15 @@ import UIKit
 
 class YutorialMenuTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
+    enum Segues: String {
+        case EditYutorial = "editYutorial"
+    }
+    
     @IBOutlet weak var menuTableView: UITableView!
     
     var yutorials = [String]()
     var newYutorials: String = ""
+    var editingCellPath: NSIndexPath?
 
     
     override func viewDidLoad() {
@@ -30,13 +35,25 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             var addYutorialVC = segue.sourceViewController as! AddYutorialViewController
             newYutorials = addYutorialVC.name
             
-            yutorials.append(newYutorials)
+            // Edit, else Add:
+            // for Edit: what condition will override the current table row's new text?
+            if let selectedIndexPath = editingCellPath where menuTableView.editing {
+                yutorials[selectedIndexPath.row] = newYutorials
+                editingCellPath = nil
+            } else {
+                yutorials.append(newYutorials)
+            }
             
+//            let selectedIndexPath = self.menuTableView.indexPathForSelectedRow()
+//            println("Edit's if let has been entered")
+//            yutorials[selectedIndexPath!.row] = newYutorials
+    
             self.tableView.reloadData()
             
             self.dismissViewControllerAnimated(true, completion: {})
         }
-        
+    
+       // @IBAction
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -63,7 +80,6 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         // Return the number of rows in the section.
         return yutorials.count
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("yutorialCell", forIndexPath: indexPath) as!
@@ -77,16 +93,12 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         return cell
     }
     
-    //// Delegate function - navigation stuff:
-//    
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        self.performSegueWithIdentifier("showSteps", sender: self)
-//    }
+    // MARK: Delegate function - navigation stuff:
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showSteps") {
             
-            // upcomingView is set to BansheeDetailViewController
+            // upcomingView is set to StepTableViewController
             var upcomingView: StepTableViewController = segue.destinationViewController as! StepTableViewController
             
             // indexPath is set to the selected path
@@ -106,18 +118,32 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             upcomingView.yutorialInformation = yutorialInfo
             //self.menuTableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
+        // Edit segue:
+        if (segue.identifier == Segues.EditYutorial.rawValue){
+            let addYutorialViewController = segue.destinationViewController as! AddYutorialViewController
+            
+            // Get the cell that generated this segue.
+            if let selectedYutorialCell = sender as? YutorialMenuTableViewCell {
+                let indexPath = self.menuTableView.indexPathForCell(selectedYutorialCell)!
+                let selectedYutorial = yutorials[indexPath.row]
+                addYutorialViewController.yutorialName.text = selectedYutorial
+                addYutorialViewController.yutorialName.placeholder = selectedYutorial
+                addYutorialViewController.name = selectedYutorial
+                addYutorialViewController.navigationItem.title = "Edit Yutorial Title"
+            }
+        }
+        // Go ahead and add stuff
+        else if (segue.identifier == "addYutorial"){
+            println("Add VC")
+        }
     }
 
-
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
-
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -127,7 +153,69 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
+    // Slide gestures for edit and delete on tableview cells
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        // Slide: Edit the row's text
+        let renameButton = UITableViewRowAction(style: .Normal, title: "Rename") { (action, indexPath) in
+            self.editingCellPath = indexPath
+            self.performSegueWithIdentifier("editYutorial", sender: self)
+        }
+        let deleteButton = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
+            self.editingCellPath = indexPath
+            self.yutorials.removeAtIndex(indexPath!.row)
+            //let thisYutorial = self.yutorials[indexPath!.row]
+            // self.confirmDelete(thisYutorial)
+
+            self.menuTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            // remove row from table
+            // remove from memory 
+            // remove from db
+            self.editingCellPath = nil
+        }
+        return [deleteButton, renameButton]
+    }
+
+    
+    
+    // MARK: Delete Confirmation stuff is all commented out, but kinda here
+    //
+    //    var deleteRowIndexPath: NSIndexPath? = nil
+    //
+    //    func handleDeleteRow(alertAction: UIAlertAction!) -> Void {
+    //        if let indexPath = deleteRowIndexPath {
+    //            tableView.beginUpdates()
+    //
+    //            self.yutorials.removeAtIndex(indexPath.row)
+    //
+    //            // Note that indexPath is wrapped in an array:  [indexPath]
+    //            menuTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+    //
+    //            deleteRowIndexPath = nil
+    //
+    //            menuTableView.endUpdates()
+    //        }
+    //    }
+    //
+    //    func cancelDeleteRow(alertAction: UIAlertAction!) {
+    //        deleteRowIndexPath = nil
+    //    }
+    //
+    //    func confirmDelete(title: String) {
+    //        let alert = UIAlertController(title: "Delete?", message: "Are you sure you want to permanently delete \(title)?", preferredStyle: .ActionSheet)
+    //
+    //        let DeleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler:handleDeleteRow)
+    //        let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:cancelDeleteRow)
+    //
+    //        alert.addAction(DeleteAction)
+    //        alert.addAction(CancelAction)
+    //
+    //        // Support display in iPad
+    //        alert.popoverPresentationController?.sourceView = self.view
+    //        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+    //        
+    //        self.presentViewController(alert, animated: true, completion: nil)
+    //    }
 
     /*
     // Override to support rearranging the table view.

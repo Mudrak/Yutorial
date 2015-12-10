@@ -13,7 +13,6 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
-            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -44,15 +43,6 @@
                                             <rect key="frame" x="13" y="13" width="53" height="49"/>
                                             <animations/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQW-T3-Qng">
-                                            <rect key="frame" x="702" y="8" width="58" height="60"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
-                                            <state key="normal" title="Edit">
-                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
                                     </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -72,13 +62,14 @@
                     <navigationItem key="navigationItem" title="Yutorials" id="c97-PY-Mdu">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="xJ1-SI-2lj">
                             <connections>
-                                <segue destination="SYK-ut-KdU" kind="presentation" modalPresentationStyle="formSheet" id="eS3-Av-LlN"/>
+                                <segue destination="SYK-ut-KdU" kind="presentation" identifier="addYutorial" modalPresentationStyle="formSheet" id="eS3-Av-LlN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="menuTableView" destination="zvz-64-lsm" id="cuI-YL-smB"/>
+                        <segue destination="SYK-ut-KdU" kind="presentation" identifier="editYutorial" modalPresentationStyle="formSheet" id="2Wp-Cx-2so"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbf-8P-tla" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -149,7 +140,6 @@
         <!--Step Detail View Controller-->
         <scene sceneID="By1-cG-mBt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u6e-f8-38b" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="puq-rg-dUz" customClass="StepDetailViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oET-wy-gPd"/>
@@ -226,6 +216,7 @@
                         <outlet property="stepDetailTitle" destination="FC1-7P-9fD" id="SuP-1K-zEh"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6e-f8-38b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2596" y="130"/>
         </scene>
@@ -473,4 +464,7 @@
         <image name="yutorial.Y" width="1574" height="1739"/>
         <image name="yutorial.logo2" width="2282" height="4026"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2Wp-Cx-2so"/>
+    </inferredMetricsTieBreakers>
 </document>

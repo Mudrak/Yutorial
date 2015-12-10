@@ -54,6 +54,7 @@ class AddYutorialViewController: UIViewController, UITextFieldDelegate {
         
         // Makes cursor start in textField
         self.yutorialName.becomeFirstResponder()
+        yutorialName.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -66,8 +67,13 @@ class AddYutorialViewController: UIViewController, UITextFieldDelegate {
     // UITextField Delegate:
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        if (textField.returnKeyType == UIReturnKeyType.Done){
+            self.performSegueWithIdentifier("doneSegue", sender: self)
+        }
         return true
     }
+    
+
     //yutorialName.delegate = self
 
     /*
