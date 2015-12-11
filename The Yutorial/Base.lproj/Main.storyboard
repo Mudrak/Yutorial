@@ -123,13 +123,14 @@
                     <navigationItem key="navigationItem" id="hPY-TB-r9X">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QxA-rE-N78">
                             <connections>
-                                <segue destination="LLS-xT-fGM" kind="presentation" modalPresentationStyle="formSheet" id="xGB-Bp-Pla"/>
+                                <segue destination="LLS-xT-fGM" kind="presentation" identifier="addYutorial" modalPresentationStyle="formSheet" id="xGB-Bp-Pla"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="stepTableView" destination="0Uy-ep-qf4" id="eSR-aj-VJ4"/>
+                        <segue destination="LLS-xT-fGM" kind="presentation" identifier="editYutorial" modalPresentationStyle="formSheet" id="DSH-Sh-ihY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4h-4E-O3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,7 +206,7 @@
                     <navigationItem key="navigationItem" id="6oF-Gs-L8l">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="juU-6m-IMV">
                             <connections>
-                                <segue destination="OVv-Ev-Pdi" kind="presentation" modalPresentationStyle="formSheet" id="pfP-MT-6Ui"/>
+                                <segue destination="OVv-Ev-Pdi" kind="presentation" identifier="addYutorial" modalPresentationStyle="formSheet" id="pfP-MT-6Ui"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -214,6 +215,7 @@
                         <outlet property="checklistTable" destination="cCT-9Z-GM2" id="xrH-cm-YPT"/>
                         <outlet property="stepDetailImage" destination="6hc-ff-ncJ" id="7gf-qB-SCd"/>
                         <outlet property="stepDetailTitle" destination="FC1-7P-9fD" id="SuP-1K-zEh"/>
+                        <segue destination="OVv-Ev-Pdi" kind="presentation" identifier="editYutorial" modalPresentationStyle="formSheet" id="MMn-98-j90"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6e-f8-38b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -306,7 +308,7 @@
                                 <color key="tintColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="LLS-xT-fGM" id="93J-gn-IxN"/>
                                 </connections>
@@ -400,7 +402,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="OVv-Ev-Pdi" id="Qmh-VS-4cC"/>
                                 </connections>
@@ -466,5 +468,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2Wp-Cx-2so"/>
+        <segue reference="xGB-Bp-Pla"/>
+        <segue reference="MMn-98-j90"/>
     </inferredMetricsTieBreakers>
 </document>

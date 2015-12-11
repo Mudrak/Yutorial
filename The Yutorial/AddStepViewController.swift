@@ -49,6 +49,7 @@ class AddStepViewController: UIViewController, UITextFieldDelegate {
         
         // Sets cursor focus on text field on load
         self.stepName.becomeFirstResponder()
+        stepName.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -61,6 +62,9 @@ class AddStepViewController: UIViewController, UITextFieldDelegate {
     // UITextField Delegate:
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        if (textField.returnKeyType == UIReturnKeyType.Done){
+            self.performSegueWithIdentifier("doneSegue", sender: self)
+        }
         return true
     }
 

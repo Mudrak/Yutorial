@@ -48,6 +48,7 @@ class AddChecklistViewController: UIViewController {
         super.viewDidLoad()
         
         self.checklistName.becomeFirstResponder()
+        //checklistName.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -60,6 +61,9 @@ class AddChecklistViewController: UIViewController {
     // UITextField Delegate:
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        if (textField.returnKeyType == UIReturnKeyType.Done){
+            self.performSegueWithIdentifier("doneSegue", sender: self)
+        }
         return true
     }
     /*

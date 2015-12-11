@@ -16,19 +16,20 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
     
     @IBOutlet weak var menuTableView: UITableView!
     
-    var yutorials = [String]()
+    //var yutorials = [String]()
+    var yutorials = Data.sharedInstance.yutorials
+    
     var newYutorials: String = ""
     var editingCellPath: NSIndexPath?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         yutorials = ["How to Create A Yutorial"]
         
     }
         @IBAction func cancel(segue:UIStoryboardSegue) {
             self.dismissViewControllerAnimated(true, completion: {})
+            
         }
         
         @IBAction func done(segue:UIStoryboardSegue) {
@@ -43,10 +44,6 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             } else {
                 yutorials.append(newYutorials)
             }
-            
-//            let selectedIndexPath = self.menuTableView.indexPathForSelectedRow()
-//            println("Edit's if let has been entered")
-//            yutorials[selectedIndexPath!.row] = newYutorials
     
             self.tableView.reloadData()
             
@@ -88,7 +85,7 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         // Configure the cell...
         cell.yutorialLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         cell.yutorialLabel.font = UIFont(name: "Montserrat-Regular", size: 25)
-        cell.yutorialLabel.text = self.yutorials[indexPath.row]
+        cell.yutorialLabel.text = yutorials[indexPath.row]
 
         return cell
     }
@@ -105,17 +102,22 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             let indexPath = self.menuTableView.indexPathForSelectedRow()
             
             var yutorialInfo: String!
+            var indexToPass: Int!
             
             // Make the first cell different than the user created others
             if (indexPath!.row == 0) {
-                yutorialInfo = "How To"
+                yutorialInfo = yutorials[0]
+                indexToPass = 0 
+                
             }
             else {
                 yutorialInfo = yutorials[indexPath!.row]
+                indexToPass = indexPath!.row
             }
             
             // Let the new view controller have its info
             upcomingView.yutorialInformation = yutorialInfo
+            upcomingView.i = indexToPass
             //self.menuTableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         // Edit segue:
@@ -125,11 +127,14 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             // Get the cell that generated this segue.
             if let selectedYutorialCell = sender as? YutorialMenuTableViewCell {
                 let indexPath = self.menuTableView.indexPathForCell(selectedYutorialCell)!
-                let selectedYutorial = yutorials[indexPath.row]
+                let selectedYutorial = self.yutorials[indexPath.row]
+                
+                // These 3 aren't working?
                 addYutorialViewController.yutorialName.text = selectedYutorial
                 addYutorialViewController.yutorialName.placeholder = selectedYutorial
-                addYutorialViewController.name = selectedYutorial
                 addYutorialViewController.navigationItem.title = "Edit Yutorial Title"
+                
+                addYutorialViewController.name = selectedYutorial
             }
         }
         // Go ahead and add stuff

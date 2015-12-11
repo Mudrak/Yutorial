@@ -12,9 +12,15 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
 
     @IBOutlet var stepTableView: UITableView!
     
-    var steps = [String?]()
-    var newStep: String = ""
+    //var steps = [String?]()
+    
+    // Data Manager variable:
+    var steps = Data.sharedInstance.stepMenu.steps
+    
+    var newSteps: String = ""
     var howToLoaded = false
+    var i: Int!
+    var editingCellPath: NSIndexPath?
     
     var yutorialInformation: String!
     
@@ -37,7 +43,7 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
         super.viewDidLoad()
         
         // If the first intro cell is selected, fill it with hardcoded data
-        if (yutorialInformation == "How To") {
+        if (yutorialInformation == "How to Create A Yutorial") {
             steps = [
                 "Press the '+' add button",
                 "Name your Yutorial",
@@ -54,21 +60,28 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
     }
     
     // Controls the actions of the Done and Cancel bar button items
-    @IBAction func done(segue:UIStoryboardSegue) {
-        var addStepVC = segue.sourceViewController as! AddStepViewController
-        newStep = addStepVC.name
+    @IBAction func cancel(segue:UIStoryboardSegue) {
+        self.dismissViewControllerAnimated(true, completion: {})
         
-        steps.append(newStep)
+    }
+    
+    @IBAction func done(segue:UIStoryboardSegue) {
+        var addYutorialVC = segue.sourceViewController as! AddStepViewController
+        newSteps = addYutorialVC.name
+        
+        // Edit, else Add:
+        // for Edit: what condition will override the current table row's new text?
+        if let selectedIndexPath = editingCellPath where stepTableView.editing {
+            steps[selectedIndexPath.row] = newSteps
+            editingCellPath = nil
+        } else {
+            steps.append(newSteps)
+        }
         
         self.tableView.reloadData()
         
         self.dismissViewControllerAnimated(true, completion: {})
     }
-    
-    @IBAction func cancel(segue:UIStoryboardSegue) {
-        self.dismissViewControllerAnimated(true, completion: {})
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -99,7 +112,7 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("stepCell", forIndexPath: indexPath) as! StepTableViewCell
-//        let newCell = tableView.dequeueReusableCellWithIdentifier("newStepCell", forIndexPath: indexPath) as! StepTableViewCell
+//        let newCell = tableView.dequeueReusableCellWithIdentifier("newStepsCell", forIndexPath: indexPath) as! StepTableViewCell
         
         // Configure the cell...
         
@@ -123,18 +136,80 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
             //var stepInfo: [String: UIImage]
             var stepInfo: String!
             var stepNum: UIImage!
+            var indexToPass: Int!
             
             // Make the first cell different than the user created others
             //stepInfo = [steps[indexPath!.row] : stepImages[indexPath!.row]]
             stepInfo = steps[indexPath!.row]
             stepNum = stepImages[indexPath!.row]
+            indexToPass = indexPath!.row
             
             // Let the new view controller have its info
             upcomingView.stepInformation = stepInfo
             upcomingView.stepNumber = stepNum
             upcomingView.yutorialTitle = yutorialInformation
-            //self.menuTableView.deselectRowAtIndexPath(indexPath, animated: true)
+            upcomingView.i = indexToPass
+            //self.stepTableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
+            // Edit segue:
+        if (segue.identifier == "editYutorial"){
+            let addYutorialViewController = segue.destinationViewController as! AddStepViewController
+            
+            // Get the cell that generated this segue.
+            if let selectedYutorialCell = sender as? StepTableViewCell {
+                let indexPath = self.stepTableView.indexPathForCell(selectedYutorialCell)!
+                let selectedYutorial = self.steps[indexPath.row]
+                
+                // These 3 aren't working?
+                addYutorialViewController.stepName.text = selectedYutorial
+                addYutorialViewController.stepName.placeholder = selectedYutorial
+                addYutorialViewController.navigationItem.title = "Edit Step Title"
+                
+                addYutorialViewController.name = selectedYutorial
+            }
+        }
+            // Go ahead and add stuff
+        else if (segue.identifier == "addYutorial"){
+            println("Add VC")
+        }
+    }
+    
+    // Override to support conditional editing of the table view.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return NO if you do not want the specified item to be editable.
+        return true
+    }
+    
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    // Slide gestures for edit and delete on tableview cells
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        // Slide: Edit the row's text
+        let renameButton = UITableViewRowAction(style: .Normal, title: "Rename") { (action, indexPath) in
+            self.editingCellPath = indexPath
+            self.performSegueWithIdentifier("editYutorial", sender: self)
+        }
+        let deleteButton = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
+            self.editingCellPath = indexPath
+            self.steps.removeAtIndex(indexPath!.row)
+            //let thisYutorial = self.yutorials[indexPath!.row]
+            // self.confirmDelete(thisYutorial)
+            
+            self.stepTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            // remove row from table
+            // remove from memory
+            // remove from db
+            self.editingCellPath = nil
+        }
+        return [deleteButton, renameButton]
     }
     
     // Dynamic cells for user-entered step data
