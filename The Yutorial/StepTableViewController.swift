@@ -15,9 +15,10 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
     //var steps = [String?]()
     
     // Data Manager variable:
-    var steps = Data.sharedInstance.stepMenu.steps
+    var steps = [Step]()
     
-    var newSteps: String = ""
+    
+    var newStep: String = ""
     var howToLoaded = false
     var i: Int!
     var editingCellPath: NSIndexPath?
@@ -41,19 +42,34 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // If the first intro cell is selected, fill it with hardcoded data
-        if (yutorialInformation == "How to Create A Yutorial") {
-            steps = [
-                "Press the '+' add button",
-                "Name your Yutorial",
-                "Press Done",
-                "Name your steps",
-                "Make your checklist items for each step",
-                "Save & Share",
-                "Forget how to do a task, chore, or job? Look back at the Yutorial!"
-            ]
+        if (yutorialInformation == "How to Create a Yutorial") {
+            println("Filler steps were set!")
+            steps.append(Step(title: "Press the '+' add button"))
+            steps.append(Step(title: "Name your Yutorial"))
+            steps.append(Step(title: "Press Done"))
+            steps.append(Step(title: "Name your steps"))
+            steps.append(Step(title: "Make your checklist items for each step"))
+            steps.append(Step(title: "Swipe left to rename and delete"))
+            steps.append(Step(title: "Save & Share"))
+            steps.append(Step(title: "Forget how to do a task, chore, or job? Look back at the Yutorial!")) 
         }
+     func viewDidAppear(animated: Bool) {
+        // reload data here
+        self.stepTableView.reloadData()
+    }
+    
+        // If the first intro cell is selected, fill it with hardcoded data
+//        if (yutorialInformation == "How to Create A Yutorial") {
+//            steps = [
+//                "Press the '+' add button",
+//                "Name your Yutorial",
+//                "Press Done",
+//                "Name your steps",
+//                "Make your checklist items for each step",
+//                "Save & Share",
+//                "Forget how to do a task, chore, or job? Look back at the Yutorial!"
+//            ]
+//        }
         navigationItem.title = yutorialInformation
 
         // Do any additional setup after loading the view.
@@ -67,15 +83,15 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
     
     @IBAction func done(segue:UIStoryboardSegue) {
         var addYutorialVC = segue.sourceViewController as! AddStepViewController
-        newSteps = addYutorialVC.name
+        let newStep = Step(title: addYutorialVC.name)
         
         // Edit, else Add:
         // for Edit: what condition will override the current table row's new text?
         if let selectedIndexPath = editingCellPath where stepTableView.editing {
-            steps[selectedIndexPath.row] = newSteps
+            steps[selectedIndexPath.row] = newStep
             editingCellPath = nil
         } else {
-            steps.append(newSteps)
+            steps.append(newStep)
         }
         
         self.tableView.reloadData()
@@ -112,20 +128,21 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("stepCell", forIndexPath: indexPath) as! StepTableViewCell
-//        let newCell = tableView.dequeueReusableCellWithIdentifier("newStepsCell", forIndexPath: indexPath) as! StepTableViewCell
+//        let newCell = tableView.dequeueReusableCellWithIdentifier("newStepCell", forIndexPath: indexPath) as! StepTableViewCell
         
         // Configure the cell...
         
         cell.stepLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         cell.stepLabel.font = UIFont(name: "Montserrat-Regular", size: 25)
         cell.stepImageView.image = stepImages[indexPath.row]
-        cell.stepLabel.text = steps[indexPath.row]
+        cell.stepLabel.text = steps[indexPath.row].title
         
         return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showDetails") {
+            navigationItem.backBarButtonItem?.title = "Steps"
             // For segue to the checklist tableview
             // upcomingView is set to ChecklistViewController
             var upcomingView: StepDetailViewController = segue.destinationViewController as! StepDetailViewController
@@ -140,7 +157,7 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
             
             // Make the first cell different than the user created others
             //stepInfo = [steps[indexPath!.row] : stepImages[indexPath!.row]]
-            stepInfo = steps[indexPath!.row]
+            stepInfo = steps[indexPath!.row].title
             stepNum = stepImages[indexPath!.row]
             indexToPass = indexPath!.row
             
@@ -158,7 +175,7 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
             // Get the cell that generated this segue.
             if let selectedYutorialCell = sender as? StepTableViewCell {
                 let indexPath = self.stepTableView.indexPathForCell(selectedYutorialCell)!
-                let selectedYutorial = self.steps[indexPath.row]
+                let selectedYutorial = self.steps[indexPath.row].title
                 
                 // These 3 aren't working?
                 addYutorialViewController.stepName.text = selectedYutorial

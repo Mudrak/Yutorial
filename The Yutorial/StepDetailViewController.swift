@@ -16,8 +16,7 @@ class StepDetailViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var stepDetailTitle: UILabel!
     
     // Data Manager variables
-    var checklistItems = Data.sharedInstance.stepMenu.checklistItems
-    var checked = Data.sharedInstance.stepMenu.checked
+    var checklistItems = [Checklist]()
     
     var stepInformation: String!
     var stepNumber: UIImage!
@@ -46,11 +45,18 @@ class StepDetailViewController: UIViewController, UITableViewDataSource {
         stepDetailTitle.font = UIFont(name: "Montserrat-Regular", size: 35)
         navigationItem.title = "Step Details"
         
-        if (yutorialTitle == "How To") {
-        checklistItems += ["Example list of checklist items","Enter substeps and data here","From notes to camera roll images","Add specific info for complex tasks"]
+        if (yutorialTitle == "How to Create a Yutorial") {
+            checklistItems.append(Checklist(cellText: "Example list of checklist items", checked: false))
+            checklistItems.append(Checklist(cellText: "Enter substeps and data here", checked: false))
+            checklistItems.append(Checklist(cellText: "From notes to camera roll images", checked: false))
+            checklistItems.append(Checklist(cellText: "Add specific info for complex tasks", checked: false))
         }
-
+        navigationItem.title = yutorialTitle
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(animated: Bool) {
+        // reload data here
+        self.checklistTable.reloadData()
     }
     
     // Controls the actions of the Done and Cancel bar button items
@@ -61,7 +67,7 @@ class StepDetailViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func done(segue:UIStoryboardSegue) {
         var addYutorialVC = segue.sourceViewController as! AddChecklistViewController
-        newChecklistItem = addYutorialVC.name
+        let newChecklistItem = Checklist(cellText: addYutorialVC.name, checked: false)
         
         // Edit, else Add:
         // for Edit: what condition will override the current table row's new text?
@@ -90,7 +96,7 @@ class StepDetailViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.checklistTable.dequeueReusableCellWithIdentifier("checklistItem") as! checklistCell
 
-        cell.checklistLabel.text = checklistItems[indexPath.row]
+        cell.checklistLabel.text = checklistItems[indexPath.row].cellText
         cell.checklistLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         cell.checklistLabel.font = UIFont(name: "Montserrat-Regular", size: 25)
         cell.checkboxImage.image = CheckboxImages.unchecked
@@ -102,9 +108,11 @@ class StepDetailViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         let selectedCell = self.checklistTable.cellForRowAtIndexPath(indexPath) as! checklistCell
         
+        println("The state of the checklist item '\(checklistItems[indexPath.row].cellText)' is: \(checklistItems[indexPath.row].checked)")
+        
         // The cell is selected: change appearance to selected
         if (selectedCell.backgroundColor == white) {
-            checked = true
+            checklistItems[indexPath.row].checked = true
             selectedCell.backgroundColor = lightMint
             selectedCell.checklistLabel.textColor = white
             selectedCell.accessoryType = UITableViewCellAccessoryType.Checkmark
@@ -112,7 +120,7 @@ class StepDetailViewController: UIViewController, UITableViewDataSource {
             selectedCell.tintColor = white
         } else {
             // Revert back to initial appearance
-            checked = false
+            checklistItems[indexPath.row].checked = false
             selectedCell.backgroundColor = white
             selectedCell.checklistLabel.textColor = darkMint
             selectedCell.accessoryType = UITableViewCellAccessoryType.None
@@ -127,7 +135,7 @@ class StepDetailViewController: UIViewController, UITableViewDataSource {
             // Get the cell that generated this segue.
             if let selectedYutorialCell = sender as? checklistCell {
                 let indexPath = self.checklistTable.indexPathForCell(selectedYutorialCell)!
-                let selectedYutorial = self.checklistItems[indexPath.row]
+                let selectedYutorial = self.checklistItems[indexPath.row].cellText
                 
                 // These 3 aren't working?
                 addYutorialViewController.checklistName.text = selectedYutorial

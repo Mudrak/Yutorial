@@ -204,6 +204,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="6oF-Gs-L8l">
+                        <barButtonItem key="backBarButtonItem" title="Steps" id="Gzo-kd-dCy"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="juU-6m-IMV">
                             <connections>
                                 <segue destination="OVv-Ev-Pdi" kind="presentation" identifier="addYutorial" modalPresentationStyle="formSheet" id="pfP-MT-6Ui"/>
@@ -288,7 +289,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYN-xd-qvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bJP-Wq-QzJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="832" y="1080"/>
+            <point key="canvasLocation" x="832" y="984"/>
         </scene>
         <!--Add Step Title-->
         <scene sceneID="RsH-hZ-fPi">
@@ -359,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ann-z7-NfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="1140"/>
+            <point key="canvasLocation" x="1714" y="1092"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vnO-Vj-gJD">
@@ -457,7 +458,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jV4-kU-P4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="o0H-7Y-Mtk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2596" y="1340"/>
+            <point key="canvasLocation" x="2596" y="1196"/>
         </scene>
     </scenes>
     <resources>

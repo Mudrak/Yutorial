@@ -12,8 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        func printFonts() {
+            let fontFamilyNames = UIFont.familyNames()
+            for familyName in fontFamilyNames {
+                println("------------------------------")
+                println("Font Family Name = [\(familyName)]")
+                let names = UIFont.fontNamesForFamilyName(familyName as! String)
+                println("Font Names = [\(names)]")
+            }
+        }
         // Override point for customization after application launch.
         
         /* MARK: STYLING /////////////////////////////////////////////
@@ -34,26 +45,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         */
         
-        let montserrat = UIFont(name: "Montserrat-Regular", size: 20)!
+        //let montserrat = UIFont(name: "Montserrat-Regular", size: 20)!
         
         // Navigation bar styling:
         UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         
-        let attrs = [
-            NSForegroundColorAttributeName : UIColor.whiteColor(),
-            NSFontAttributeName : UIFont(name: "Montserrat-Bold", size: 30)!
-        ]
-        UINavigationBar.appearance().titleTextAttributes = attrs
+        if let navFont = UIFont(name: "Montserrat-Bold", size: 30) {
+            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: navFont, NSForegroundColorAttributeName: UIColor.whiteColor()]
+            println("Nav font loaded")
+        } else {
+            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        }
 
         //UINavigationBar.appearance().font = UIFont(name: "Montserrat-Regular", size: "15")
         //UITextField.appearance().font = montserrat
-        UILabel.appearance().font = UIFont(name: "Montserrat-Regular", size: 25)!
+        if let labelFont = UIFont(name: "Montserrat-Regular", size: 25) {
+            UILabel.appearance().font = labelFont
+        }
         
         let barButton = UIBarButtonItem.appearance()
         
-        if let font = UIFont(name: "Montserrat-Regular", size: 22) {
-            barButton.setTitleTextAttributes([NSFontAttributeName: font], forState: UIControlState.Normal)
+        if let barButtonFont = UIFont(name: "Montserrat-Regular", size: 22) {
+            barButton.setTitleTextAttributes([NSFontAttributeName: barButtonFont], forState: UIControlState.Normal)
         }
         
         //Status Bar color:

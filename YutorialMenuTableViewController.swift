@@ -17,38 +17,45 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
     @IBOutlet weak var menuTableView: UITableView!
     
     //var yutorials = [String]()
-    var yutorials = Data.sharedInstance.yutorials
+    var yutorials = [Yutorial]()
+    
     
     var newYutorials: String = ""
     var editingCellPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        yutorials = ["How to Create A Yutorial"]
+        let y = Yutorial(title: "How to Create a Yutorial")
+        yutorials.append(y)
         
     }
-        @IBAction func cancel(segue:UIStoryboardSegue) {
-            self.dismissViewControllerAnimated(true, completion: {})
-            
-        }
-        
-        @IBAction func done(segue:UIStoryboardSegue) {
-            var addYutorialVC = segue.sourceViewController as! AddYutorialViewController
-            newYutorials = addYutorialVC.name
-            
-            // Edit, else Add:
-            // for Edit: what condition will override the current table row's new text?
-            if let selectedIndexPath = editingCellPath where menuTableView.editing {
-                yutorials[selectedIndexPath.row] = newYutorials
-                editingCellPath = nil
-            } else {
-                yutorials.append(newYutorials)
-            }
+    override func viewDidAppear(animated: Bool) {
+        // reload data here
+        self.tableView.reloadData()
+    }
     
-            self.tableView.reloadData()
-            
-            self.dismissViewControllerAnimated(true, completion: {})
+    @IBAction func cancel(segue:UIStoryboardSegue) {
+        self.dismissViewControllerAnimated(true, completion: {})
+        
+    }
+    
+    @IBAction func done(segue:UIStoryboardSegue) {
+        var addYutorialVC = segue.sourceViewController as! AddYutorialViewController
+        let newYutorial = Yutorial(title: addYutorialVC.name)
+        
+        // Edit, else Add:
+        // for Edit: what condition will override the current table row's new text?
+        if let selectedIndexPath = editingCellPath where menuTableView.editing {
+            yutorials[selectedIndexPath.row] = newYutorial
+            editingCellPath = nil
+        } else {
+            yutorials.append(newYutorial)
         }
+
+        self.menuTableView.reloadData()
+        
+        self.dismissViewControllerAnimated(true, completion: {})
+    }
     
        // @IBAction
 
@@ -81,11 +88,11 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("yutorialCell", forIndexPath: indexPath) as!
             YutorialMenuTableViewCell
-
+    
         // Configure the cell...
         cell.yutorialLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         cell.yutorialLabel.font = UIFont(name: "Montserrat-Regular", size: 25)
-        cell.yutorialLabel.text = yutorials[indexPath.row]
+        cell.yutorialLabel.text = yutorials[indexPath.row].title
 
         return cell
     }
@@ -106,12 +113,12 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             
             // Make the first cell different than the user created others
             if (indexPath!.row == 0) {
-                yutorialInfo = yutorials[0]
-                indexToPass = 0 
+                yutorialInfo = yutorials[0].title
+                indexToPass = 0
                 
             }
             else {
-                yutorialInfo = yutorials[indexPath!.row]
+                yutorialInfo = yutorials[indexPath!.row].title
                 indexToPass = indexPath!.row
             }
             
@@ -127,7 +134,7 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             // Get the cell that generated this segue.
             if let selectedYutorialCell = sender as? YutorialMenuTableViewCell {
                 let indexPath = self.menuTableView.indexPathForCell(selectedYutorialCell)!
-                let selectedYutorial = self.yutorials[indexPath.row]
+                let selectedYutorial = self.yutorials[indexPath.row].title
                 
                 // These 3 aren't working?
                 addYutorialViewController.yutorialName.text = selectedYutorial
