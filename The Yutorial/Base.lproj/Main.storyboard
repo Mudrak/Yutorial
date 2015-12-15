@@ -19,7 +19,7 @@
         <!--Yutorials-->
         <scene sceneID="zTS-ft-52p">
             <objects>
-                <tableViewController title="Yutorials" id="7WE-u3-Pnt" customClass="YutorialMenuTableViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Yutorials" id="7WE-u3-Pnt" customClass="YutorialMenuTableViewController" customModule="Yutorials" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" id="zvz-64-lsm">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="yutorialCell" rowHeight="77" id="NCX-3c-JNC" customClass="YutorialMenuTableViewCell" customModule="The_Yutorial" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="yutorialCell" rowHeight="77" id="NCX-3c-JNC" customClass="YutorialMenuTableViewCell" customModule="Yutorials" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NCX-3c-JNC" id="e6H-s5-a8U">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -79,14 +79,14 @@
         <!--Step Table View Controller-->
         <scene sceneID="O8t-wj-ALh">
             <objects>
-                <tableViewController id="7Li-nH-Kvb" customClass="StepTableViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7Li-nH-Kvb" customClass="StepTableViewController" customModule="Yutorials" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Uy-ep-qf4">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="separatorColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stepCell" rowHeight="85" id="79P-nM-jCP" customClass="StepTableViewCell" customModule="The_Yutorial" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stepCell" rowHeight="85" id="79P-nM-jCP" customClass="StepTableViewCell" customModule="Yutorials" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="79P-nM-jCP" id="fvZ-mB-qUf">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -141,7 +141,7 @@
         <!--Step Detail View Controller-->
         <scene sceneID="By1-cG-mBt">
             <objects>
-                <viewController id="puq-rg-dUz" customClass="StepDetailViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="puq-rg-dUz" customClass="StepDetailViewController" customModule="Yutorials" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oET-wy-gPd"/>
                         <viewControllerLayoutGuide type="bottom" id="fJP-rP-VFU"/>
@@ -167,24 +167,33 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleAspectFit" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="checklistItem" rowHeight="85" id="jKF-fz-y0u" customClass="checklistCell" customModule="The_Yutorial" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleAspectFit" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="checklistItem" rowHeight="85" id="jKF-fz-y0u" customClass="checklistCell" customModule="Yutorials" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jKF-fz-y0u" id="OW1-In-SpK">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Checklist Item" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lt1-aB-0JD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Checklist Item" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lt1-aB-0JD">
                                                     <rect key="frame" x="80" y="0.0" width="723" height="85"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
                                                     <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check.gray" translatesAutoresizingMaskIntoConstraints="NO" id="zbe-oQ-boH">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="check.gray" translatesAutoresizingMaskIntoConstraints="NO" id="zbe-oQ-boH">
                                                     <rect key="frame" x="8" y="17" width="56" height="52"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="56" id="FMI-mh-NdL"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="zbe-oQ-boH" firstAttribute="leading" secondItem="OW1-In-SpK" secondAttribute="leadingMargin" constant="-7" id="Y4d-08-cLO"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zbe-oQ-boH" secondAttribute="bottom" constant="7" id="aA9-Bd-MNV"/>
+                                                <constraint firstItem="zbe-oQ-boH" firstAttribute="top" secondItem="OW1-In-SpK" secondAttribute="topMargin" constant="9" id="dc5-7x-gHK"/>
+                                                <constraint firstItem="lt1-aB-0JD" firstAttribute="leading" secondItem="zbe-oQ-boH" secondAttribute="trailing" constant="16" id="xvR-BO-Z1a"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
@@ -226,7 +235,7 @@
         <!--Add Yutorial View Controller-->
         <scene sceneID="fTr-md-7kk">
             <objects>
-                <viewController id="SYK-ut-KdU" customClass="AddYutorialViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SYK-ut-KdU" customClass="AddYutorialViewController" customModule="Yutorials" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="72W-hC-Slt"/>
                         <viewControllerLayoutGuide type="bottom" id="U58-WR-Fb6"/>
@@ -294,7 +303,7 @@
         <!--Add Step Title-->
         <scene sceneID="RsH-hZ-fPi">
             <objects>
-                <viewController title="Add Step Title" id="LLS-xT-fGM" customClass="AddStepViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Step Title" id="LLS-xT-fGM" customClass="AddStepViewController" customModule="Yutorials" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OSp-FJ-1zk"/>
                         <viewControllerLayoutGuide type="bottom" id="bIG-3N-h3G"/>
@@ -385,7 +394,7 @@
         <!--Add Checklist Item-->
         <scene sceneID="vTQ-NT-znL">
             <objects>
-                <viewController title="Add Checklist Item" id="OVv-Ev-Pdi" customClass="AddChecklistViewController" customModule="The_Yutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Checklist Item" id="OVv-Ev-Pdi" customClass="AddChecklistViewController" customModule="Yutorials" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IEW-5r-nrK"/>
                         <viewControllerLayoutGuide type="bottom" id="cux-xt-xGQ"/>

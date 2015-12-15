@@ -16,15 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        func printFonts() {
-            let fontFamilyNames = UIFont.familyNames()
-            for familyName in fontFamilyNames {
-                println("------------------------------")
-                println("Font Family Name = [\(familyName)]")
-                let names = UIFont.fontNamesForFamilyName(familyName as! String)
-                println("Font Names = [\(names)]")
-            }
-        }
         // Override point for customization after application launch.
         
         /* MARK: STYLING /////////////////////////////////////////////
@@ -53,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let navFont = UIFont(name: "Montserrat-Bold", size: 30) {
             UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: navFont, NSForegroundColorAttributeName: UIColor.whiteColor()]
-            println("Nav font loaded")
         } else {
             UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         }

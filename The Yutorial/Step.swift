@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class Step {
+    
     var title: String
     
     init(title: String) {

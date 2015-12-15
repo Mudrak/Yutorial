@@ -10,7 +10,6 @@ import UIKit
 
 class StepDetailViewController: UIViewController, UITableViewDataSource {
     
-    
     @IBOutlet var checklistTable: UITableView!
     @IBOutlet weak var stepDetailImage: UIImageView!
     @IBOutlet weak var stepDetailTitle: UILabel!
@@ -32,7 +31,7 @@ class StepDetailViewController: UIViewController, UITableViewDataSource {
     
     struct Checkbox {
         var checked: UIImage! = UIImage(named: "check.gray")
-        var unchecked: UIImage! = UIImage(named: "check.empty.black")
+        var unchecked: UIImage! = UIImage(named: "uncheck")
     }
     let CheckboxImages = Checkbox()
     
@@ -115,7 +114,7 @@ class StepDetailViewController: UIViewController, UITableViewDataSource {
             checklistItems[indexPath.row].checked = true
             selectedCell.backgroundColor = lightMint
             selectedCell.checklistLabel.textColor = white
-            selectedCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            //selectedCell.accessoryType = UITableViewCellAccessoryType.Checkmark
             selectedCell.checkboxImage.image = CheckboxImages.checked
             selectedCell.tintColor = white
         } else {
@@ -123,7 +122,7 @@ class StepDetailViewController: UIViewController, UITableViewDataSource {
             checklistItems[indexPath.row].checked = false
             selectedCell.backgroundColor = white
             selectedCell.checklistLabel.textColor = darkMint
-            selectedCell.accessoryType = UITableViewCellAccessoryType.None
+            //selectedCell.accessoryType = UITableViewCellAccessoryType.None
             selectedCell.checkboxImage.image = CheckboxImages.unchecked
         }
     }

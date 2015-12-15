@@ -16,10 +16,7 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
     
     @IBOutlet weak var menuTableView: UITableView!
     
-    //var yutorials = [String]()
     var yutorials = [Yutorial]()
-    
-    
     var newYutorials: String = ""
     var editingCellPath: NSIndexPath?
     
@@ -114,12 +111,9 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             // Make the first cell different than the user created others
             if (indexPath!.row == 0) {
                 yutorialInfo = yutorials[0].title
-                indexToPass = 0
-                
             }
             else {
                 yutorialInfo = yutorials[indexPath!.row].title
-                indexToPass = indexPath!.row
             }
             
             // Let the new view controller have its info
@@ -128,7 +122,7 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             //self.menuTableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         // Edit segue:
-        if (segue.identifier == Segues.EditYutorial.rawValue){
+        if (segue.identifier == "editYutorial"){
             let addYutorialViewController = segue.destinationViewController as! AddYutorialViewController
             
             // Get the cell that generated this segue.
@@ -146,7 +140,6 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         }
         // Go ahead and add stuff
         else if (segue.identifier == "addYutorial"){
-            println("Add VC")
         }
     }
 
