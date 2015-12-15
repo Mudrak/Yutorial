@@ -16,7 +16,9 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
     
     @IBOutlet weak var menuTableView: UITableView!
     
-    var yutorials = [Yutorial]()
+    //var yutorials = [Yutorial]()
+    var yutorials = YutorialCollection().Yutorials
+    
     var newYutorials: String = ""
     var editingCellPath: NSIndexPath?
     
@@ -106,7 +108,6 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             let indexPath = self.menuTableView.indexPathForSelectedRow()
             
             var yutorialInfo: String!
-            var indexToPass: Int!
             
             // Make the first cell different than the user created others
             if (indexPath!.row == 0) {
@@ -118,12 +119,13 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             
             // Let the new view controller have its info
             upcomingView.yutorialInformation = yutorialInfo
-            upcomingView.i = indexToPass
-            //self.menuTableView.deselectRowAtIndexPath(indexPath, animated: true)
+            upcomingView.steps = yutorials[indexPath!.row].Steps
+            println("Coming from Yutorial at row \(indexPath!.row)")
+            //self.menuTableView.deselectRowAtIndexPath(indexPath!, animated: true)
         }
         // Edit segue:
         if (segue.identifier == "editYutorial"){
-            let addYutorialViewController = segue.destinationViewController as! AddYutorialViewController
+            let addYutorialViewController: AddYutorialViewController = segue.destinationViewController as! AddYutorialViewController
             
             // Get the cell that generated this segue.
             if let selectedYutorialCell = sender as? YutorialMenuTableViewCell {
@@ -142,6 +144,9 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         else if (segue.identifier == "addYutorial"){
         }
     }
+    
+    
+    //MARK: Editing and Deleting 
 
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

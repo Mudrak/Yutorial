@@ -12,9 +12,9 @@ import UIKit
 class Step {
     
     var title: String
+    var ChecklistItems = [Checklist]()
     
     init(title: String) {
         self.title = title
     }
-
 }

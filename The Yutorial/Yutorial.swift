@@ -9,11 +9,20 @@
 import Foundation
 import UIKit
 
-class Yutorial {
+class Yutorial: Printable {
     var title: String!
+    var Steps = [Step]()
     
     init(title: String) {
         self.title = title
     }
+    var description: String {
+        var s: String
+        s = "Yutorial name: \(title) with steps: \(Steps)"
+        return s
+    }
+    
+    // Add more about NSCoding! at http://nshipster.com/nscoding/
+    
 }
 

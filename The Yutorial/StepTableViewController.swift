@@ -12,15 +12,12 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
 
     @IBOutlet var stepTableView: UITableView!
     
-    //var steps = [String?]()
-    
     // Data Manager variable:
-    var steps = [Step]()
-    
+    // Array of Step initializing as empty every time? How to load? 
+    var steps: [Step]!
     
     var newStep: String = ""
     var howToLoaded = false
-    var i: Int!
     var editingCellPath: NSIndexPath?
     
     var yutorialInformation: String!
@@ -43,36 +40,24 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         if (yutorialInformation == "How to Create a Yutorial") {
-            println("Filler steps were set!")
-            steps.append(Step(title: "Press the '+' add button"))
-            steps.append(Step(title: "Name your Yutorial"))
-            steps.append(Step(title: "Press Done"))
-            steps.append(Step(title: "Name your steps"))
-            steps.append(Step(title: "Make your checklist items for each step"))
-            steps.append(Step(title: "Swipe left to rename and delete"))
-            steps.append(Step(title: "Save & Share"))
-            steps.append(Step(title: "Forget how to do a task, chore, or job? Look back at the Yutorial!")) 
+            self.steps.append(Step(title: "Press the '+' add button"))
+            self.steps.append(Step(title: "Name your Yutorial"))
+            self.steps.append(Step(title: "Press Done"))
+            self.steps.append(Step(title: "Name your steps"))
+            self.steps.append(Step(title: "Make your checklist items for each step"))
+            self.steps.append(Step(title: "Swipe left to rename and delete"))
+            self.steps.append(Step(title: "Save & Share"))
+            self.steps.append(Step(title: "Forget how to do a task, chore, or job? Look back at the Yutorial!"))
         }
-     func viewDidAppear(animated: Bool) {
+        navigationItem.title = yutorialInformation
+        // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(animated: Bool) {
         // reload data here
         self.stepTableView.reloadData()
     }
-    
-        // If the first intro cell is selected, fill it with hardcoded data
-//        if (yutorialInformation == "How to Create A Yutorial") {
-//            steps = [
-//                "Press the '+' add button",
-//                "Name your Yutorial",
-//                "Press Done",
-//                "Name your steps",
-//                "Make your checklist items for each step",
-//                "Save & Share",
-//                "Forget how to do a task, chore, or job? Look back at the Yutorial!"
-//            ]
-//        }
-        navigationItem.title = yutorialInformation
-
-        // Do any additional setup after loading the view.
+    override func viewWillDisappear(animated: Bool) {
+        // enter Property list saving here
     }
     
     // Controls the actions of the Done and Cancel bar button items
@@ -88,10 +73,10 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
         // Edit, else Add:
         // for Edit: what condition will override the current table row's new text?
         if let selectedIndexPath = editingCellPath where stepTableView.editing {
-            steps[selectedIndexPath.row] = newStep
+            self.steps[selectedIndexPath.row] = newStep
             editingCellPath = nil
         } else {
-            steps.append(newStep)
+            self.steps.append(newStep)
         }
         
         self.tableView.reloadData()
@@ -135,7 +120,12 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
         cell.stepLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         cell.stepLabel.font = UIFont(name: "Montserrat-Regular", size: 25)
         cell.stepImageView.image = stepImages[indexPath.row]
-        cell.stepLabel.text = steps[indexPath.row].title
+        cell.stepLabel.text = self.steps[indexPath.row].title
+        
+        println("Contents of steps: \(steps)")
+        //println("\(Yutorial)")
+        
+        
         
         return cell
     }
@@ -157,16 +147,16 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
             
             // Make the first cell different than the user created others
             //stepInfo = [steps[indexPath!.row] : stepImages[indexPath!.row]]
-            stepInfo = steps[indexPath!.row].title
+            stepInfo = self.steps[indexPath!.row].title
             stepNum = stepImages[indexPath!.row]
-            indexToPass = indexPath!.row
             
             // Let the new view controller have its info
             upcomingView.stepInformation = stepInfo
             upcomingView.stepNumber = stepNum
             upcomingView.yutorialTitle = yutorialInformation
-            upcomingView.i = indexToPass
-            //self.stepTableView.deselectRowAtIndexPath(indexPath, animated: true)
+            upcomingView.checklistItems = steps[indexPath!.row].ChecklistItems
+            println("Coming from Step at row \(indexPath!.row)")
+            self.stepTableView.deselectRowAtIndexPath(indexPath!, animated: true)
         }
             // Edit segue:
         if (segue.identifier == "editYutorial"){
@@ -190,6 +180,9 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
             println("Add VC")
         }
     }
+    
+    
+    // MARK: Editing and Deleting
     
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

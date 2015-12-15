@@ -172,14 +172,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jKF-fz-y0u" id="OW1-In-SpK">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Checklist Item" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lt1-aB-0JD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checklist Item" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lt1-aB-0JD">
                                                     <rect key="frame" x="80" y="0.0" width="723" height="85"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
                                                     <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="check.gray" translatesAutoresizingMaskIntoConstraints="NO" id="zbe-oQ-boH">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check.gray" translatesAutoresizingMaskIntoConstraints="NO" id="zbe-oQ-boH">
                                                     <rect key="frame" x="8" y="17" width="56" height="52"/>
                                                     <animations/>
                                                     <constraints>
@@ -189,10 +189,13 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="zbe-oQ-boH" firstAttribute="leading" secondItem="OW1-In-SpK" secondAttribute="leadingMargin" constant="-7" id="Y4d-08-cLO"/>
+                                                <constraint firstItem="zbe-oQ-boH" firstAttribute="leading" secondItem="OW1-In-SpK" secondAttribute="leadingMargin" id="Y4d-08-cLO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="lt1-aB-0JD" secondAttribute="trailing" constant="-43" id="ZyU-HG-0zT"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zbe-oQ-boH" secondAttribute="bottom" constant="7" id="aA9-Bd-MNV"/>
+                                                <constraint firstItem="lt1-aB-0JD" firstAttribute="top" secondItem="OW1-In-SpK" secondAttribute="top" id="cLQ-kJ-rAT"/>
                                                 <constraint firstItem="zbe-oQ-boH" firstAttribute="top" secondItem="OW1-In-SpK" secondAttribute="topMargin" constant="9" id="dc5-7x-gHK"/>
                                                 <constraint firstItem="lt1-aB-0JD" firstAttribute="leading" secondItem="zbe-oQ-boH" secondAttribute="trailing" constant="16" id="xvR-BO-Z1a"/>
+                                                <constraint firstItem="lt1-aB-0JD" firstAttribute="centerY" secondItem="OW1-In-SpK" secondAttribute="centerY" id="zRE-0p-xBh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>

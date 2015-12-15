@@ -15,7 +15,7 @@ class StepDetailViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var stepDetailTitle: UILabel!
     
     // Data Manager variables
-    var checklistItems = [Checklist]()
+    var checklistItems: [Checklist]!
     
     var stepInformation: String!
     var stepNumber: UIImage!

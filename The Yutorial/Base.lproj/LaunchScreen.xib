@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="Gl8-Xb-VUv">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yutorial.logo2" translatesAutoresizingMaskIntoConstraints="NO" id="Gl8-Xb-VUv">
                     <rect key="frame" x="68" y="281" width="632" height="664"/>
                     <animations/>
                     <constraints>
@@ -18,15 +18,22 @@
                         <constraint firstAttribute="width" constant="632" id="uZo-oj-Fa9"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yutorials.wordmark" translatesAutoresizingMaskIntoConstraints="NO" id="sxd-ET-uQ4">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yutorials.wordmark" translatesAutoresizingMaskIntoConstraints="NO" id="sxd-ET-uQ4">
                     <rect key="frame" x="108" y="106" width="552" height="128"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="ALn-ou-j9d"/>
+                        <constraint firstAttribute="width" constant="552" id="FW0-bh-P9B"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Gl8-Xb-VUv" secondAttribute="bottom" constant="79" id="Cle-hj-W75"/>
+                <constraint firstItem="Gl8-Xb-VUv" firstAttribute="top" secondItem="sxd-ET-uQ4" secondAttribute="bottom" constant="47" id="dtc-jl-Ekn"/>
+                <constraint firstItem="sxd-ET-uQ4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="u7F-fb-vXj"/>
+                <constraint firstItem="Gl8-Xb-VUv" firstAttribute="centerX" secondItem="sxd-ET-uQ4" secondAttribute="centerX" id="w09-6S-Kma"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
