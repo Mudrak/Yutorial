@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CEB288DC1A54C68000BCF57A"
-               BuildableName = "The Yutorial.app"
-               BlueprintName = "The Yutorial"
+               BuildableName = "Yutorials.app"
+               BlueprintName = "Yutorials"
                ReferencedContainer = "container:The Yutorial.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CEB288F11A54C68100BCF57A"
-               BuildableName = "The YutorialTests.xctest"
-               BlueprintName = "The YutorialTests"
+               BuildableName = "YutorialsTests.xctest"
+               BlueprintName = "YutorialsTests"
                ReferencedContainer = "container:The Yutorial.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CEB288F11A54C68100BCF57A"
-               BuildableName = "The YutorialTests.xctest"
-               BlueprintName = "The YutorialTests"
+               BuildableName = "YutorialsTests.xctest"
+               BlueprintName = "YutorialsTests"
                ReferencedContainer = "container:The Yutorial.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CEB288DC1A54C68000BCF57A"
-            BuildableName = "The Yutorial.app"
-            BlueprintName = "The Yutorial"
+            BuildableName = "Yutorials.app"
+            BlueprintName = "Yutorials"
             ReferencedContainer = "container:The Yutorial.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,8 +77,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CEB288DC1A54C68000BCF57A"
-            BuildableName = "The Yutorial.app"
-            BlueprintName = "The Yutorial"
+            BuildableName = "Yutorials.app"
+            BlueprintName = "Yutorials"
             ReferencedContainer = "container:The Yutorial.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -96,8 +96,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CEB288DC1A54C68000BCF57A"
-            BuildableName = "The Yutorial.app"
-            BlueprintName = "The Yutorial"
+            BuildableName = "Yutorials.app"
+            BlueprintName = "Yutorials"
             ReferencedContainer = "container:The Yutorial.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

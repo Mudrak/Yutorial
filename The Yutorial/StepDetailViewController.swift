@@ -8,12 +8,28 @@
 
 import UIKit
 
-class StepDetailViewController: UIViewController, UITableViewDataSource {
+class StepDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource {
     
     @IBOutlet var checklistTable: UITableView!
     @IBOutlet weak var stepDetailImage: UIImageView!
     @IBOutlet weak var stepDetailTitle: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
+    @IBAction func takePicture(sender: AnyObject) {
+        let imagePicker = UIImagePickerController()
+        
+        //if UIImagePickerController.isSourceTypeAvailable(.Camera){
+       //     imagePicker.sourceType = .Camera
+      //  }else {
+      //      imagePicker.sourceType = .PhotoLibrary
+     //  }
+        imagePicker.sourceType = .PhotoLibrary
+        
+        imagePicker.delegate = self
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
+    }
     // Data Manager variables
     var checklistItems: [Checklist]!
     
@@ -35,6 +51,15 @@ class StepDetailViewController: UIViewController, UITableViewDataSource {
     }
     let CheckboxImages = Checkbox()
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        let image = info [UIImagePickerControllerOriginalImage] as! UIImage
+        
+        imageView.image = image
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
