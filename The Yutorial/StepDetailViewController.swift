@@ -37,7 +37,6 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
     var stepNumber: UIImage!
     var yutorialTitle: String!
     var newChecklistItem: String = ""
-    var i: Int = 0
     var editingCellPath: NSIndexPath?
     
     //Colors: 
@@ -71,11 +70,12 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
         
         if (yutorialTitle == "How to Create a Yutorial") {
             checklistItems.append(Checklist(cellText: "Example list of checklist items", checked: false))
+            checklistItems.append(Checklist(cellText: "Tap each cell to check it off", checked: false))
             checklistItems.append(Checklist(cellText: "Enter substeps and data here", checked: false))
             checklistItems.append(Checklist(cellText: "From notes to camera roll images", checked: false))
-            checklistItems.append(Checklist(cellText: "Add specific info for complex tasks", checked: false))
+            checklistItems.append(Checklist(cellText: "For specific info for complex tasks", checked: false))
         }
-        navigationItem.title = yutorialTitle
+        navigationItem.title = "Checklist"
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(animated: Bool) {

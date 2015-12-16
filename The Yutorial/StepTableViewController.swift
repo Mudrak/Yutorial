@@ -20,6 +20,8 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
     // Array of Step initializing as empty every time? How to load? 
     var steps: [Step]!
     var delegate: YutorialMenuVCDelegate?
+    var y = YutorialCollection().Yutorials
+    var passedIndexPath: NSIndexPath?
     
     var newStep: String = ""
     var howToLoaded = false
@@ -40,33 +42,33 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
         UIImage(named: "step9")!,
         UIImage(named: "step10")!,
         UIImage(named: "step11")!,
+        UIImage(named: "step12")!,
+        UIImage(named: "step13")!,
+        UIImage(named: "step14")!,
+        UIImage(named: "step15")!,
+        UIImage(named: "step16")!,
+        UIImage(named: "step17")!
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (yutorialInformation == "How to Create a Yutorial") {
-            self.steps.append(Step(title: "Press the '+' add button"))
-            self.steps.append(Step(title: "Name your Yutorial"))
-            self.steps.append(Step(title: "Press Done"))
-            self.steps.append(Step(title: "Name your steps"))
-            self.steps.append(Step(title: "Make your checklist items for each step"))
-            self.steps.append(Step(title: "Swipe left to rename and delete"))
-            self.steps.append(Step(title: "Save & Share"))
-            self.steps.append(Step(title: "Forget how to do a task, chore, or job? Look back at the Yutorial!"))
-        }
+        
         navigationItem.title = yutorialInformation
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(animated: Bool) {
         // reload data here
-        self.stepTableView.reloadData()
-        let indexPath = self.stepTableView.indexPathForSelectedRow()
+        //self.stepTableView.reloadData()
     
         println("Appear--Contents of steps: \(steps)")
     }
     override func viewWillDisappear(animated: Bool) {
         // enter Property list saving here
         println("Disappear--Contents of steps: \(steps)")
+        let indexPath = passedIndexPath
+        println("Passed path: \(indexPath) with row: \(indexPath!.row)")
+        //let y = YutorialCollection().Yutorials[indexPath!.row]
+        //y.Steps += steps
     }
     
     // Controls the actions of the Done and Cancel bar button items
@@ -86,6 +88,7 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
             editingCellPath = nil
         } else {
             self.steps.append(newStep)
+            Yutorial(title: "\(self)").Steps.append(newStep)
         }
         
 //        self.delegate?.updateData(self.data)
@@ -137,7 +140,6 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showDetails") {
-            navigationItem.backBarButtonItem?.title = "Steps"
             // For segue to the checklist tableview
             // upcomingView is set to ChecklistViewController
             var upcomingView: StepDetailViewController = segue.destinationViewController as! StepDetailViewController
@@ -156,6 +158,7 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
             stepNum = stepImages[indexPath!.row]
             
             // Let the new view controller have its info
+            upcomingView.navigationItem.backBarButtonItem?.title = "Steps"
             upcomingView.stepInformation = stepInfo
             upcomingView.stepNumber = stepNum
             upcomingView.yutorialTitle = yutorialInformation
@@ -167,21 +170,27 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
         if (segue.identifier == "editYutorial"){
             let addYutorialViewController = segue.destinationViewController as! AddStepViewController
             
+            addYutorialViewController.navigationItem.title = "Edit Step Title"
+            
             // Get the cell that generated this segue.
             if let selectedYutorialCell = sender as? StepTableViewCell {
                 let indexPath = self.stepTableView.indexPathForCell(selectedYutorialCell)!
                 let selectedYutorial = self.steps[indexPath.row].title
-                
                 // These 3 aren't working?
                 addYutorialViewController.stepName.text = selectedYutorial
                 addYutorialViewController.stepName.placeholder = selectedYutorial
-                addYutorialViewController.navigationItem.title = "Edit Step Title"
+                addYutorialViewController.title = "Edit Step"
+            
+                // navigationItem.title = "Edit Step Title"
                 
                 addYutorialViewController.name = selectedYutorial
             }
         }
             // Go ahead and add stuff
         else if (segue.identifier == "addYutorial"){
+            let addYutorialViewController = segue.destinationViewController as! AddStepViewController
+            addYutorialViewController.title = "Add Step"
+            
             println("Add VC")
         }
     }

@@ -124,7 +124,9 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             // Let the new view controller have its info
             upcomingView.yutorialInformation = yutorialInfo
             upcomingView.steps = yutorials[indexPath!.row].Steps
+            upcomingView.passedIndexPath = indexPath! 
             println("Coming from Yutorial at row \(indexPath!.row)")
+            println("Steps Class Data: \(yutorials[indexPath!.row].Steps)")
             //self.menuTableView.deselectRowAtIndexPath(indexPath!, animated: true)
         }
         // Edit segue:
@@ -136,10 +138,13 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
                 let indexPath = self.menuTableView.indexPathForCell(selectedYutorialCell)!
                 let selectedYutorial = self.yutorials[indexPath.row].title
                 
-                // These 3 aren't working?
+                // Not displaying? Issues with optionals?
                 addYutorialViewController.yutorialName.text = selectedYutorial
                 addYutorialViewController.yutorialName.placeholder = selectedYutorial
                 addYutorialViewController.navigationItem.title = "Edit Yutorial Title"
+                println("Title: \(addYutorialViewController.navigationItem.title)")
+                println("Text to add to field: \(addYutorialViewController.yutorialName.text)")
+                addYutorialViewController.title = "Edit Yutorial Title"
                 
                 addYutorialViewController.name = selectedYutorial
             }

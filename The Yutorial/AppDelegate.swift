@@ -47,9 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         }
-
-        //UINavigationBar.appearance().font = UIFont(name: "Montserrat-Regular", size: "15")
-        //UITextField.appearance().font = montserrat
+        
         if let labelFont = UIFont(name: "Montserrat-Regular", size: 25) {
             UILabel.appearance().font = labelFont
         }
