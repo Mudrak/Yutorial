@@ -18,6 +18,7 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
     
     //var yutorials = [Yutorial]()
     var yutorials = YutorialCollection().Yutorials
+    //var yutorials = YutorialCollection.sharedInstance
     
     var newYutorials: String = ""
     var editingCellPath: NSIndexPath?
@@ -31,7 +32,6 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
     override func viewDidAppear(animated: Bool) {
         // reload data here
         println("Menu--Contents of Yutorials: \(yutorials)")
-        println("")
         self.menuTableView.reloadData()
     }
     
@@ -123,10 +123,7 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             
             // Let the new view controller have its info
             upcomingView.yutorialInformation = yutorialInfo
-            upcomingView.steps = yutorials[indexPath!.row].Steps
-            upcomingView.passedIndexPath = indexPath! 
-            println("Coming from Yutorial at row \(indexPath!.row)")
-            println("Steps Class Data: \(yutorials[indexPath!.row].Steps)")
+            upcomingView.yutorial = yutorials[indexPath!.row]
             //self.menuTableView.deselectRowAtIndexPath(indexPath!, animated: true)
         }
         // Edit segue:

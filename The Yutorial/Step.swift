@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-class Step: Printable {
+class Step: NSObject, Printable {
     
     var title: String
-    var ChecklistItems = [Checklist]()
+    var checklistItems = [Checklist]()
     
     init(title: String) {
         self.title = title
     }
-    var description: String {
+    override var description: String {
         var s: String
         s = "Step Name: \(title)"
         return s

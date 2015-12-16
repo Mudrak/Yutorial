@@ -12,4 +12,6 @@ import UIKit
 class YutorialCollection {
     var Yutorials = [Yutorial]()
     
+    // Singleton
+    static let sharedInstance = YutorialCollection().Yutorials
 }

@@ -31,7 +31,8 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
         
     }
     // Data Manager variables
-    var checklistItems: [Checklist]!
+    var step: Step! 
+    //var checklistItem: Checklist!
     
     var stepInformation: String!
     var stepNumber: UIImage!
@@ -69,11 +70,11 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
         navigationItem.title = "Step Details"
         
         if (yutorialTitle == "How to Create a Yutorial") {
-            checklistItems.append(Checklist(cellText: "Example list of checklist items", checked: false))
-            checklistItems.append(Checklist(cellText: "Tap each cell to check it off", checked: false))
-            checklistItems.append(Checklist(cellText: "Enter substeps and data here", checked: false))
-            checklistItems.append(Checklist(cellText: "From notes to camera roll images", checked: false))
-            checklistItems.append(Checklist(cellText: "For specific info for complex tasks", checked: false))
+            step.checklistItems.append(Checklist(cellText: "Example list of checklist items", checked: false))
+            step.checklistItems.append(Checklist(cellText: "Tap each cell to check it off", checked: false))
+            step.checklistItems.append(Checklist(cellText: "Enter substeps and data here", checked: false))
+            step.checklistItems.append(Checklist(cellText: "From notes to camera roll images", checked: false))
+            step.checklistItems.append(Checklist(cellText: "For specific info for complex tasks", checked: false))
         }
         navigationItem.title = "Checklist"
         // Do any additional setup after loading the view.
@@ -96,10 +97,10 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
         // Edit, else Add:
         // for Edit: what condition will override the current table row's new text?
         if let selectedIndexPath = editingCellPath where checklistTable.editing {
-            checklistItems[selectedIndexPath.row] = newChecklistItem
+            step.checklistItems[selectedIndexPath.row] = newChecklistItem
             editingCellPath = nil
         } else {
-            checklistItems.append(newChecklistItem)
+            step.checklistItems.append(newChecklistItem)
         }
         
         self.checklistTable.reloadData()
@@ -114,13 +115,13 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Only one section necessary
-        return checklistItems.count
+        return step.checklistItems.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.checklistTable.dequeueReusableCellWithIdentifier("checklistItem") as! checklistCell
 
-        cell.checklistLabel.text = checklistItems[indexPath.row].cellText
+        cell.checklistLabel.text = step.checklistItems[indexPath.row].cellText
         cell.checklistLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         cell.checklistLabel.font = UIFont(name: "Montserrat-Regular", size: 25)
         cell.checkboxImage.image = CheckboxImages.unchecked
@@ -132,11 +133,9 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         let selectedCell = self.checklistTable.cellForRowAtIndexPath(indexPath) as! checklistCell
         
-        println("The state of the checklist item '\(checklistItems[indexPath.row].cellText)' is: \(checklistItems[indexPath.row].checked)")
-        
         // The cell is selected: change appearance to selected
         if (selectedCell.backgroundColor == white) {
-            checklistItems[indexPath.row].checked = true
+            step.checklistItems[indexPath.row].checked = true
             selectedCell.backgroundColor = lightMint
             selectedCell.checklistLabel.textColor = white
             //selectedCell.accessoryType = UITableViewCellAccessoryType.Checkmark
@@ -144,7 +143,7 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
             selectedCell.tintColor = white
         } else {
             // Revert back to initial appearance
-            checklistItems[indexPath.row].checked = false
+            step.checklistItems[indexPath.row].checked = false
             selectedCell.backgroundColor = white
             selectedCell.checklistLabel.textColor = darkMint
             //selectedCell.accessoryType = UITableViewCellAccessoryType.None
@@ -159,7 +158,7 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
             // Get the cell that generated this segue.
             if let selectedYutorialCell = sender as? checklistCell {
                 let indexPath = self.checklistTable.indexPathForCell(selectedYutorialCell)!
-                let selectedYutorial = self.checklistItems[indexPath.row].cellText
+                let selectedYutorial = self.step.checklistItems[indexPath.row].cellText
                 
                 // These 3 aren't working?
                 addYutorialViewController.checklistName.text = selectedYutorial
@@ -200,7 +199,7 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
         }
         let deleteButton = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
             self.editingCellPath = indexPath
-            self.checklistItems.removeAtIndex(indexPath!.row)
+            self.step.checklistItems.removeAtIndex(indexPath!.row)
             //let thisYutorial = self.yutorials[indexPath!.row]
             // self.confirmDelete(thisYutorial)
             
