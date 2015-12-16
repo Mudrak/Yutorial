@@ -30,7 +30,9 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
     }
     override func viewDidAppear(animated: Bool) {
         // reload data here
-        self.tableView.reloadData()
+        println("Menu--Contents of Yutorials: \(yutorials)")
+        println("")
+        self.menuTableView.reloadData()
     }
     
     @IBAction func cancel(segue:UIStoryboardSegue) {
@@ -103,6 +105,8 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             
             // upcomingView is set to StepTableViewController
             var upcomingView: StepTableViewController = segue.destinationViewController as! StepTableViewController
+            
+//            (segue.destinationViewController as! StepTableViewController).delegate = self
             
             // indexPath is set to the selected path
             let indexPath = self.menuTableView.indexPathForSelectedRow()
@@ -185,6 +189,11 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         }
         return [deleteButton, renameButton]
     }
+//    
+//    extension YutorialMenuTableViewController: YutorialMenuVCDelegate {
+//        func updateData(data: [Step]) {
+//            self.internalData = data
+//        }
 
     
     
@@ -242,14 +251,5 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol YutorialMenuVCDelegate {
+    func updateData(data: [Step])
+}
+
 class StepTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var stepTableView: UITableView!
@@ -15,6 +19,7 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
     // Data Manager variable:
     // Array of Step initializing as empty every time? How to load? 
     var steps: [Step]!
+    var delegate: YutorialMenuVCDelegate?
     
     var newStep: String = ""
     var howToLoaded = false
@@ -55,9 +60,13 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
     override func viewDidAppear(animated: Bool) {
         // reload data here
         self.stepTableView.reloadData()
+        let indexPath = self.stepTableView.indexPathForSelectedRow()
+    
+        println("Appear--Contents of steps: \(steps)")
     }
     override func viewWillDisappear(animated: Bool) {
         // enter Property list saving here
+        println("Disappear--Contents of steps: \(steps)")
     }
     
     // Controls the actions of the Done and Cancel bar button items
@@ -79,6 +88,7 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
             self.steps.append(newStep)
         }
         
+//        self.delegate?.updateData(self.data)
         self.tableView.reloadData()
         
         self.dismissViewControllerAnimated(true, completion: {})
@@ -121,11 +131,6 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
         cell.stepLabel.font = UIFont(name: "Montserrat-Regular", size: 25)
         cell.stepImageView.image = stepImages[indexPath.row]
         cell.stepLabel.text = self.steps[indexPath.row].title
-        
-        println("Contents of steps: \(steps)")
-        //println("\(Yutorial)")
-        
-        
         
         return cell
     }

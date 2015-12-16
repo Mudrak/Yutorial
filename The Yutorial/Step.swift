@@ -9,12 +9,17 @@
 import Foundation
 import UIKit
 
-class Step {
+class Step: Printable {
     
     var title: String
     var ChecklistItems = [Checklist]()
     
     init(title: String) {
         self.title = title
+    }
+    var description: String {
+        var s: String
+        s = "Step Name: \(title)"
+        return s
     }
 }

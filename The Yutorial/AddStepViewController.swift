@@ -9,8 +9,7 @@
 import UIKit
 
 class AddStepViewController: UIViewController, UITextFieldDelegate {
-
-
+    
     @IBOutlet weak var stepName: UITextField!
     var name: String!
     
