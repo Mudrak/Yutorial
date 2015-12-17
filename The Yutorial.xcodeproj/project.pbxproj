@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		843AA8FD1C19ECBA00E4C3B3 /* YutorialMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AA8FA1C19ECBA00E4C3B3 /* YutorialMenuTableViewController.swift */; };
 		843AA8FE1C19ECBA00E4C3B3 /* AddYutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AA8FB1C19ECBA00E4C3B3 /* AddYutorialViewController.swift */; };
+		84410DC71C2271FD002C13F6 /* StepImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84410DC61C2271FD002C13F6 /* StepImage.swift */; };
 		84498AB41C138F87009F0C78 /* checklistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84498AB31C138F87009F0C78 /* checklistCell.swift */; };
 		84498AB61C14F332009F0C78 /* AddChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84498AB51C14F332009F0C78 /* AddChecklistViewController.swift */; };
 		844ED8011C0113C200712EFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844ED8001C0113C200712EFC /* Images.xcassets */; };
 		8468F2C41C1F23C300B6BE6F /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468F2C31C1F23C300B6BE6F /* Step.swift */; };
 		8468F2C61C1F240600B6BE6F /* Yutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468F2C51C1F240600B6BE6F /* Yutorial.swift */; };
 		8468F2C81C1F602E00B6BE6F /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468F2C71C1F602E00B6BE6F /* Checklist.swift */; };
-		8468F2CC1C1F609500B6BE6F /* CameraImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468F2CB1C1F609500B6BE6F /* CameraImage.swift */; };
 		8468F2D11C1F726700B6BE6F /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8468F2CD1C1F726700B6BE6F /* Montserrat-Bold.otf */; };
 		8468F2D21C1F726700B6BE6F /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8468F2CE1C1F726700B6BE6F /* Montserrat-Light.otf */; };
 		8468F2D31C1F726700B6BE6F /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8468F2CF1C1F726700B6BE6F /* Montserrat-Regular.otf */; };
@@ -27,9 +27,6 @@
 		849AAD4A1C02CFBB00253DAF /* YutorialMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAD491C02CFBB00253DAF /* YutorialMenuTableViewCell.swift */; };
 		84AF9DBA1C0E0E6900B089D3 /* font in Resources */ = {isa = PBXBuildFile; fileRef = 84AF9DB91C0E0E6900B089D3 /* font */; };
 		84AF9DBC1C0E0E9500B089D3 /* StepDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF9DBB1C0E0E9500B089D3 /* StepDetailViewController.swift */; };
-		84BA13A31C2090DC00639A06 /* YutorialData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BA13A21C2090DC00639A06 /* YutorialData.plist */; };
-		84BA13A51C20945900639A06 /* StepData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BA13A41C20945900639A06 /* StepData.plist */; };
-		84BA13A71C20B90600639A06 /* YutorialCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BA13A61C20B90600639A06 /* YutorialCollection.swift */; };
 		CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB288E21A54C68000BCF57A /* AppDelegate.swift */; };
 		CEB288E81A54C68100BCF57A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB288E61A54C68000BCF57A /* Main.storyboard */; };
 		CEB288ED1A54C68100BCF57A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */; };
@@ -49,13 +46,13 @@
 /* Begin PBXFileReference section */
 		843AA8FA1C19ECBA00E4C3B3 /* YutorialMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YutorialMenuTableViewController.swift; path = ../YutorialMenuTableViewController.swift; sourceTree = "<group>"; };
 		843AA8FB1C19ECBA00E4C3B3 /* AddYutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddYutorialViewController.swift; path = ../AddYutorialViewController.swift; sourceTree = "<group>"; };
+		84410DC61C2271FD002C13F6 /* StepImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepImage.swift; sourceTree = "<group>"; };
 		84498AB31C138F87009F0C78 /* checklistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checklistCell.swift; sourceTree = "<group>"; };
 		84498AB51C14F332009F0C78 /* AddChecklistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChecklistViewController.swift; sourceTree = "<group>"; };
 		844ED8001C0113C200712EFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8468F2C31C1F23C300B6BE6F /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		8468F2C51C1F240600B6BE6F /* Yutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yutorial.swift; sourceTree = "<group>"; };
 		8468F2C71C1F602E00B6BE6F /* Checklist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
-		8468F2CB1C1F609500B6BE6F /* CameraImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraImage.swift; path = ../CameraImage.swift; sourceTree = "<group>"; };
 		8468F2CD1C1F726700B6BE6F /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.otf"; path = "../Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		8468F2CE1C1F726700B6BE6F /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.otf"; path = "../Montserrat-Light.otf"; sourceTree = "<group>"; };
 		8468F2CF1C1F726700B6BE6F /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.otf"; path = "../Montserrat-Regular.otf"; sourceTree = "<group>"; };
@@ -67,9 +64,6 @@
 		849AAD491C02CFBB00253DAF /* YutorialMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YutorialMenuTableViewCell.swift; sourceTree = "<group>"; };
 		84AF9DB91C0E0E6900B089D3 /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = font; sourceTree = "<group>"; };
 		84AF9DBB1C0E0E9500B089D3 /* StepDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepDetailViewController.swift; sourceTree = "<group>"; };
-		84BA13A21C2090DC00639A06 /* YutorialData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = YutorialData.plist; path = ../YutorialData.plist; sourceTree = "<group>"; };
-		84BA13A41C20945900639A06 /* StepData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StepData.plist; sourceTree = "<group>"; };
-		84BA13A61C20B90600639A06 /* YutorialCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YutorialCollection.swift; sourceTree = "<group>"; };
 		CEB288DD1A54C68000BCF57A /* Yutorials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yutorials.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB288E11A54C68000BCF57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB288E21A54C68000BCF57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,13 +124,10 @@
 				84AF9DBB1C0E0E9500B089D3 /* StepDetailViewController.swift */,
 				84498AB31C138F87009F0C78 /* checklistCell.swift */,
 				84498AB51C14F332009F0C78 /* AddChecklistViewController.swift */,
-				84BA13A61C20B90600639A06 /* YutorialCollection.swift */,
 				8468F2C51C1F240600B6BE6F /* Yutorial.swift */,
 				8468F2C31C1F23C300B6BE6F /* Step.swift */,
+				84410DC61C2271FD002C13F6 /* StepImage.swift */,
 				8468F2C71C1F602E00B6BE6F /* Checklist.swift */,
-				8468F2CB1C1F609500B6BE6F /* CameraImage.swift */,
-				84BA13A21C2090DC00639A06 /* YutorialData.plist */,
-				84BA13A41C20945900639A06 /* StepData.plist */,
 				CEB288E61A54C68000BCF57A /* Main.storyboard */,
 				844ED8001C0113C200712EFC /* Images.xcassets */,
 				CEB288EB1A54C68100BCF57A /* LaunchScreen.xib */,
@@ -258,8 +249,6 @@
 				8468F2D11C1F726700B6BE6F /* Montserrat-Bold.otf in Resources */,
 				8468F2D21C1F726700B6BE6F /* Montserrat-Light.otf in Resources */,
 				8468F2D31C1F726700B6BE6F /* Montserrat-Regular.otf in Resources */,
-				84BA13A31C2090DC00639A06 /* YutorialData.plist in Resources */,
-				84BA13A51C20945900639A06 /* StepData.plist in Resources */,
 				8468F2D41C1F726700B6BE6F /* Montserrat-UltraLight.otf in Resources */,
 				844ED8011C0113C200712EFC /* Images.xcassets in Resources */,
 				84AF9DBA1C0E0E6900B089D3 /* font in Resources */,
@@ -283,15 +272,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				84AF9DBC1C0E0E9500B089D3 /* StepDetailViewController.swift in Sources */,
-				8468F2CC1C1F609500B6BE6F /* CameraImage.swift in Sources */,
 				84498AB61C14F332009F0C78 /* AddChecklistViewController.swift in Sources */,
 				849AAD4A1C02CFBB00253DAF /* YutorialMenuTableViewCell.swift in Sources */,
 				84498AB41C138F87009F0C78 /* checklistCell.swift in Sources */,
 				849AAD3E1C02545C00253DAF /* NavigationController.swift in Sources */,
 				848AD6EB1C0E0D43008A4EFA /* StepTableViewController.swift in Sources */,
 				8468F2C81C1F602E00B6BE6F /* Checklist.swift in Sources */,
-				84BA13A71C20B90600639A06 /* YutorialCollection.swift in Sources */,
 				843AA8FE1C19ECBA00E4C3B3 /* AddYutorialViewController.swift in Sources */,
+				84410DC71C2271FD002C13F6 /* StepImage.swift in Sources */,
 				8468F2C61C1F240600B6BE6F /* Yutorial.swift in Sources */,
 				CEB288E31A54C68000BCF57A /* AppDelegate.swift in Sources */,
 				848AD6E81C0E0D43008A4EFA /* AddStepViewController.swift in Sources */,

@@ -15,23 +15,9 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var stepDetailTitle: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBAction func takePicture(sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        
-        //if UIImagePickerController.isSourceTypeAvailable(.Camera){
-       //     imagePicker.sourceType = .Camera
-      //  }else {
-      //      imagePicker.sourceType = .PhotoLibrary
-     //  }
-        imagePicker.sourceType = .PhotoLibrary
-        
-        imagePicker.delegate = self
-        
-        presentViewController(imagePicker, animated: true, completion: nil)
-        
-    }
     // Data Manager variables
-    var step: Step! 
+    var step: Step!
+    var stepImage: StepImage!
     //var checklistItem: Checklist!
     
     var stepInformation: String!
@@ -50,16 +36,19 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
         var unchecked: UIImage! = UIImage(named: "uncheck")
     }
     let CheckboxImages = Checkbox()
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        
-        let image = info [UIImagePickerControllerOriginalImage] as! UIImage
-        
-        imageView.image = image
-        
-        dismissViewControllerAnimated(true, completion: nil)
-        
-    }
+       
+//    init() {
+//        if (yutorialTitle == "How to Create a Yutorial") {
+//            step.checklistItems = [
+//                Checklist(cellText: "Example list of checklist items", checked: false),
+//                Checklist(cellText: "Tap each cell to check it off", checked: false),
+//                Checklist(cellText: "Enter substeps and data here", checked: false),
+//                Checklist(cellText: "From notes to camera roll images", checked: false),
+//                Checklist(cellText: "For specific info for complex tasks", checked: false)
+//                
+//            ]
+//        }
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,13 +57,17 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
         stepDetailTitle.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         stepDetailTitle.font = UIFont(name: "Montserrat-Regular", size: 35)
         navigationItem.title = "Step Details"
+        imageView.image = step.checklistImage
         
         if (yutorialTitle == "How to Create a Yutorial") {
-            step.checklistItems.append(Checklist(cellText: "Example list of checklist items", checked: false))
-            step.checklistItems.append(Checklist(cellText: "Tap each cell to check it off", checked: false))
-            step.checklistItems.append(Checklist(cellText: "Enter substeps and data here", checked: false))
-            step.checklistItems.append(Checklist(cellText: "From notes to camera roll images", checked: false))
-            step.checklistItems.append(Checklist(cellText: "For specific info for complex tasks", checked: false))
+            step.checklistItems = [
+                Checklist(cellText: "Example list of checklist items", checked: false),
+                Checklist(cellText: "Tap each cell to check it off", checked: false),
+                Checklist(cellText: "Enter substeps and data here", checked: false),
+                Checklist(cellText: "From notes to camera roll images", checked: false),
+                Checklist(cellText: "For specific info for complex tasks", checked: false)
+                
+            ]
         }
         navigationItem.title = "Checklist"
         // Do any additional setup after loading the view.
@@ -82,6 +75,33 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidAppear(animated: Bool) {
         // reload data here
         self.checklistTable.reloadData()
+    }
+    
+    // Bring in a photo:
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        let image = info [UIImagePickerControllerOriginalImage] as! UIImage
+        
+        imageView.image = image
+        step.checklistImage = imageView.image
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    @IBAction func takePicture(sender: AnyObject) {
+        let imagePicker = UIImagePickerController()
+        
+        //if UIImagePickerController.isSourceTypeAvailable(.Camera){
+        //     imagePicker.sourceType = .Camera
+        //  }else {
+        //      imagePicker.sourceType = .PhotoLibrary
+        //  }
+        imagePicker.sourceType = .PhotoLibrary
+        
+        imagePicker.delegate = self
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
     }
     
     // Controls the actions of the Done and Cancel bar button items
@@ -204,9 +224,6 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
             // self.confirmDelete(thisYutorial)
             
             self.checklistTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            // remove row from table
-            // remove from memory
-            // remove from db
             self.editingCellPath = nil
         }
         return [deleteButton, renameButton]

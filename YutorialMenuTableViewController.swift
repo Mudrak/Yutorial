@@ -10,34 +10,40 @@ import UIKit
 
 class YutorialMenuTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
-    enum Segues: String {
-        case EditYutorial = "editYutorial"
-    }
+//    enum Segues: String {
+//        case EditYutorial = "editYutorial"
+//    }
     
     @IBOutlet weak var menuTableView: UITableView!
     
-    //var yutorials = [Yutorial]()
-    var yutorials = YutorialCollection().Yutorials
-    //var yutorials = YutorialCollection.sharedInstance
+    var yutorials = [Yutorial]()
+    
+    // Use for NSCoder:
+    //var yutorials = Yutorial.all()
     
     var newYutorials: String = ""
     var editingCellPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let y = Yutorial(title: "How to Create a Yutorial")
-        yutorials.append(y)
         
+        // Sample Yutorials
+        yutorials = [
+            Yutorial(title: "How to Create a Yutorial"),
+            Yutorial(title: "Setting up the stereo"),
+            Yutorial(title: "How to tie a tie")
+        ]
     }
     override func viewDidAppear(animated: Bool) {
         // reload data here
-        println("Menu--Contents of Yutorials: \(yutorials)")
         self.menuTableView.reloadData()
+    }
+    override func viewDidDisappear(animated: Bool) {
+        // save here? How? 
     }
     
     @IBAction func cancel(segue:UIStoryboardSegue) {
         self.dismissViewControllerAnimated(true, completion: {})
-        
     }
     
     @IBAction func done(segue:UIStoryboardSegue) {
@@ -47,14 +53,16 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         // Edit, else Add:
         // for Edit: what condition will override the current table row's new text?
         if let selectedIndexPath = editingCellPath where menuTableView.editing {
+            //save:
+            //yutorials[selectedIndexPath.row].save()
             yutorials[selectedIndexPath.row] = newYutorial
             editingCellPath = nil
         } else {
+            // Add the Yutorial
             yutorials.append(newYutorial)
         }
-
+        //let indexPath = self.menuTableView.indexPathForSelectedRow()
         self.menuTableView.reloadData()
-        
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
@@ -94,6 +102,9 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         cell.yutorialLabel.textColor = UIColor(red: 0.0/255.0, green: 160.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         cell.yutorialLabel.font = UIFont(name: "Montserrat-Regular", size: 25)
         cell.yutorialLabel.text = yutorials[indexPath.row].title
+        
+        // Save the cell being created...
+        //yutorials[indexPath.row].save()
 
         return cell
     }
@@ -120,10 +131,11 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             else {
                 yutorialInfo = yutorials[indexPath!.row].title
             }
-            
+            //yutorials[indexPath!.row].save()
             // Let the new view controller have its info
             upcomingView.yutorialInformation = yutorialInfo
             upcomingView.yutorial = yutorials[indexPath!.row]
+            
             //self.menuTableView.deselectRowAtIndexPath(indexPath!, animated: true)
         }
         // Edit segue:
@@ -139,8 +151,6 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
                 addYutorialViewController.yutorialName.text = selectedYutorial
                 addYutorialViewController.yutorialName.placeholder = selectedYutorial
                 addYutorialViewController.navigationItem.title = "Edit Yutorial Title"
-                println("Title: \(addYutorialViewController.navigationItem.title)")
-                println("Text to add to field: \(addYutorialViewController.yutorialName.text)")
                 addYutorialViewController.title = "Edit Yutorial Title"
                 
                 addYutorialViewController.name = selectedYutorial
@@ -179,7 +189,11 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         }
         let deleteButton = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
             self.editingCellPath = indexPath
+            // delete from db:
+            //self.yutorials[indexPath!.row].delete()
+            // delete from table
             self.yutorials.removeAtIndex(indexPath!.row)
+            // delete from db:
             //let thisYutorial = self.yutorials[indexPath!.row]
             // self.confirmDelete(thisYutorial)
 
@@ -191,15 +205,8 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         }
         return [deleteButton, renameButton]
     }
-//    
-//    extension YutorialMenuTableViewController: YutorialMenuVCDelegate {
-//        func updateData(data: [Step]) {
-//            self.internalData = data
-//        }
-
     
-    
-    // MARK: Delete Confirmation stuff is all commented out, but kinda here
+    // MARK: Delete Confirmation stuff is all commented out, but most of it is here:
     //
     //    var deleteRowIndexPath: NSIndexPath? = nil
     //
