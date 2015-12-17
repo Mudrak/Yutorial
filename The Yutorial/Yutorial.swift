@@ -12,7 +12,7 @@ import UIKit
 final class Yutorial: NSObject, NSCoding, Printable {
     
     // File name is a unique id
-    let id: String = NSUUID().UUIDString
+    let id: String
     var title: String
     var steps: [Step] = []
     
@@ -23,6 +23,7 @@ final class Yutorial: NSObject, NSCoding, Printable {
     // inherit from NSObject to use NSCoding
     
     init(title: String) {
+        id = NSUUID().UUIDString
         self.title = title
         if (title == "How to Create a Yutorial") {
             steps.append(Step(title: "Press the '+' add button"))
@@ -41,11 +42,14 @@ final class Yutorial: NSObject, NSCoding, Printable {
         return s
     }
     
-    func append (newStep: Step) {
-        steps.append(newStep)
-    }
-
+    // MARK: NSCoding
+    
     init(coder decoder: NSCoder) {
+        if let id = decoder.decodeObjectForKey("id") as? String {
+            self.id = id
+        } else {
+            id = NSUUID().UUIDString
+        }
         if let title = decoder.decodeObjectForKey("title") as? String {
             self.title = title
         } else {
@@ -57,76 +61,66 @@ final class Yutorial: NSObject, NSCoding, Printable {
             steps = []
         }
     }
-    
+
     func encodeWithCoder(coder: NSCoder) {
+        coder.encodeObject(self.id, forKey: "id")
         coder.encodeObject(self.title, forKey: "title")
         coder.encodeObject(self.steps, forKey: "steps")
     }
     
+    // Call in VC's to save new objects
+    func save() {
+        Yutorial.encode(self)
+    }
+    func delete () {
+        Yutorial.deleteFromPath(storagePath)
+    }
     
-    //MARK: NSCoding
-
-//    let CodedStorage<P: _Persistable where P: NSObject>: PersistenceType
-//    var cache = Dictionary<P.ID, P>()
-//    
-//    init() {
-//        initializeStorage()
-//    }
-//    
-//    func persist(entity: P) -> Bool {
-//        guard let id = entity.id else { return false }
-//        let path = pathForID(String(id))
-//        return encode(entity, toPath: path)
-//    }
-//    
-//    func fetch(id: P.ID) -> P? {
-//        if let e = cache[id] {
-//            return e
-//        }
-//        cache[id] = decodeFromPath(pathForID(String(id)))
-//        return cache[id]
-//    }
-//    
-//    func fetchAll(reload: Bool = false) -> [P] {
-//        if reload || cache.isEmpty {
-//            return decodeAllFromPath(self.storagePath)
-//        } else {
-//            return Array(cache.values)
-//        }
-//    }
-//    
-//    func encode(entity: P, toPath path: String) -> Bool {
-//        let ok = NSKeyedArchiver.archiveRootObject(entity, toFile: path)
-//        if !ok { print("Failed to save \(P.self) to path \(path). \(entity)") }
-//        return ok
-//    }
-//    
-//    func decodeFromPath(path: String) -> P? {
-//        return NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? P
-//    }
-//    
-//    func decodeAllFromPath(path: String) -> [P] {
-//        do {
-//        let files = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(path)
-//        return files.flatMap { decodeFromPath("\(path)/\($0)") }
-//        } catch let error as NSError {
-//            print("Error: \(error.domain) - Could not read contents of directory \(path)")
-//            return [Persistable]()
-//        }
-//    }
-//    
-//    var storageRoot = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory,
-//        NSSearchPathDomainMask.UserDomainMask, true).first! + "/persistence"
-//    
-//    var storagePath: String { return storageRoot + String(Persistable) }
-//    
-//    func pathForID(id: String) -> String {
-//        return storagePath + "/" + id
-//    }
-//    
-//    private func initializeStorage() {
-//        try! NSFileManager.defaultManager().createDirectoryAtPath(storagePath, withIntermediateDirectories: true, attributes: nil)
-//    }
+    // MARK: - Class level encoding functions
     
+    class func all() -> [Yutorial] {
+        return decodeAllFromPath(storagePath)
+    }
+    
+    class func deleteFromPath(path: String) {
+        // delete from db
+        NSFileManager.defaultManager().removeItemAtPath(path, error: nil)
+    }
+    
+    class func encode(yutorial: Yutorial) -> Bool {
+        let path = yutorial.storagePath
+        let ok = NSKeyedArchiver.archiveRootObject(yutorial, toFile: path)
+        if !ok { print("Failed to save to \(path). \(yutorial)") }
+        return ok
+    }
+    
+    class func decodeFromPath(path: String) -> Yutorial {
+        if let loaded: AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithFile(path) {
+            return (loaded as? Yutorial)!
+        } else {
+            return Yutorial(title: "nil!")
+        }
+    }
+    
+    class func decodeAllFromPath(path: String) -> [Yutorial] {
+        // if crashes, add an error pointer
+        if let files = NSFileManager.defaultManager().contentsOfDirectoryAtPath(path, error: nil) {
+            return map(files, { (x: AnyObject) -> Yutorial in
+                return self.decodeFromPath("\(path)/\(x)")
+            })
+        } else {
+            return []
+        }
+    }
+    
+    var storagePath: String {
+        return Yutorial.storagePath + "/" + id
+    }
+    
+    static var storagePath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory,
+        NSSearchPathDomainMask.UserDomainMask, true).first! as! String) + "Yutorials"
+    
+    class func initializeStorage() {
+        NSFileManager.defaultManager().createDirectoryAtPath(storagePath, withIntermediateDirectories: true, attributes: nil, error: nil)
+    }
 }
-
