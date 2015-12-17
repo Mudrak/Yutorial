@@ -16,6 +16,6 @@ class Checklist {
     
     init(cellText: String, checked: Bool) {
         self.cellText = cellText
-        self.checked = false 
+        self.checked = false
     }
 }

@@ -10,37 +10,40 @@ import UIKit
 
 class YutorialMenuTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
-    enum Segues: String {
-        case EditYutorial = "editYutorial"
-    }
+//    enum Segues: String {
+//        case EditYutorial = "editYutorial"
+//    }
     
     @IBOutlet weak var menuTableView: UITableView!
     
+    var yutorials = [Yutorial]()
     
-    //var yutorials = YutorialCollection().Yutorials
-    
-    var yutorials = Yutorial.all()
+    // Use for NSCoder:
+    //var yutorials = Yutorial.all()
     
     var newYutorials: String = ""
     var editingCellPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Sample Yutorials
+        yutorials = [
+            Yutorial(title: "How to Create a Yutorial"),
+            Yutorial(title: "Setting up the stereo"),
+            Yutorial(title: "How to tie a tie")
+        ]
     }
     override func viewDidAppear(animated: Bool) {
         // reload data here
-        println("Menu--Contents of Yutorials: \(yutorials)")
         self.menuTableView.reloadData()
     }
     override func viewDidDisappear(animated: Bool) {
-        // save here
-        // new one, on changes
-        //Yutorial.save()
+        // save here? How? 
     }
     
     @IBAction func cancel(segue:UIStoryboardSegue) {
         self.dismissViewControllerAnimated(true, completion: {})
-        
     }
     
     @IBAction func done(segue:UIStoryboardSegue) {
@@ -148,8 +151,6 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
                 addYutorialViewController.yutorialName.text = selectedYutorial
                 addYutorialViewController.yutorialName.placeholder = selectedYutorial
                 addYutorialViewController.navigationItem.title = "Edit Yutorial Title"
-                println("Title: \(addYutorialViewController.navigationItem.title)")
-                println("Text to add to field: \(addYutorialViewController.yutorialName.text)")
                 addYutorialViewController.title = "Edit Yutorial Title"
                 
                 addYutorialViewController.name = selectedYutorial
@@ -189,7 +190,7 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         let deleteButton = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
             self.editingCellPath = indexPath
             // delete from db:
-            self.yutorials[indexPath!.row].delete()
+            //self.yutorials[indexPath!.row].delete()
             // delete from table
             self.yutorials.removeAtIndex(indexPath!.row)
             // delete from db:

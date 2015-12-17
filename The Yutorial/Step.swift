@@ -13,6 +13,7 @@ class Step: NSObject, Printable {
     
     var title: String
     var checklistItems = [Checklist]()
+    var checklistImage: UIImage!
     
     init(title: String) {
         self.title = title
