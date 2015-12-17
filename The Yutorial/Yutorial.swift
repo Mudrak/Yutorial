@@ -56,6 +56,12 @@ class Yutorial: NSObject, Printable {
             steps.append(Step(title: "Bring the wide end down through the knot in front."))
             steps.append(Step(title: "And -- using both hands -- tighten the knot carefully and draw it up to the collar."))
         }
+        if (title == "How to use the 3D Printer") {
+            steps.append(Step(title: "Find or make a design file"))
+            steps.append(Step(title: "Upload design to the printer"))
+            steps.append(Step(title: "Clear build platform and press start button"))
+            steps.append(Step(title: "Monitor print to completion!"))
+        }
     }
     override var description: String {
         var s: String

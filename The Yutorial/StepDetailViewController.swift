@@ -36,19 +36,7 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
         var unchecked: UIImage! = UIImage(named: "uncheck")
     }
     let CheckboxImages = Checkbox()
-       
-//    init() {
-//        if (yutorialTitle == "How to Create a Yutorial") {
-//            step.checklistItems = [
-//                Checklist(cellText: "Example list of checklist items", checked: false),
-//                Checklist(cellText: "Tap each cell to check it off", checked: false),
-//                Checklist(cellText: "Enter substeps and data here", checked: false),
-//                Checklist(cellText: "From notes to camera roll images", checked: false),
-//                Checklist(cellText: "For specific info for complex tasks", checked: false)
-//                
-//            ]
-//        }
-//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,6 +47,8 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
         navigationItem.title = "Step Details"
         imageView.image = step.checklistImage
         
+        
+        // Sample Data:
         if (yutorialTitle == "How to Create a Yutorial") {
             step.checklistItems = [
                 Checklist(cellText: "Example list of checklist items", checked: false),
@@ -66,7 +56,6 @@ class StepDetailViewController: UIViewController, UIImagePickerControllerDelegat
                 Checklist(cellText: "Enter substeps and data here", checked: false),
                 Checklist(cellText: "From notes to camera roll images", checked: false),
                 Checklist(cellText: "For specific info for complex tasks", checked: false)
-                
             ]
         }
         navigationItem.title = "Checklist"
