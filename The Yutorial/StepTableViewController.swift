@@ -120,6 +120,8 @@ class StepTableViewController: UITableViewController, UITableViewDataSource, UIT
         cell.stepImageView.image = stepImages[indexPath.row]
         cell.stepLabel.text = self.yutorial.steps[indexPath.row].title
         
+        //yutorial.save()
+        
         return cell
     }
     

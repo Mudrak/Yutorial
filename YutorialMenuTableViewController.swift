@@ -16,10 +16,10 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
     
     @IBOutlet weak var menuTableView: UITableView!
     
-    var yutorials = [Yutorial]()
+    //var yutorials = [Yutorial]()
     
     // Use for NSCoder:
-    //var yutorials = Yutorial.all()
+    var yutorials = Yutorial.all()
     
     var newYutorials: String = ""
     var editingCellPath: NSIndexPath?
@@ -137,7 +137,7 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
             upcomingView.yutorialInformation = yutorialInfo
             upcomingView.yutorial = yutorials[indexPath!.row]
             
-            //self.menuTableView.deselectRowAtIndexPath(indexPath!, animated: true)
+            self.menuTableView.deselectRowAtIndexPath(indexPath!, animated: true)
         }
         // Edit segue:
         if (segue.identifier == "editYutorial"){
@@ -190,11 +190,12 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         }
         let deleteButton = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
             self.editingCellPath = indexPath
-            // delete from db:
-            //self.yutorials[indexPath!.row].delete()
             // delete from table
+            //self.yutorials[indexPath!.row].delete()
             self.yutorials.removeAtIndex(indexPath!.row)
             // delete from db:
+            //self.yutorials[indexPath!.row].delete()
+            
             //let thisYutorial = self.yutorials[indexPath!.row]
             // self.confirmDelete(thisYutorial)
 

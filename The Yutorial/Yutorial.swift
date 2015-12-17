@@ -13,9 +13,9 @@ import UIKit
 class Yutorial: NSObject, Printable {
     
     // File name is a unique id
-    //let id: String
+    let id: String
     var title: String
-    var steps: [Step] = []
+    var steps: [Step] = [Step]()
     
     // read serial
     // load all yutorials - class method
@@ -24,7 +24,7 @@ class Yutorial: NSObject, Printable {
     // inherit from NSObject to use NSCoding
     
     init(title: String) {
-        //id = NSUUID().UUIDString
+        id = NSUUID().UUIDString
         self.title = title
         if (title == "How to Create a Yutorial") {
             steps.append(Step(title: "Press the '+' add button"))
@@ -62,6 +62,11 @@ class Yutorial: NSObject, Printable {
             steps.append(Step(title: "Clear build platform and press start button"))
             steps.append(Step(title: "Monitor print to completion!"))
         }
+        
+        
+//        let nc = NSNotificationCenter.defaultCenter()
+//        nc.addObserver(self, selector: "appDidEnterBackground", name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        
     }
     override var description: String {
         var s: String
@@ -71,83 +76,83 @@ class Yutorial: NSObject, Printable {
     
     // MARK: NSCoding
     
-//    init(coder decoder: NSCoder) {
-//        if let id = decoder.decodeObjectForKey("id") as? String {
-//            self.id = id
-//        } else {
-//            id = NSUUID().UUIDString
-//        }
-//        if let title = decoder.decodeObjectForKey("title") as? String {
-//            self.title = title
-//        } else {
-//            title = ""
-//        }
-//        if let steps = decoder.decodeObjectForKey("steps") as? [Step] {
-//            self.steps = steps
-//        } else {
-//            steps = []
-//        }
-//    }
-//
-//    func encodeWithCoder(coder: NSCoder) {
-//        coder.encodeObject(self.id, forKey: "id")
-//        coder.encodeObject(self.title, forKey: "title")
-//        coder.encodeObject(self.steps, forKey: "steps")
-//    }
-//    
-//    // Call in VC's to save new objects
-//    func save() {
-//        Yutorial.encode(self)
-//    }
-//    func delete () {
-//        Yutorial.deleteFromPath(storagePath)
-//    }
-//    
-//    // MARK: - Class level encoding functions
-//    
-//    class func all() -> [Yutorial] {
-//        return decodeAllFromPath(storagePath)
-//    }
-//    
-//    class func deleteFromPath(path: String) {
-//        // delete from db
-//        NSFileManager.defaultManager().removeItemAtPath(path, error: nil)
-//    }
-//    
-//    class func encode(yutorial: Yutorial) -> Bool {
-//        let path = yutorial.storagePath
-//        let ok = NSKeyedArchiver.archiveRootObject(yutorial, toFile: path)
-//        if !ok { print("Failed to save to \(path). \(yutorial)") }
-//        return ok
-//    }
-//    
-//    class func decodeFromPath(path: String) -> Yutorial {
-//        if let loaded: AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithFile(path) {
-//            return (loaded as? Yutorial)!
-//        } else {
-//            return Yutorial(title: "nil!")
-//        }
-//    }
-//    
-//    class func decodeAllFromPath(path: String) -> [Yutorial] {
-//        // if crashes, add an error pointer
-//        if let files = NSFileManager.defaultManager().contentsOfDirectoryAtPath(path, error: nil) {
-//            return map(files, { (x: AnyObject) -> Yutorial in
-//                return self.decodeFromPath("\(path)/\(x)")
-//            })
-//        } else {
-//            return []
-//        }
-//    }
-//    
-//    var storagePath: String {
-//        return Yutorial.storagePath + "/" + id
-//    }
-//    
-//    static var storagePath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory,
-//        NSSearchPathDomainMask.UserDomainMask, true).first! as! String) + "Yutorials"
-//    
-//    class func initializeStorage() {
-//        NSFileManager.defaultManager().createDirectoryAtPath(storagePath, withIntermediateDirectories: true, attributes: nil, error: nil)
-//    }
+    init(coder decoder: NSCoder) {
+        if let id = decoder.decodeObjectForKey("id") as? String {
+            self.id = id
+        } else {
+            id = NSUUID().UUIDString
+        }
+        if let title = decoder.decodeObjectForKey("title") as? String {
+            self.title = title
+        } else {
+            title = ""
+        }
+        if let steps = decoder.decodeObjectForKey("steps") as? [Step] {
+            self.steps = steps
+        } else {
+            steps = []
+        }
+    }
+
+    func encodeWithCoder(coder: NSCoder) {
+        coder.encodeObject(self.id, forKey: "id")
+        coder.encodeObject(self.title, forKey: "title")
+        coder.encodeObject(self.steps, forKey: "steps")
+    }
+    
+    // Call in VC's to save new objects
+    func save() {
+        Yutorial.encode(self)
+    }
+    func delete () {
+        Yutorial.deleteFromPath(storagePath)
+    }
+    
+    // MARK: - Class level encoding functions
+    
+    class func all() -> [Yutorial] {
+        return decodeAllFromPath(storagePath)
+    }
+    
+    class func deleteFromPath(path: String) {
+        // delete from db
+        NSFileManager.defaultManager().removeItemAtPath(path, error: nil)
+    }
+    
+    class func encode(yutorial: Yutorial) -> Bool {
+        let path = yutorial.storagePath
+        let ok = NSKeyedArchiver.archiveRootObject(yutorial, toFile: path)
+        if !ok { print("Failed to save to \(path). \(yutorial)") }
+        return ok
+    }
+    
+    class func decodeFromPath(path: String) -> Yutorial {
+        if let loaded: AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithFile(path) {
+            return (loaded as? Yutorial)!
+        } else {
+            return Yutorial(title: "nil!")
+        }
+    }
+    
+    class func decodeAllFromPath(path: String) -> [Yutorial] {
+        // if crashes, add an error pointer
+        if let files = NSFileManager.defaultManager().contentsOfDirectoryAtPath(path, error: nil) {
+            return map(files, { (x: AnyObject) -> Yutorial in
+                return self.decodeFromPath("\(path)/\(x)")
+            })
+        } else {
+            return []
+        }
+    }
+    
+    var storagePath: String {
+        return Yutorial.storagePath + "/" + id
+    }
+    
+    static var storagePath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory,
+        NSSearchPathDomainMask.UserDomainMask, true).first! as! String) + "Yutorials"
+    
+    class func initializeStorage() {
+        NSFileManager.defaultManager().createDirectoryAtPath(storagePath, withIntermediateDirectories: true, attributes: nil, error: nil)
+    }
 }
