@@ -31,7 +31,8 @@ class YutorialMenuTableViewController: UITableViewController, UITableViewDataSou
         yutorials = [
             Yutorial(title: "How to Create a Yutorial"),
             Yutorial(title: "Setting up the stereo"),
-            Yutorial(title: "How to tie a tie")
+            Yutorial(title: "How to tie a tie"),
+            Yutorial(title: "How to use the 3D Printer")
         ]
     }
     override func viewDidAppear(animated: Bool) {
